@@ -1,19 +1,35 @@
 from scrapy import Selector
 from collections import deque
+from typing import List, Dict, Optional, Any
 import os
 
 
-def extract_elements(elements):
+def extract_elements(elements: List[Selector]) -> List[Dict[str, Any]]:
     """
-    递归提取 HTML 元素信息，并返回结构化数据列表
+    递归提取 HTML 元素信息，并返回结构化数据列表。
+    
+    Args:
+        elements (List[Selector]): Scrapy 的 Selector 对象列表，表示一组 HTML 元素。
+
+    Returns:
+        List[Dict]: 包含每个节点信息的字典列表，包含：
+            - tag: 标签名（如 div、a 等）
+            - attributes: 属性字典
+            - text_content: 文本内容列表（去除空格）
+            - children: 子节点列表（递归调用自身）
     """
     element_list = []
 
     for elem in elements:
+        # 获取标签名
         tag = elem.xpath('local-name()').get()
+
+        # 获取属性字典
         attributes = dict(elem.attrib)
-        text_content = elem.xpath('.//text()').getall()
-        text_content = [t.strip() for t in text_content if t.strip()]
+
+        # 获取所有文本内容并清洗
+        raw_texts = elem.xpath('.//text()').getall()
+        text_content = [t.strip() for t in raw_texts if t.strip()]
 
         node_info = {
             'tag': tag,
@@ -23,6 +39,7 @@ def extract_elements(elements):
 
         element_list.append(node_info)
 
+        # 递归处理子元素
         children = elem.xpath('./*')
         if children:
             child_nodes = extract_elements(children)
@@ -31,13 +48,20 @@ def extract_elements(elements):
     return element_list
 
 
-def build_similarity_xpath(reference_node, ignore_attrs=None):
+def build_similarity_xpath(reference_node: Dict[str, Any], ignore_attrs: Optional[List[str]] = None) -> str:
     """
-    根据参考节点生成用于匹配相似元素的通用 XPath
-    忽略 id 等唯一性属性
+    根据参考节点生成用于匹配相似元素的通用 XPath。
+    忽略 id 和 href 等唯一性或变化频繁的属性。
+
+    Args:
+        reference_node (Dict): 参考节点的结构化信息（由 extract_elements 返回）
+        ignore_attrs (Optional[List[str]]): 需要忽略的属性列表，默认为 ['id', 'href']
+
+    Returns:
+        str: 构建完成的 XPath 表达式
     """
     if ignore_attrs is None:
-        ignore_attrs = ['id','href']
+        ignore_attrs = ['id', 'href']
 
     tag = reference_node['tag']
     attrs = []
@@ -53,7 +77,17 @@ def build_similarity_xpath(reference_node, ignore_attrs=None):
     return xpath_expr
 
 
-def find_similar_elements(html_text, reference_xpath=None):
+def find_similar_elements(html_text: str, reference_xpath: Optional[str] = None) -> List[str]:
+    """
+    主流程函数：解析 HTML 并查找与参考元素相似的元素。
+
+    Args:
+        html_text (str): 页面源码字符串
+        reference_xpath (Optional[str]): 指定参考元素的 XPath 路径，若不传则使用第一个 <a> 标签
+
+    Returns:
+        List[str]: 匹配到的相似元素的原始 HTML 片段列表
+    """
     selector = Selector(text=html_text)
 
     if reference_xpath:
@@ -63,10 +97,10 @@ def find_similar_elements(html_text, reference_xpath=None):
             raise ValueError(f"No element found at provided reference_xpath: {reference_xpath}")
 
         # 提取该元素的结构信息用于构建相似性规则
-        reference_node = extract_elements(selector.xpath(reference_xpath))
-        if not reference_node:
+        reference_node_list = extract_elements(selector.xpath(reference_xpath))
+        if not reference_node_list:
             raise ValueError("Failed to extract reference node from given XPath.")
-        reference_node = reference_node[0]  # extract_elements 返回列表
+        reference_node = reference_node_list[0]  # extract_elements 返回列表
     else:
         # 默认选择第一个 <a> 标签作为参考元素
         root_elements = selector.xpath('//body/*')
@@ -92,7 +126,10 @@ if __name__ == '__main__':
         html_content = f.read()
 
     try:
-        matched_elements = find_similar_elements(html_content,'/html/body/div/main/div[1]/div/div/div/div/div[2]/ul/li[1]/a')
+        matched_elements = find_similar_elements(
+            html_content,
+            '/html/body/div/main/div[1]/div/div/div/div/div[2]/ul/li[1]/a'
+        )
         print("\nMatched Similar Elements:")
         for el in matched_elements:
             print(el)
