@@ -52,13 +52,7 @@ def build_similarity_xpath(reference_node: Dict[str, Any], ignore_attrs: Optiona
     """
     根据参考节点生成用于匹配相似元素的通用 XPath。
     忽略 id 和 href 等唯一性或变化频繁的属性。
-
-    Args:
-        reference_node (Dict): 参考节点的结构化信息（由 extract_elements 返回）
-        ignore_attrs (Optional[List[str]]): 需要忽略的属性列表，默认为 ['id', 'href']
-
-    Returns:
-        str: 构建完成的 XPath 表达式
+    对 class 属性做特殊处理，支持多值精确匹配。
     """
     if ignore_attrs is None:
         ignore_attrs = ['id', 'href']
@@ -67,13 +61,24 @@ def build_similarity_xpath(reference_node: Dict[str, Any], ignore_attrs: Optiona
     attrs = []
 
     for attr_name, attr_value in reference_node['attributes'].items():
-        if attr_name not in ignore_attrs and attr_value:
+        if not attr_value:
+            continue
+        if attr_name in ignore_attrs:
+            continue
+
+        if attr_name == 'class':
+            # 特殊处理 class 属性，逐个单词匹配
+            classes = attr_value.split()
+            for cls in classes:
+                attrs.append(f'contains(concat(" ", normalize-space(@class), " "), " {cls} ")')
+        else:
+            # 普通属性使用 contains 匹配
             attrs.append(f'contains(@{attr_name}, "{attr_value}")')
 
     if not attrs:
         return f"//{tag}"
 
-    xpath_expr = f"//{tag}[" + " and ".join(attrs) + "]"
+    xpath_expr = f"//{tag}[" + " or ".join(attrs) + "]"
     return xpath_expr
 
 
@@ -128,7 +133,7 @@ if __name__ == '__main__':
     try:
         matched_elements = find_similar_elements(
             html_content,
-            '/html/body/div/main/div[1]/div/div/div/div/div[2]/ul/li[1]/a'
+            '/html/body/div[5]/div[1]/div/div[1]/div[1]'
         )
         print("\nMatched Similar Elements:")
         for el in matched_elements:
