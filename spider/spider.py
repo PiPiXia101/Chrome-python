@@ -25,7 +25,7 @@ class Spider:
     # 寻找相似元素
     def run_similar(self,url,html_obj):
         original_data,xhr_list,html_info,web_js_file_path = rander.get_html(url)
-        plate_result=func(original_data,html_obj)
+        # plate_result=func(original_data,html_obj)
 
 
 
