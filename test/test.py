@@ -17,7 +17,8 @@ TAG_WEIGHTS = {
     'tr': 4,
     'td': 2,
     'br': 0,
-    '*': 1  # 默认权重
+    'i':-1,
+    '*': 0  # 默认权重
     
 }
 
@@ -121,7 +122,7 @@ def find_scored_highest_weight_node(nodes: List[Node]) -> Node:
         返回:
         float: 节点的得分。
         """
-        return node.path_weight * 0.7 + (max_level - node.level) * 0.3
+        return node.path_weight * 0.3 + (max_level - node.level) * 0.7
 
     # 过滤出所有级别大于0的有效节点
     valid_nodes = [node for node in nodes if node.level > 0]
@@ -142,8 +143,39 @@ def get_nodes_by_level(nodes: List[Node], target_level: int) -> List[Node]:
     """
     return [node for node in nodes if node.level == target_level]
 
+def get_parent_and_siblings(node: Node, all_nodes: List[Node]) -> Dict[str, Any]:
+    """
+    获取指定节点的父节点和同级节点。
+
+    参数:
+        node (Node): 当前节点。
+        all_nodes (List[Node]): 所有节点的列表。
+
+    返回:
+        Dict[str, Any]: 包含父节点和同级节点的字典。
+    """
+    # 查找父节点
+    parent = next(
+        (n for n in all_nodes if n.id == node.parent_id and n.level == node.level - 1),
+        None
+    )
+
+    # 查找同级节点（相同 parent_id 且相同 level，排除自己）
+    siblings = [
+        n for n in all_nodes
+        if n.parent_id == node.parent_id and n.level == node.level and n.id != node.id
+    ]
+
+    return {
+        "parent": parent,
+        "siblings": siblings
+    }
+
 # 示例用法
-test_node = '<li class="on"><span><a href="http://www.fogang.gov.cn/ywdt/fgyw/index.html" title="佛冈要闻" target="_blank">佛冈要闻</a></span></li>'
+test_node = """<li class="active"> 
+                            <a href="#panel-906275" data-toggle="tab" aria-expanded="true">
+                              <div onclick="window.open('doc-2-1.html');"> 院内新闻</div></a>
+                        </li>"""
 html = Selector(text=test_node)
 root_nodes = html.xpath('//body')  # 获取根级节点
 
@@ -175,42 +207,59 @@ else:
 with open('/Users/yan/Desktop/Chrome-python/html/test.html', 'r', encoding='utf-8') as f:
     html_str = f.read()
 html_obj = Selector(text = html_str)
-# node_list = html_obj.xpath(f'//{first_node.table_name}/parent::li[@class=""]')
-node_list = html_obj.xpath(f'//{first_node.table_name}')
+# 选中元素的代表节点在页面中,已经全部找到了
+match_list = html_obj.xpath(f'//{first_node.table_name}')
 
-
-for item in node_list:
-    # print(item.get())
-    first_node_html = item
-    first_node_level = first_node.level
+for match_node in match_list:
     similar_elements = list()
-    while first_node_level>1:
-        item = item.xpath('./parent::*')
-        table_name = item.xpath('local-name()').get()
-        attributes = dict(item.attrib)
-        # print(table_name,attributes)
-        first_node_level -= 1
-        selected_nodes = get_nodes_by_level(all_nodes, first_node_level)
-        finnly = False
-        for node in selected_nodes:
-            if table_name == node.table_name:
-                similar_elements.append(
+    # 权重值最大的节点
+    first_node = find_scored_highest_weight_node(all_nodes)
+    first_node_level = first_node.level
+    # print(f"当前节点 [{first_node.level}] {first_node.table_name} (ID: {first_node.id}, Level: {first_node.level}, LevelIndex: {first_node.level_index}) | Attrs: {first_node.attribute}")
+    while first_node.level>1:
+        parent_type = False
+        sibling_type = False
+        # 获取父节点
+        html_parent_node = match_node.xpath('./parent::*')
+        html_parent_name = html_parent_node.xpath('local-name()').get()
+    
+        result = get_parent_and_siblings(first_node, all_nodes)
+        parent_node = result["parent"]
+        sibling_nodes = result["siblings"]
+        if html_parent_name == parent_node.table_name:
+            # print("父节点匹配成功！")
+            parent_type = True
+            html_sibling_nodes = html_parent_node.xpath('./child::*')
+            if sibling_nodes and html_sibling_nodes and len(sibling_nodes)+1 == len(html_sibling_nodes):
+                for sibling_node in sibling_nodes:
+                    if sibling_node.table_name == html_sibling_nodes[sibling_node.level_index].xpath('local-name()').get():
+                        sibling_type+=1
+                if sibling_type == len(sibling_nodes):
+                    print(sibling_type,len(sibling_nodes))
+                    sibling_type = True
+                    # print('3同级节点匹配成功')
+                else:
+                    sibling_type = False
+            else:
+                if not sibling_nodes:
+                    sibling_type = True
+                else:
+                    sibling_type = False
+        if parent_type and sibling_type:
+            print(f"└── 寻找到上级元素 {html_parent_name} 第{parent_node.level}层 第{parent_node.level_index}个节点,并且子元素全部匹配成功{','.join([item.table_name for item in sibling_nodes])},进行下一次递归")
+            similar_elements.append(
                     {
-                        'html——table_name': table_name,
-                        'node——table_name': node.table_name,
-                        'html——attributes': attributes,
-                        'node——attributes': node.attribute,
-                        'first_node_level': first_node_level,
+                        'origin_node':first_node,
+                        'seek_oneself':match_node,
+                        'seek_parent':html_parent_node
                     }
                 )
-            else:
-                finnly = True
-                break
-        if finnly:
+            match_node = html_parent_node
+            first_node = parent_node
+        else:
             break
-    if len(similar_elements) == (first_node.level-1):
-        print('寻找到的元素',first_node_html.get())
-        for element in similar_elements:
-            print('相似元素',element)
+    if len(similar_elements) == first_node_level-1:
+        print(f"相似元素：\n{similar_elements[-1]['seek_parent'].get()}\n\n{similar_elements[0]['seek_oneself'].get()}\n")
         print('='*50)
-        
+        pass
+
