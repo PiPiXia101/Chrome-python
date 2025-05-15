@@ -7,6 +7,19 @@ from scrapy import Selector
 from typing import List, Dict, Any
 from lib.tree_diagram.tree_node import Node
 import hashlib
+TAG_WEIGHTS = {
+    'img': 10,
+    'a': 10,
+    'p': 5,
+    'div': 4,
+    'ul': 4,
+    'li': 2,
+    'tr': 4,
+    'td': 2,
+    'br': 0,
+    '*': 1  # 默认权重
+    
+}
 
 def generate_node_id(table_name: str, level: int, level_index: int) -> str:
     """
@@ -23,7 +36,7 @@ def generate_node_id(table_name: str, level: int, level_index: int) -> str:
     unique_str = f"{table_name}:{level}:{level_index}"
     return hashlib.md5(unique_str.encode()).hexdigest()
 
-def build_nodes(node_obj, parent_id: str = None, level: int = 0, level_index: int = 0) -> List[Node]:
+def build_nodes(node_obj, parent_id: str = None, level: int = 0, level_index: int = 0, path_weight: int = 0) -> List[Node]:
     """
     递归构建 HTML 节点树并生成 Node 对象列表。
     
@@ -32,6 +45,7 @@ def build_nodes(node_obj, parent_id: str = None, level: int = 0, level_index: in
         parent_id (str): 当前节点的父节点 ID（由上一层递归传入）。
         level (int): 当前节点的层级，默认从 0 开始。
         level_index (int): 当前节点在其父级节点下的索引位置。
+        path_weight (int): 从根节点到当前节点路径上的权重总和。
 
     Returns:
         List[Node]: 包含当前节点及其所有子节点的 Node 对象列表。
@@ -42,52 +56,58 @@ def build_nodes(node_obj, parent_id: str = None, level: int = 0, level_index: in
         table_name = child.xpath('local-name()').get()
         attributes = dict(child.attrib)
 
+        # 获取当前节点自身的权重
+        self_weight = TAG_WEIGHTS.get(table_name, TAG_WEIGHTS['*'])
+
+        # 计算新的路径权重（父路径 + 自身权重）
+        new_path_weight = path_weight + self_weight
+
         # 使用 table_name、level、index 生成唯一 id
         node_id = generate_node_id(table_name, level + 1, index)
 
         # 创建当前节点
         node = Node(
-            parent_id=parent_id,                 # 来自上层节点的 id
+            parent_id=parent_id,
             id=node_id,
             table_name=table_name,
             attribute=attributes,
             level=level + 1,
-            level_index=index
+            level_index=index,
+            path_weight=new_path_weight  # 新增字段
         )
         nodes.append(node)
 
         # 递归构建子节点，将当前 node.id 作为 parent_id 传入
-        child_nodes = build_nodes(child, parent_id=node_id, level=level + 1, level_index=index)
+        child_nodes = build_nodes(
+            child,
+            parent_id=node_id,
+            level=level + 1,
+            level_index=index,
+            path_weight=new_path_weight  # 向下传递路径权重
+        )
         nodes.extend(child_nodes)
 
     return nodes
 
-def find_first_single_node(nodes: List[Node]) -> Node:
+def find_highest_weight_node(nodes: List[Node]) -> Node:
     """
-    按层级从高到低查找，找到第一个所在层级只有一个节点且 level > 0 的节点。
+    查找 path_weight 最大的节点（忽略 level=0 的根节点）。
 
     Args:
         nodes (List[Node]): Node 对象列表。
 
     Returns:
-        Node: 找到的第一个符合条件的节点，未找到则返回 None。
+        Node: 找到的权重最高的节点，未找到则返回 None。
     """
-    # 统计每一层的节点数量
-    level_count = {}
-    for node in nodes:
-        if node.level == 0:
-            continue
-        level_count[node.level] = level_count.get(node.level, 0) + 1
+    # 过滤掉 level=0 的根节点，并找出 path_weight 最大的节点
+    valid_nodes = [node for node in nodes if node.level > 0]
 
-    # 倒序遍历，优先找到最深层级中只有一个节点的层级
-    for node in sorted(nodes, key=lambda x: x.level, reverse=True):
-        if node.level == 0:
-            continue
-        if level_count[node.level] == 1:
-            return node
+    if not valid_nodes:
+        return None
 
-    return None
-
+    # 使用 max 函数按 path_weight 排序取最大值
+    highest_node = max(valid_nodes, key=lambda x: x.path_weight)
+    return highest_node
 
 def get_nodes_by_level(nodes: List[Node], target_level: int) -> List[Node]:
     """
@@ -103,7 +123,7 @@ def get_nodes_by_level(nodes: List[Node], target_level: int) -> List[Node]:
     return [node for node in nodes if node.level == target_level]
 
 # 示例用法
-test_node = '<li class=""><a href="/channel_128409" class="index_hoverli__QkvuD"><i>直播</i></a></li>'
+test_node = '<li class="on"><span><a href="http://www.fogang.gov.cn/ywdt/fgyw/index.html" title="佛冈要闻" target="_blank">佛冈要闻</a></span></li>'
 html = Selector(text=test_node)
 root_nodes = html.xpath('//body')  # 获取根级节点
 
@@ -113,10 +133,10 @@ for idx, root in enumerate(root_nodes):
 
 for node in all_nodes:
     indent = '  ' * (node.level - 1)  # 根据层级缩进
-    print(f"{indent}└── [{node.level}] {node.table_name} (ID: {node.id}, Level: {node.level}, LevelIndex: {node.level_index}) | Attrs: {node.attribute}")
+    print(f"{indent}└── [{node.level}] {node.table_name} path_weight: {node.path_weight} (ID: {node.id}, Level: {node.level}, LevelIndex: {node.level_index}) | Attrs: {node.attribute}")
 
 # 查找符合条件的第一个节点
-first_node = find_first_single_node(all_nodes)
+first_node = find_highest_weight_node(all_nodes)
 
 if first_node:
     print("找到的节点信息：")
@@ -166,5 +186,5 @@ for item in node_list:
                 break
         if finnly:
             break
-
-    print('='*50)
+    if not finnly:
+        print('='*50)

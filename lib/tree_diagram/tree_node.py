@@ -11,7 +11,7 @@ class Node:
         level_index (int): 同一层级中该节点的索引位置。
     """
 
-    def __init__(self, parent_id: str, id: str, table_name: str, attribute: dict, level: int, level_index: int):
+    def __init__(self, parent_id: str, id: str, table_name: str, attribute: dict, level: int, level_index: int, path_weight=0):
         """
         初始化一个新的节点实例。
 
@@ -29,3 +29,4 @@ class Node:
         self.attribute = attribute
         self.level = level  # 节点的层级
         self.level_index = level_index  # 节点的层级索引
+        self.path_weight = path_weight
