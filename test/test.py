@@ -89,25 +89,45 @@ def build_nodes(node_obj, parent_id: str = None, level: int = 0, level_index: in
 
     return nodes
 
-def find_highest_weight_node(nodes: List[Node]) -> Node:
+def find_scored_highest_weight_node(nodes: List[Node]) -> Node:
     """
-    查找 path_weight 最大的节点（忽略 level=0 的根节点）。
-
-    Args:
-        nodes (List[Node]): Node 对象列表。
-
-    Returns:
-        Node: 找到的权重最高的节点，未找到则返回 None。
+    寻找具有最高加权得分的节点。
+    
+    此函数通过计算每个节点的得分来确定哪个节点的“重要性”最高。得分是基于节点的路径权重和其级别与最大级别之间的差值计算得出的。
+    
+    参数:
+    nodes (List[Node]): 一个Node对象列表，代表待评估的节点集合。
+    
+    返回:
+    Node: 得分最高的节点。如果没有提供节点或没有有效节点，则返回None。
     """
-    # 过滤掉 level=0 的根节点，并找出 path_weight 最大的节点
-    valid_nodes = [node for node in nodes if node.level > 0]
-
-    if not valid_nodes:
+    # 检查节点列表是否为空
+    if not nodes:
         return None
 
-    # 使用 max 函数按 path_weight 排序取最大值
-    highest_node = max(valid_nodes, key=lambda x: x.path_weight)
-    return highest_node
+    # 计算所有节点中的最大级别
+    max_level = max(node.level for node in nodes)
+
+    # 定义一个用于计算节点得分的内部函数
+    def score(node):
+        """
+        计算节点的得分。
+        
+        得分是根据节点的路径权重和它与最大级别的差距来计算的。这个函数帮助确定节点的相对重要性。
+        
+        参数:
+        node (Node): 要计算得分的节点。
+        
+        返回:
+        float: 节点的得分。
+        """
+        return node.path_weight * 0.7 + (max_level - node.level) * 0.3
+
+    # 过滤出所有级别大于0的有效节点
+    valid_nodes = [node for node in nodes if node.level > 0]
+
+    # 返回得分最高的有效节点
+    return max(valid_nodes, key=score)
 
 def get_nodes_by_level(nodes: List[Node], target_level: int) -> List[Node]:
     """
@@ -135,8 +155,8 @@ for node in all_nodes:
     indent = '  ' * (node.level - 1)  # 根据层级缩进
     print(f"{indent}└── [{node.level}] {node.table_name} path_weight: {node.path_weight} (ID: {node.id}, Level: {node.level}, LevelIndex: {node.level_index}) | Attrs: {node.attribute}")
 
-# 查找符合条件的第一个节点
-first_node = find_highest_weight_node(all_nodes)
+# 权重值最大的节点
+first_node = find_scored_highest_weight_node(all_nodes)
 
 if first_node:
     print("找到的节点信息：")
@@ -163,9 +183,7 @@ for item in node_list:
     # print(item.get())
     first_node_html = item
     first_node_level = first_node.level
-    # print(item.xpath('./parent::*').xpath('local-name()').get())
-    # while True:
-    # 向上匹配
+    similar_elements = list()
     while first_node_level>1:
         item = item.xpath('./parent::*')
         table_name = item.xpath('local-name()').get()
@@ -176,15 +194,23 @@ for item in node_list:
         finnly = False
         for node in selected_nodes:
             if table_name == node.table_name:
-                print(first_node.level)
-                print(f'选中唯一元素{first_node.level}',first_node_html.get())
-                print(f'选中唯一元素{first_node_level}层元素',table_name,attributes)
-                print(f"└── [{node.level}] {node.table_name} (ID: {node.id}, Level: {node.level}, LevelIndex: {node.level_index}) | Attrs: {node.attribute}")
-                print('*'*50)
+                similar_elements.append(
+                    {
+                        'html——table_name': table_name,
+                        'node——table_name': node.table_name,
+                        'html——attributes': attributes,
+                        'node——attributes': node.attribute,
+                        'first_node_level': first_node_level,
+                    }
+                )
             else:
                 finnly = True
                 break
         if finnly:
             break
-    if not finnly:
+    if len(similar_elements) == (first_node.level-1):
+        print('寻找到的元素',first_node_html.get())
+        for element in similar_elements:
+            print('相似元素',element)
         print('='*50)
+        
