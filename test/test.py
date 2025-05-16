@@ -171,6 +171,73 @@ def get_parent_and_siblings(node: Node, all_nodes: List[Node]) -> Dict[str, Any]
         "siblings": siblings
     }
 
+
+def find_similar_ancestor_structure(start_node, weightMax_node, all_nodes, similar_elements):
+    """
+    根据节点结构寻找相似的祖先节点。
+
+    参数:
+    - start_node: 开始节点，用于从该节点开始寻找相似祖先结构。
+    - weightMax_node: 权重最大节点，用于获取父节点和兄弟节点信息。
+    - all_nodes: 所有节点列表，包含所有待检查的节点。
+    - similar_elements: 相似元素列表，用于存储找到的相似元素。
+
+    返回:
+    - 相似元素列表，包含所有找到的相似元素。
+    """
+    # 获取权重最大节点的父节点和兄弟节点
+    result = get_parent_and_siblings(weightMax_node, all_nodes)
+    parent_node = result["parent"]
+    sibling_nodes = result["siblings"]
+
+    # 如果没有父节点，则直接返回相似元素列表
+    if not parent_node:
+        return similar_elements
+
+    # 获取父节点的HTML节点
+    html_parent_node = start_node.xpath('./parent::*')
+    if not html_parent_node:
+        return similar_elements
+
+    # 检查父节点的名称是否匹配
+    html_parent_name = html_parent_node.xpath('local-name()').get(default='')
+    if html_parent_name != parent_node.table_name:
+        return similar_elements
+
+    # 获取父节点的所有子节点
+    html_sibling_nodes = html_parent_node.xpath('./child::*')
+    html_siblings_count = len(html_sibling_nodes)
+
+    # 检查兄弟节点数量是否匹配
+    if sibling_nodes:
+        if len(sibling_nodes) + 1 != html_siblings_count:
+            return similar_elements
+
+        match_count = 0
+        for sibling_node in sibling_nodes:
+            index = sibling_node.level_index
+            if index < html_siblings_count and \
+               sibling_node.table_name == html_sibling_nodes[index].xpath('local-name()').get(default=''):
+                match_count += 1
+
+        sibling_type = match_count == len(sibling_nodes)
+    else:
+        sibling_type = True
+
+    # 如果兄弟节点匹配成功，则添加到相似元素列表中并进行下一次递归
+    if sibling_type:
+        print(f"└── 寻找到上级元素 {html_parent_name} 第{parent_node.level}层 第{parent_node.level_index}个节点,"
+              f"并且子元素全部匹配成功{','.join([item.table_name for item in sibling_nodes])},进行下一次递归")
+        similar_elements.append({
+            'origin_node': start_node,
+            'seek_oneself': start_node,
+            'seek_parent': html_parent_node
+        })
+        find_similar_ancestor_structure(html_parent_node, parent_node, all_nodes, similar_elements)
+    else:
+        return similar_elements
+
+
 # 示例用法
 test_node = """<div class="small_toplink__GmZhY"><a target="_blank" href="/newsDetail_forward_30797146" class="index_inherit__A1ImK"><div class="small_imgposition__PYVLm"><div class="small_isrecommend__zSjSv"><div class="index_corner_label__3aOsf"><span>推荐</span></div></div><img alt="多省市已开展现房销售试点，去年全国现房销售面积占比超30%" src="https://imgpai.thepaper.cn/newpai/image/1746868361052_PAmfEQ_1746868361294.png?x-oss-process=image/resize,w_332" width="318" height="182"></div><h2>多省市已开展现房销售试点，去年全国现房销售面积占比超30%</h2></a></div>"""
 html = Selector(text=test_node)
@@ -213,48 +280,12 @@ for match_node in match_list:
     first_node = find_scored_highest_weight_node(all_nodes)
     first_node_level = first_node.level
     # print(f"当前节点 [{first_node.level}] {first_node.table_name} (ID: {first_node.id}, Level: {first_node.level}, LevelIndex: {first_node.level_index}) | Attrs: {first_node.attribute}")
-    while first_node.level>1:
-        parent_type = False
-        sibling_type = False
-        # 获取父节点
-        html_parent_node = match_node.xpath('./parent::*')
-        html_parent_name = html_parent_node.xpath('local-name()').get()
-    
-        result = get_parent_and_siblings(first_node, all_nodes)
-        parent_node = result["parent"]
-        sibling_nodes = result["siblings"]
-        if html_parent_name == parent_node.table_name:
-            # print("父节点匹配成功！")
-            parent_type = True
-            html_sibling_nodes = html_parent_node.xpath('./child::*')
-            if sibling_nodes and html_sibling_nodes and len(sibling_nodes)+1 == len(html_sibling_nodes):
-                for sibling_node in sibling_nodes:
-                    if sibling_node.table_name == html_sibling_nodes[sibling_node.level_index].xpath('local-name()').get():
-                        sibling_type+=1
-                if sibling_type == len(sibling_nodes):
-                    print(sibling_type,len(sibling_nodes))
-                    sibling_type = True
-                    # print('3同级节点匹配成功')
-                else:
-                    sibling_type = False
-            else:
-                if not sibling_nodes:
-                    sibling_type = True
-                else:
-                    sibling_type = False
-        if parent_type and sibling_type:
-            print(f"└── 寻找到上级元素 {html_parent_name} 第{parent_node.level}层 第{parent_node.level_index}个节点,并且子元素全部匹配成功{','.join([item.table_name for item in sibling_nodes])},进行下一次递归")
-            similar_elements.append(
-                    {
-                        'origin_node':first_node,
-                        'seek_oneself':match_node,
-                        'seek_parent':html_parent_node
-                    }
-                )
-            match_node = html_parent_node
-            first_node = parent_node
-        else:
-            break
+    # 匹配父、同节点
+    find_similar_ancestor_structure(match_node,first_node,all_nodes,similar_elements)
+            
+   
+   
+   
     if len(similar_elements) == first_node_level-1:
         print(f"相似元素：\n{similar_elements[-1]['seek_parent'].get()}\n\n{similar_elements[0]['seek_oneself'].get()}\n")
         print('='*50)
