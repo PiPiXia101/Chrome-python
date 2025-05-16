@@ -21,7 +21,7 @@ def get_html(url):
 
     with sync_playwright() as p:
         start_time = time.time()
-        browser = p.firefox.launch()
+        browser = p.firefox.launch(headless=True)
         context = browser.new_context()
 
         context.set_extra_http_headers({

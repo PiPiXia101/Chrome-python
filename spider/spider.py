@@ -16,11 +16,14 @@ class Spider:
     # 现有的提取板块流程测试
     def run(self,url):
         original_data,xhr_list,html_info,web_js_file_path = rander.get_html(url)
+        # print(original_data)
+        with open('/Users/yan/Desktop/Chrome-python/html/test copy.html','w',encoding='utf-8') as f:
+            f.write(original_data)
         # 板块提取流程
-        a_list= self.analysisPlate.get_all_a(original_data)
-        plate_result = self.analysisPlate.prefilter(url,a_list)
-        for i in plate_result:
-            print(i)
+        # a_list= self.analysisPlate.get_all_a(original_data)
+        # plate_result = self.analysisPlate.prefilter(url,a_list)
+        # for i in plate_result:
+        #     print(i)
 
     # 寻找相似元素
     def run_similar(self,url,html_obj):
@@ -31,6 +34,6 @@ class Spider:
 
 if __name__ == '__main__':
     spider = Spider()
-    # spider.run('https://www.thepaper.cn/')
+    spider.run('https://www.zhihu.com/question/19550227')
     # id("navMenu")/UL[1]/LI[6]/A[1]
     html_obj= """<a href="/channel_122908" class="index_hoverli__QkvuD"><i>国际</i></a>"""

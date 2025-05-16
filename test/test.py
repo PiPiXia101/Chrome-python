@@ -172,10 +172,7 @@ def get_parent_and_siblings(node: Node, all_nodes: List[Node]) -> Dict[str, Any]
     }
 
 # 示例用法
-test_node = """<li class="active"> 
-                            <a href="#panel-906275" data-toggle="tab" aria-expanded="true">
-                              <div onclick="window.open('doc-2-1.html');"> 院内新闻</div></a>
-                        </li>"""
+test_node = """<div class="small_toplink__GmZhY"><a target="_blank" href="/newsDetail_forward_30797146" class="index_inherit__A1ImK"><div class="small_imgposition__PYVLm"><div class="small_isrecommend__zSjSv"><div class="index_corner_label__3aOsf"><span>推荐</span></div></div><img alt="多省市已开展现房销售试点，去年全国现房销售面积占比超30%" src="https://imgpai.thepaper.cn/newpai/image/1746868361052_PAmfEQ_1746868361294.png?x-oss-process=image/resize,w_332" width="318" height="182"></div><h2>多省市已开展现房销售试点，去年全国现房销售面积占比超30%</h2></a></div>"""
 html = Selector(text=test_node)
 root_nodes = html.xpath('//body')  # 获取根级节点
 
