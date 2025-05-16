@@ -122,7 +122,7 @@ def find_scored_highest_weight_node(nodes: List[Node]) -> Node:
         返回:
         float: 节点的得分。
         """
-        return node.path_weight * 0.3 + (max_level - node.level) * 0.7
+        return node.path_weight * 0.2 + (max_level - node.level) * 0.8
 
     # 过滤出所有级别大于0的有效节点
     valid_nodes = [node for node in nodes if node.level > 0]
