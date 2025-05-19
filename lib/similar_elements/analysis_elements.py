@@ -130,19 +130,6 @@ def find_scored_highest_weight_node(nodes: List[Node]) -> Node:
     # 返回得分最高的有效节点
     return max(valid_nodes, key=score)
 
-def get_nodes_by_level(nodes: List[Node], target_level: int) -> List[Node]:
-    """
-    获取指定层级 (level) 的所有节点。
-
-    Args:
-        nodes (List[Node]): 节点列表。
-        target_level (int): 目标层级。
-
-    Returns:
-        List[Node]: 所有层级等于 target_level 的节点列表。
-    """
-    return [node for node in nodes if node.level == target_level]
-
 def get_parent_and_siblings(node: Node, all_nodes: List[Node]) -> Dict[str, Any]:
     """
     获取指定节点的父节点和同级节点。
