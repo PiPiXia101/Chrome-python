@@ -226,8 +226,6 @@ def find_similar_ancestor_structure(start_node, weightMax_node, all_nodes, simil
 
     # 如果兄弟节点匹配成功，则添加到相似元素列表中并进行下一次递归
     if sibling_type:
-        print(f"└── 寻找到上级元素 {html_parent_name} 第{parent_node.level}层 第{parent_node.level_index}个节点,"
-              f"并且子元素全部匹配成功{','.join([item.table_name for item in sibling_nodes])},进行下一次递归")
         similar_elements.append({
             'origin_node': start_node,
             'seek_oneself': start_node,
@@ -239,7 +237,7 @@ def find_similar_ancestor_structure(start_node, weightMax_node, all_nodes, simil
 
 
 # 示例用法
-test_node = """<div class="small_toplink__GmZhY"><a target="_blank" href="/newsDetail_forward_30797146" class="index_inherit__A1ImK"><div class="small_imgposition__PYVLm"><div class="small_isrecommend__zSjSv"><div class="index_corner_label__3aOsf"><span>推荐</span></div></div><img alt="多省市已开展现房销售试点，去年全国现房销售面积占比超30%" src="https://imgpai.thepaper.cn/newpai/image/1746868361052_PAmfEQ_1746868361294.png?x-oss-process=image/resize,w_332" width="318" height="182"></div><h2>多省市已开展现房销售试点，去年全国现房销售面积占比超30%</h2></a></div>"""
+test_node = """<div class="index_list__uLR_N"><div class="index_listimg__MIbUc"><a target="_blank" href="/newsDetail_forward_30778368" class="index_inherit__A1ImK"><div class="index_imgposition__NNNO1"><img alt="马上评｜颜宁“简历打假”的启示" src="https://imgpai.thepaper.cn/newpai/image/1746591307394_tHNhBj_1746591307711.png?x-oss-process=image/resize,w_332" width="210" height="118"></div></a></div><div class="index_listcontent__pQrTb"><h2><a target="_blank" href="/newsDetail_forward_30778368" class="index_inherit__A1ImK">马上评｜颜宁“简历打假”的启示</a></h2><div class="index_listcontentbot__92p4_"><p><span><a target="_blank" href="/list_27224" class="index_inherit__A1ImK">澎湃评论</a></span></p><p id="30778368"><a target="_blank" href="/newsDetail_forward_30778368?commTag=true" class="index_inherit__A1ImK"><span class="index_zan__STXcT">34</span></a><b class="share_normalstyle__UTbBN"><span class="ant-dropdown-trigger index_share__tP3kg shareall">分享</span></b></p></div></div></div>"""
 html = Selector(text=test_node)
 root_nodes = html.xpath('//body')  # 获取根级节点
 
