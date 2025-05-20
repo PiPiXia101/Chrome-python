@@ -253,15 +253,30 @@ def run_example(test_node,html_str):
         find_similar_ancestor_structure(match_node,first_node,all_nodes,similar_elements)  
         if len(similar_elements) == first_node.level-1:
             result.append(similar_elements)
-    return result
+    return result,all_nodes,first_node
 
 # 示例用法
-test_node = """<div class="index_list__uLR_N"><div class="index_listimg__MIbUc"><a target="_blank" href="/newsDetail_forward_30778368" class="index_inherit__A1ImK"><div class="index_imgposition__NNNO1"><img alt="马上评｜颜宁“简历打假”的启示" src="https://imgpai.thepaper.cn/newpai/image/1746591307394_tHNhBj_1746591307711.png?x-oss-process=image/resize,w_332" width="210" height="118"></div></a></div><div class="index_listcontent__pQrTb"><h2><a target="_blank" href="/newsDetail_forward_30778368" class="index_inherit__A1ImK">马上评｜颜宁“简历打假”的启示</a></h2><div class="index_listcontentbot__92p4_"><p><span><a target="_blank" href="/list_27224" class="index_inherit__A1ImK">澎湃评论</a></span></p><p id="30778368"><a target="_blank" href="/newsDetail_forward_30778368?commTag=true" class="index_inherit__A1ImK"><span class="index_zan__STXcT">34</span></a><b class="share_normalstyle__UTbBN"><span class="ant-dropdown-trigger index_share__tP3kg shareall">分享</span></b></p></div></div></div>"""
+test_node = """<div class="more_btn" frag="按钮" type="更多" style=""> <a href="/186/list.htm" class="w9_more" target="_blank"><span class="more_text" frag="按钮内容" style="outline: red solid 2px;">More++</span></a> </div>"""
 
 with open('/Users/yan/Desktop/Chrome-python/html/test.html', 'r', encoding='utf-8') as f:
     html_str = f.read()
 
-result = run_example(test_node,html_str)
+result,all_nodes,first_node = run_example(test_node,html_str)
+print(f"选中[{first_node.level}] {first_node.table_name} (ID: {first_node.id}, Level: {first_node.level}, LevelIndex: {first_node.level_index}) | Attrs: {first_node.attribute}")
+children_of_first_node = [node for node in all_nodes if node.parent_id == first_node.id]
 for item in result:
-    print(f"相似元素：\n{item[-1]['seek_parent'].get()}\n\n{item[0]['seek_oneself'].get()}\n")
-    print('='*50)
+    if children_of_first_node:
+        similar_nodes = []
+        for idx, root in enumerate([item[0]['seek_oneself']]):
+            similar_nodes.extend(build_nodes(root, level=0, level_index=idx))
+        if similar_nodes and len(similar_nodes) == len(children_of_first_node):
+            # print(item[0]['seek_oneself'].get())
+            for node in children_of_first_node:
+                # print(f"└── [{node.level}] {node.table_name} path_weight: {node.path_weight} (ID: {node.id}, Level: {node.level}, LevelIndex: {node.level_index}) | Attrs: {node.attribute}")
+                # print(f"└── [{similar_nodes[node.level_index].level}] {similar_nodes[node.level_index].table_name} path_weight: {similar_nodes[node.level_index].path_weight} (ID: {similar_nodes[node.level_index].id}, Level: {node.level}, LevelIndex: {similar_nodes[node.level_index].level_index}) | Attrs: {similar_nodes[node.level_index].attribute}")
+                if similar_nodes[node.level_index].table_name == node.table_name:
+                    print(f"相同节点：{item[0]['seek_oneself'].get()}")
+                    print('='*50)
+    else:
+        print(f"相同节点：{item[0]['seek_oneself'].get()}")
+        print('='*50)
