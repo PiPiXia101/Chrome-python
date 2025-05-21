@@ -107,3 +107,4 @@ for node in all_nodes:
 a_nodes = [node for node in all_nodes if node.table_name == 'a']
 for node in a_nodes:
     print(f"Node ID: {node.id}, Attributes: {node.attribute}, Path Weight: {node.path_weight}")
+    print(node.attribute.get('href'))

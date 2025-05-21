@@ -1,0 +1,34 @@
+[
+    {
+        "success": 0,
+        "url": "/186/list.htm",
+        "query_type": false,
+        "query": "",
+        "url_path": [
+            {
+                "path": "186",
+                "path_index": 1,
+                "path_template": "\\d+",
+                "diversity": [
+                    "\\w+",
+                    "\\w+",
+                    "\\w+",
+                    "\\w+"
+                ],
+                "diversity_path": [
+                    "jxky",
+                    "xmt",
+                    "wzjt",
+                    "wzsj"
+                ]
+            },
+            {
+                "path": "list.htm",
+                "path_index": 2,
+                "path_template": "\\w+.\\w+",
+                "diversity": [],
+                "diversity_path": []
+            }
+        ]
+    }
+]

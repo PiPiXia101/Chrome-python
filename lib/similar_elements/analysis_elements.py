@@ -275,7 +275,7 @@ for item in result:
                 # print(f"└── [{node.level}] {node.table_name} path_weight: {node.path_weight} (ID: {node.id}, Level: {node.level}, LevelIndex: {node.level_index}) | Attrs: {node.attribute}")
                 # print(f"└── [{similar_nodes[node.level_index].level}] {similar_nodes[node.level_index].table_name} path_weight: {similar_nodes[node.level_index].path_weight} (ID: {similar_nodes[node.level_index].id}, Level: {node.level}, LevelIndex: {similar_nodes[node.level_index].level_index}) | Attrs: {similar_nodes[node.level_index].attribute}")
                 if similar_nodes[node.level_index].table_name == node.table_name:
-                    print(f"相同节点：{item[0]['seek_oneself'].get()}")
+                    print(f"相似元素：\n{item[-1]['seek_parent'].get()}\n\n{item[0]['seek_oneself'].get()}\n")
                     print('='*50)
     else:
         print(f"相同节点：{item[0]['seek_oneself'].get()}")
