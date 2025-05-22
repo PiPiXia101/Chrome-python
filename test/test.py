@@ -163,4 +163,33 @@ for item in select_element_list:
         ]
 }
 """
+"""
+//a[contains(@href, '{}')]
+"""
 print(select_element_list)
+xpath_result = list()
+for example in select_element_list:
+    # //a[contains(@href, '{}')]
+    template_str = "//a[{}]"
+    path_list = list()
+    for path in example['url_path']:
+        if path.get('diversity',[]) and path.get('diversity_path',[]):
+            # path_list.append('diversity')
+            continue
+        else:
+            path_list.append(path.get('path'))
+
+    parameter = 'or'.join([f"contains(@href, '{item}')" for item in path_list])
+    xpath_str = template_str.format(parameter)
+    xpath_result.append(xpath_str)
+# 验证程序 
+with open('/Users/yan/Desktop/Chrome-python/html/test.html', 'r', encoding='utf-8') as f:
+    html_str = f.read()
+
+html = Selector(text = html_str)
+
+for xpath_str in xpath_result:
+    print(xpath_str)
+    result = html.xpath(xpath_str).extract()
+    for item in result:
+        print(item)
