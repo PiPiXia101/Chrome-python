@@ -4,8 +4,8 @@ from typing import List, Dict, Any
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from scrapy import Selector
-from lib.tree_diagram.tree_node import Node
-from lib.similar_elements.analysis_elements import build_nodes
+from tree_diagram.tree_node import Node
+from similar_elements.analysis_elements import build_nodes
 
 
 def merge_elements(lst: List[str]) -> str:
@@ -98,6 +98,7 @@ def analyze_html_and_generate_xpaths(html_content: str, test_paths: List[str]) -
             - matches: 每个表达式在 HTML 中匹配的内容
             - select_elements: 解析出的锚点元素信息
     """
+    test_paths = list(set(test_paths))
     result = {
         "xpaths": [],
         "matches": {},
@@ -136,7 +137,8 @@ def analyze_html_and_generate_xpaths(html_content: str, test_paths: List[str]) -
                 if select_path["path_template"] != similar_path["path_template"]:
                     select_path["diversity"].append(similar_path["path_template"])
                     select_path["diversity_path"].append(similar_path["path"])
-
+    with open("./test.json", 'w', encoding='utf-8') as f:
+        f.write(str(select_element_list).replace("'", '"'))
     # 构造 XPath 表达式
     xpath_result = set()
     for example in select_element_list:
@@ -153,37 +155,41 @@ def analyze_html_and_generate_xpaths(html_content: str, test_paths: List[str]) -
     return result
 
 
-if __name__ == "__main__":
-    # 选中的元素
-    test_node = """<div class="more_btn" frag="按钮" type="更多" style=""> <a href="/186/list.htm" class="w9_more" target="_blank"><span class="more_text" frag="按钮内容" style="outline: red solid 2px;">More++</span></a> </div>"""
+# if __name__ == "__main__":
+#     # 选中的元素
+#     test_node = """
+#     <div class="more_btn" frag="按钮" type="更多" style=""> 
+#     <a href="/186/list.htm" class="w9_more" target="_blank">
+#     <span class="more_text" frag="按钮内容" style="outline: red solid 2px;">More++</span></a> 
+#     </div>"""
 
 
-    # 相似元素的a标签的href
-    test_paths = [
-        "/186/list.htm",
-        "/208/list.htm",
-        "/187/list.htm",
-        "/jxky/list.htm",
-        "/188/list.htm",
-        "/187/list.htm",
-        "/xmt/list.htm",
-        "/188/list.htm",
-        "/wzjt/list.htm",
-        "/210/list.htm",
-        "/wzsj/list.htm"
-    ]
-    # 测试数据
-    with open("/Users/yan/Desktop/Chrome-python/html/test.html", 'r', encoding='utf-8') as f:
-        html_content = f.read()
-    html = Selector(text=html_content)
+#     # 相似元素的a标签的href
+#     test_paths = [
+#         "/186/list.htm",
+#         "/208/list.htm",
+#         "/187/list.htm",
+#         "/jxky/list.htm",
+#         "/188/list.htm",
+#         "/187/list.htm",
+#         "/xmt/list.htm",
+#         "/188/list.htm",
+#         "/wzjt/list.htm",
+#         "/210/list.htm",
+#         "/wzsj/list.htm"
+#     ]
+#     # 测试数据
+#     with open("/Users/yan/Desktop/Chrome-python/html/test.html", 'r', encoding='utf-8') as f:
+#         html_content = f.read()
+#     html = Selector(text=html_content)
 
-    result = analyze_html_and_generate_xpaths(test_node, test_paths)
+#     result = analyze_html_and_generate_xpaths(test_node, test_paths)
 
-    print("XPath Expressions:")
-    for xpath in result["xpaths"]:
-        print(xpath)
-        for item in html.xpath(xpath):
-            print(item.get())
+#     print("XPath Expressions:")
+#     for xpath in result["xpaths"]:
+#         print(xpath)
+#         for item in html.xpath(xpath):
+#             print(item.get())
 
     
     

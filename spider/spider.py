@@ -1,10 +1,14 @@
 import sys
 import os
 
+
+
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from lib import rander
 from lib.plate_extract.palte import analysis_plate
+from lib.analysis_Xpath.plate_xpath import *
+from lib.similar_elements.analysis_elements import *
 
 class Spider:
 
@@ -31,9 +35,35 @@ class Spider:
         # plate_result=func(original_data,html_obj)
 
 
+    def run(self,url):
+        # 模拟浏览器打开链接
+        original_data,xhr_list,html_info,web_js_file_path = rander.get_html(url)
+        html = Selector(text=original_data)
+        # 确定选中的元素 
+        # 示例用法
+        test_node = """
+        <div class="more_btn" frag="按钮" type="更多" style=""> 
+        <a href="/186/list.htm" class="w9_more" target="_blank">
+        <span class="more_text" frag="按钮内容" style="outline: red solid 2px;">More++</span>
+        </a> </div>"""
+        test_paths = list()
+        # 寻找相似元素
+        result,all_nodes,first_node = run_example(test_node,original_data)
+        # 单层子节点匹配
+        result = children_match(result,all_nodes,first_node)
+        # 获取相似元素里面的A属性href
+        for item in result:
+            # print(item[0]['seek_oneself'].xpath('@href').get())
+            test_paths.append(item[0]['seek_oneself'].xpath('@href').get())
+        # 选中节点、相似元素分析A属性href得到Xpath
+        result = analyze_html_and_generate_xpaths(test_node, test_paths)
+        for Xpath_str in result["xpaths"]:
+            print(Xpath_str)
+
+
+
 
 if __name__ == '__main__':
     spider = Spider()
-    spider.run('https://www.zhihu.com/question/19550227')
-    # id("navMenu")/UL[1]/LI[6]/A[1]
-    html_obj= """<a href="/channel_122908" class="index_hoverli__QkvuD"><i>国际</i></a>"""
+    spider.run('https://www.szcu.edu.cn/')
+    

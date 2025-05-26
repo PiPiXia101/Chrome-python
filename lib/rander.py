@@ -1,8 +1,15 @@
+import sys
+import os
+
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 import os
 import time
 from urllib.parse import urlparse
 from playwright.sync_api import sync_playwright
 import time  
+
+from lib.python_demo.bit_api import *
 
 
 js_file_path = '/Users/yan/Desktop/Chrome-python/JS_file/'
@@ -21,24 +28,18 @@ def get_html(url):
 
     with sync_playwright() as p:
         start_time = time.time()
-        browser = p.firefox.launch(headless=True)
-        context = browser.new_context()
+        browser_id = "9ca7aae028fc43e39559875470c8e23d" # 窗口ID从窗口配置界面中复制，或者api创建后返回
+        res = openBrowser(browser_id)
+        ws = res['data']['ws']
+        print("ws address ==>>> ", ws)
 
-        context.set_extra_http_headers({
-            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"})
+        chromium = p.chromium
+        browser = chromium.connect_over_cdp(ws)
+        default_context = browser.contexts[0]
 
-        # 设置全局40秒超时
-        context.set_default_navigation_timeout(20000)
 
-        page = context.new_page()
-        js_path = '/Users/yan/Desktop/Chrome-python/lib/stealth.min.js'
-        try:
-            with open(js_path, 'r', encoding='utf-8') as f:
-                js = f.read()
-        except:
-            print('js文件加载失败')
-        else:
-            page.add_init_script(js)  # 执行规避webdriver检测
+        page = default_context.new_page()
+        
 
         print(f'当前url: {url} 创建webdriver花费{time.time() - start_time}')
 
@@ -88,15 +89,13 @@ def get_html(url):
             s_time = 10000
             page.wait_for_timeout(s_time)
             original_data = page.content()  # 源码
-            context.close()
-            browser.close()
+            page.close()
             print(f'整体花费{time.time() - start_time}')
 
             return original_data,xhr_list,html_info,web_js_file_path
         except Exception as e:
             print(f'当前失败的url: {url}, \n失败原因: {e} 整体花费{time.time() - start_time}')
-            context.close()
-            browser.close()
+            page.close()
             return None,None,None,None
         
 

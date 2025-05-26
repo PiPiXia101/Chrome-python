@@ -255,28 +255,41 @@ def run_example(test_node,html_str):
             result.append(similar_elements)
     return result,all_nodes,first_node
 
-# 示例用法
-test_node = """<div class="more_btn" frag="按钮" type="更多" style=""> <a href="/186/list.htm" class="w9_more" target="_blank"><span class="more_text" frag="按钮内容" style="outline: red solid 2px;">More++</span></a> </div>"""
 
-with open('/Users/yan/Desktop/Chrome-python/html/test.html', 'r', encoding='utf-8') as f:
-    html_str = f.read()
+# 子节点匹配
+def children_match(result,all_nodes,first_node):
+    finally_result = list()
+    print(f"选中[{first_node.level}] {first_node.table_name} (ID: {first_node.id}, Level: {first_node.level}, LevelIndex: {first_node.level_index}) | Attrs: {first_node.attribute}")
+    children_of_first_node = [node for node in all_nodes if node.parent_id == first_node.id]
+    for item in result:
+        if children_of_first_node:
+            similar_nodes = []
+            for idx, root in enumerate([item[0]['seek_oneself']]):
+                similar_nodes.extend(build_nodes(root, level=0, level_index=idx))
+            if similar_nodes and len(similar_nodes) == len(children_of_first_node):
+                for node in children_of_first_node:
+                    if similar_nodes[node.level_index].table_name == node.table_name:
+                        finally_result.append(item)
+                        print(f"相似元素：\n{item[-1]['seek_parent'].get()}\n\n{item[0]['seek_oneself'].get()}\n")
+                        print('='*50)
+        else:
+            finally_result.append(item)
+            print(f"相同节点：{item[0]['seek_oneself'].get()}")
+            print('='*50)
+    return finally_result
 
-result,all_nodes,first_node = run_example(test_node,html_str)
-print(f"选中[{first_node.level}] {first_node.table_name} (ID: {first_node.id}, Level: {first_node.level}, LevelIndex: {first_node.level_index}) | Attrs: {first_node.attribute}")
-children_of_first_node = [node for node in all_nodes if node.parent_id == first_node.id]
-for item in result:
-    if children_of_first_node:
-        similar_nodes = []
-        for idx, root in enumerate([item[0]['seek_oneself']]):
-            similar_nodes.extend(build_nodes(root, level=0, level_index=idx))
-        if similar_nodes and len(similar_nodes) == len(children_of_first_node):
-            # print(item[0]['seek_oneself'].get())
-            for node in children_of_first_node:
-                # print(f"└── [{node.level}] {node.table_name} path_weight: {node.path_weight} (ID: {node.id}, Level: {node.level}, LevelIndex: {node.level_index}) | Attrs: {node.attribute}")
-                # print(f"└── [{similar_nodes[node.level_index].level}] {similar_nodes[node.level_index].table_name} path_weight: {similar_nodes[node.level_index].path_weight} (ID: {similar_nodes[node.level_index].id}, Level: {node.level}, LevelIndex: {similar_nodes[node.level_index].level_index}) | Attrs: {similar_nodes[node.level_index].attribute}")
-                if similar_nodes[node.level_index].table_name == node.table_name:
-                    print(f"相似元素：\n{item[-1]['seek_parent'].get()}\n\n{item[0]['seek_oneself'].get()}\n")
-                    print('='*50)
-    else:
-        print(f"相同节点：{item[0]['seek_oneself'].get()}")
-        print('='*50)
+
+# # 示例用法
+# test_node = """
+# <div class="more_btn" frag="按钮" type="更多" style=""> 
+# <a href="/186/list.htm" class="w9_more" target="_blank">
+# <span class="more_text" frag="按钮内容" style="outline: red solid 2px;">More++</span>
+# </a> </div>"""
+
+# with open('/Users/yan/Desktop/Chrome-python/html/test.html', 'r', encoding='utf-8') as f:
+#     html_str = f.read()
+
+# result,all_nodes,first_node = run_example(test_node,html_str)
+# print(result)
+# result = children_match(result,all_nodes,first_node)
+# print(result)
