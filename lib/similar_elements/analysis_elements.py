@@ -223,7 +223,7 @@ def find_similar_ancestor_structure(start_node, weightMax_node, all_nodes, simil
         return similar_elements
 
 def run_example(test_node,html_str):
-    result = list()
+    finnly_result = list()
     html = Selector(text=test_node)
     root_nodes = html.xpath('//body')  # 获取根级节点
     all_nodes = []
@@ -247,13 +247,55 @@ def run_example(test_node,html_str):
     html_obj = Selector(text = html_str)
     # 选中元素的代表节点在页面中,已经全部找到了
     match_list = html_obj.xpath(f'//{first_node.table_name}')
-
     for match_node in match_list:
         similar_elements = list()
-        find_similar_ancestor_structure(match_node,first_node,all_nodes,similar_elements)  
-        if len(similar_elements) == first_node.level-1:
-            result.append(similar_elements)
-    return result,all_nodes,first_node
+        # 权重值最大的节点
+        first_node = find_scored_highest_weight_node(all_nodes)
+        first_node_level = first_node.level
+        while first_node.level>1:
+            parent_type = False
+            sibling_type = False
+            # 获取父节点
+            html_parent_node = match_node.xpath('./parent::*')
+            html_parent_name = html_parent_node.xpath('local-name()').get()
+        
+            result = get_parent_and_siblings(first_node, all_nodes)
+            parent_node = result["parent"]
+            sibling_nodes = result["siblings"]
+            if html_parent_name == parent_node.table_name:
+                parent_type = True
+                html_sibling_nodes = html_parent_node.xpath('./child::*')
+                if sibling_nodes and html_sibling_nodes and len(sibling_nodes)+1 == len(html_sibling_nodes):
+                    for sibling_node in sibling_nodes:
+                        if sibling_node.table_name == html_sibling_nodes[sibling_node.level_index].xpath('local-name()').get():
+                            sibling_type+=1
+                    if sibling_type == len(sibling_nodes):
+                        sibling_type = True
+                    else:
+                        sibling_type = False
+                else:
+                    if not sibling_nodes and (not len(html_sibling_nodes) -1):
+                        sibling_type = True
+                    else:
+                        sibling_type = False
+            if parent_type and sibling_type:
+                print(f"└── 寻找到上级元素 {html_parent_name} 第{parent_node.level}层 第{parent_node.level_index}个节点,并且子元素全部匹配成功{','.join([item.table_name for item in sibling_nodes])},进行下一次递归")
+                similar_elements.append(
+                        {
+                            'origin_node':first_node,
+                            'seek_oneself':match_node,
+                            'seek_parent':html_parent_node
+                        }
+                    )
+                match_node = html_parent_node
+                first_node = parent_node
+            else:
+                break
+
+        
+        if len(similar_elements) == first_node_level-1:
+            finnly_result.append(similar_elements)
+    return finnly_result,all_nodes,first_node
 
 
 # 子节点匹配
@@ -262,34 +304,35 @@ def children_match(result,all_nodes,first_node):
     print(f"选中[{first_node.level}] {first_node.table_name} (ID: {first_node.id}, Level: {first_node.level}, LevelIndex: {first_node.level_index}) | Attrs: {first_node.attribute}")
     children_of_first_node = [node for node in all_nodes if node.parent_id == first_node.id]
     for item in result:
+        similar_nodes = []
+        for idx, root in enumerate([item[0]['seek_oneself']]):
+            similar_nodes.extend(build_nodes(root, level=0, level_index=idx))
         if children_of_first_node:
-            similar_nodes = []
-            for idx, root in enumerate([item[0]['seek_oneself']]):
-                similar_nodes.extend(build_nodes(root, level=0, level_index=idx))
             if similar_nodes and len(similar_nodes) == len(children_of_first_node):
                 for node in children_of_first_node:
                     if similar_nodes[node.level_index].table_name == node.table_name:
                         finally_result.append(item)
-                        print(f"相似元素：\n{item[-1]['seek_parent'].get()}\n\n{item[0]['seek_oneself'].get()}\n")
-                        print('='*50)
+                        # print(f"相似元素：\n{item[-1]['seek_parent'].get()}\n\n{item[0]['seek_oneself'].get()}\n")
+                        # print('='*50)
         else:
-            finally_result.append(item)
-            print(f"相同节点：{item[0]['seek_oneself'].get()}")
-            print('='*50)
+            if not similar_nodes:
+                finally_result.append(item)
+            # print(f"相同节点：{item[0]['seek_oneself'].get()}")
+            # print('='*50)
     return finally_result
 
 
-# # 示例用法
-# test_node = """
-# <div class="more_btn" frag="按钮" type="更多" style=""> 
-# <a href="/186/list.htm" class="w9_more" target="_blank">
-# <span class="more_text" frag="按钮内容" style="outline: red solid 2px;">More++</span>
-# </a> </div>"""
+# 示例用法
+test_node = """<li class="active"><a target="_blank" href="./newsite/zwdt/szyw/">时政要闻</a></li>"""
 
-# with open('/Users/yan/Desktop/Chrome-python/html/test.html', 'r', encoding='utf-8') as f:
-#     html_str = f.read()
 
-# result,all_nodes,first_node = run_example(test_node,html_str)
-# print(result)
-# result = children_match(result,all_nodes,first_node)
-# print(result)
+
+with open('/Users/yan/Desktop/Chrome-python/html/test copy.html', 'r', encoding='utf-8') as f:
+    html_str = f.read()
+
+result,all_nodes,first_node = run_example(test_node,html_str)
+result = children_match(result,all_nodes,first_node)
+for item in result:
+    print(item[0]['seek_parent'].get())
+    print('='*50)
+

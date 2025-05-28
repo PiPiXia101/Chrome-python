@@ -5,7 +5,7 @@ import os
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from lib import rander
+from lib.rander_playwight import rander
 from lib.plate_extract.palte import analysis_plate
 from lib.analysis_Xpath.plate_xpath import *
 from lib.similar_elements.analysis_elements import *
@@ -35,17 +35,12 @@ class Spider:
         # plate_result=func(original_data,html_obj)
 
 
-    def run(self,url):
+    def run(self,url,test_node):
         # 模拟浏览器打开链接
         original_data,xhr_list,html_info,web_js_file_path = rander.get_html(url)
         html = Selector(text=original_data)
         # 确定选中的元素 
         # 示例用法
-        test_node = """
-        <div class="more_btn" frag="按钮" type="更多" style=""> 
-        <a href="/186/list.htm" class="w9_more" target="_blank">
-        <span class="more_text" frag="按钮内容" style="outline: red solid 2px;">More++</span>
-        </a> </div>"""
         test_paths = list()
         # 寻找相似元素
         result,all_nodes,first_node = run_example(test_node,original_data)
@@ -65,5 +60,7 @@ class Spider:
 
 if __name__ == '__main__':
     spider = Spider()
-    spider.run('https://www.szcu.edu.cn/')
+    test_node = """
+        <li class="active"><a target="_blank" href="./newsite/zwdt/szyw/">时政要闻</a></li>"""
+    spider.run('http://www.shuicheng.gov.cn/',test_node)
     
