@@ -1,6 +1,7 @@
 import sys
 import os
 from typing import List, Dict, Any
+from urllib.parse import urljoin, urlparse
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from scrapy import Selector
@@ -84,7 +85,7 @@ def load_html_file(file_path: str) -> Selector:
         print(f"Error loading HTML file: {e}")
         return Selector(text="")
 
-def analyze_html_and_generate_xpaths(html_content: str, test_paths: List[str]) -> Dict[str, Any]:
+def analyze_html_and_generate_xpaths(html_content: str, test_paths: List[str],web_url: str) -> Dict[str, Any]:
     """
     分析给定的 HTML 内容，提取链接路径并生成对应的 XPath 表达式。
     
@@ -98,7 +99,21 @@ def analyze_html_and_generate_xpaths(html_content: str, test_paths: List[str]) -
             - matches: 每个表达式在 HTML 中匹配的内容
             - select_elements: 解析出的锚点元素信息
     """
+    web_url_info = urlparse(web_url)
     test_paths = list(set(test_paths))
+    new_test_paths = list()
+    for item in test_paths: 
+        if web_url == item:
+            continue
+        if item.startswith('.'):
+            url = urljoin(web_url, item)
+        else:
+            url = item
+        if web_url_info.netloc not in url:
+            continue 
+        
+        new_test_paths.append(url)
+    test_paths = new_test_paths
     result = {
         "xpaths": [],
         "matches": {},
@@ -116,6 +131,7 @@ def analyze_html_and_generate_xpaths(html_content: str, test_paths: List[str]) -
     select_element_list = []
     for node in a_nodes:
         href = node.attribute.get('href', '')
+        href = urljoin(web_url, href)
         parsed = parse_url(href)
         parsed['success'] = 0
         select_element_list.append(parsed)
@@ -144,8 +160,8 @@ def analyze_html_and_generate_xpaths(html_content: str, test_paths: List[str]) -
     for example in select_element_list:
         path_list = [path.get("path") for path in example["url_path"] if not path.get("diversity")]
         if not path_list:
-            continue
-        parameter = " or ".join([f"contains(@href, '{item}')" for item in path_list])
+            continue         
+        parameter = " or ".join([f"contains(@href, '{item}')" for item in path_list if (item) and (not item.startswith('http')) and (not web_url_info.netloc == item)])
         xpath_str = f"//a[{parameter}]"
         xpath_result.add(xpath_str)
 
@@ -156,40 +172,80 @@ def analyze_html_and_generate_xpaths(html_content: str, test_paths: List[str]) -
 
 
 # if __name__ == "__main__":
+#     web_url = "http://www.shuicheng.gov.cn/"
+#     web_url_info = urlparse(web_url)
 #     # 选中的元素
-#     test_node = """
-#     <div class="more_btn" frag="按钮" type="更多" style=""> 
-#     <a href="/186/list.htm" class="w9_more" target="_blank">
-#     <span class="more_text" frag="按钮内容" style="outline: red solid 2px;">More++</span></a> 
-#     </div>"""
-
-
+#     # 示例用法
+#     test_node = """<li class="active"><a target="_blank" href="./newsite/zwdt/szyw/">时政要闻</a></li>"""
 #     # 相似元素的a标签的href
 #     test_paths = [
-#         "/186/list.htm",
-#         "/208/list.htm",
-#         "/187/list.htm",
-#         "/jxky/list.htm",
-#         "/188/list.htm",
-#         "/187/list.htm",
-#         "/xmt/list.htm",
-#         "/188/list.htm",
-#         "/wzjt/list.htm",
-#         "/210/list.htm",
-#         "/wzsj/list.htm"
+#         "http://www.shuicheng.gov.cn/",
+#     "http://www.shuicheng.gov.cn/newsite/zwdt/szyw/",
+#     "http://www.shuicheng.gov.cn/newsite/zwdt/zwyw/",
+#     "http://www.shuicheng.gov.cn/newsite/zwdt/xzdt/",
+#     "http://www.shuicheng.gov.cn/newsite/zwdt/bmdt/",
+#     "http://www.shuicheng.gov.cn/newsite/zwdt/tzgg/",
+#     "http://www.gov.cn/pushinfo/v150203/",
+#     "http://www.guizhou.gov.cn/zwgk/zcfg/szfwj/szfl/",
+#     "http://www.gzlps.gov.cn/ywdt/jrld/",
+#     "http://www.shuicheng.gov.cn/newsite/zwgk/zfxxgk_1/",
+#     "http://www.shuicheng.gov.cn/newsite/zwgk/ldzc/",
+#     "http://www.shuicheng.gov.cn/newsite/zwgk/zcbm/",
+#     "http://61.243.10.146:9090/",
+#     "http://www.shuicheng.gov.cn/newsite/zwgk/jyta/",
+#     "http://www.shuicheng.gov.cn/newsite/zwgk/scxhmzcmbk/",
+#     "http://www.shuicheng.gov.cn/newsite/zwgk/cwhy/",
+#     "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/",
+#     "http://www.shuicheng.gov.cn/newsite/zwgk/zdjc/",
+#     "http://www.shuicheng.gov.cn/newsite/zwgk/ggqsy/",
+#     "http://www.shuicheng.gov.cn/newsite/zwgk/yshj/",
+#     "http://www.shuicheng.gov.cn/newsite/zwgk/ysqgk/",
+#     "http://www.shuicheng.gov.cn/newsite/zwgk/gzhgfxwjsjk/",
+#     "http://www.shuicheng.gov.cn/newsite/zwgk/zfgzbg/",
+#     "http://www.shuicheng.gov.cn/newsite/zwgk/zwgkpt/",
+#     "http://www.shuicheng.gov.cn/newsite/jdhy/zcjd/",
+#     "http://www.shuicheng.gov.cn/newsite/jdhy/hygq/",
+#     "http://www.shuicheng.gov.cn/newsite/jdhy/xwfbh/",
+#     "http://www.shuicheng.gov.cn/newsite/bsfw/",
+#     "http://www.shuicheng.gov.cn/newsite/gzcy/qzxx/",
+#     "http://www.shuicheng.gov.cn/newsite/gzcy/myzj/",
+#     "http://www.shuicheng.gov.cn/newsite/gzcy/zxft/",
+#     "http://www.shuicheng.gov.cn/newsite/gzcy/zmhdzsk/",
+#     "http://www.shuicheng.gov.cn/newsite/gzcy/xmtjz/",
+#     "http://www.shuicheng.gov.cn/newsite/zfsj/",
+#     "http://www.shuicheng.gov.cn/newsite/zwgk/yshj/",
+#     "http://www.shuicheng.gov.cn/newsite/stsc/",
+#     "http://www.shuicheng.gov.cn/newsite/zwdt/tzgg/202106/t20210623_68770241.html",
+#     "https://www.gzscjjkfq.cn/index.php?c=category&id=12",
+#     "http://www.shuicheng.gov.cn/newsite/zwdt/tzgg/202505/t20250527_87929820.html",
+#     "./newsite/zwdt/szyw/",
+#     "./newsite/zwdt/zwyw/",
+#     "./newsite/zwdt/bmdt/",
+#     "./newsite/zwdt/xzdt/",
+#     "./newsite/zwgk/zfxxgk_1/zfxxgkzn/",
+#     "./newsite/zwgk/zfxxgk_1/zfxxgkzd/",
+#     "./newsite/zwgk/zfxxgk_1/fdzdgknr/",
+#     "./newsite/zwgk/zfxxgk_1/zfxxgknb/",
+#     "./newsite/zwgk/ysqgk/",
+#     "./newsite/zwgk/gzhgfxwjsjk/",
+#     "./newsite/zwgk/zfxxgk_1/fdzdgknr/zcwj_5827454/zfwj/",
+#     "./newsite/zwgk/cwhy/",
+#     "./newsite/zwgk/zdly/jycy/zpxx/",
+#     "./newsite/gzcy/qzxx/",
+#     "./newsite/gzcy/zxft/",
+#     "./newsite/gzcy/myzj/",
 #     ]
 #     # 测试数据
-#     with open("/Users/yan/Desktop/Chrome-python/html/test.html", 'r', encoding='utf-8') as f:
-#         html_content = f.read()
-#     html = Selector(text=html_content)
+#     with open('/Users/yan/Desktop/Chrome-python/html/test copy.html', 'r', encoding='utf-8') as f:
+#         html_str = f.read()
+#     html = Selector(text=html_str)
 
-#     result = analyze_html_and_generate_xpaths(test_node, test_paths)
+#     result = analyze_html_and_generate_xpaths(test_node, test_paths,web_url)
 
 #     print("XPath Expressions:")
 #     for xpath in result["xpaths"]:
 #         print(xpath)
-#         for item in html.xpath(xpath):
-#             print(item.get())
+    
 
     
     
