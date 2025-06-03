@@ -1,190 +1,120 @@
+"""
+    http://www.shuicheng.gov.cn/newsite/zwdt/tzgg/202106/t20210623_68770241.html 错误 要修改原先的xpath
+    http://www.shuicheng.gov.cn/newsite/gzcy/zxft/ 正确
+    得出 202106/t20210623_68770241.html差异点
+    倒序分析 为啥错误
+
+    http://www.shuicheng.gov.cn/newsite/zwgk/zfxxgk_1/zfxxgkzn/ 疑似 实际是文章,不要影响原先的xpath
+    http://www.shuicheng.gov.cn/newsite/zwgk/zfxxgk_1/fdzdgknr/zcwj_5827454/zfwj/index.html 疑似 实际是板块
+    http://www.shuicheng.gov.cn/newsite/zwgk/zfxxgk_1/zfxxgknb/nb_2022n/ 疑似 实际是板块,但是模型判断错误了 怎么过滤这种连不进行修改提取规则
+
+
+  
+"""
+# 列表相近两个元素如果一样就合并
+
+# 板块path段 以\w+为主 假如是全数字\d+ 有几大概率是文章如果,但是有一个问题 只年有可能是板块 所以要判断\d+ 是怎么组成的 
+
+
 import sys
 import os
-from typing import List, Dict, Any
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from scrapy import Selector
-from lib.tree_diagram.tree_node import Node
-from lib.similar_elements.analysis_elements import build_nodes
+
+from urllib.parse import urlparse
+
+from lib.analysis_Xpath.plate_xpath import parse_url
 
 
-def merge_elements(lst: List[str]) -> str:
-    """
-    将连续相同的字符合并为 "char+" 的形式表示一个或多个。
-    """
-    result = []
+def merge_adjacent_elements(lst):
     i = 0
-    while i < len(lst):
-        j = i + 1
-        while j < len(lst) and lst[j] == lst[i]:
-            j += 1
-        if j - i > 1:
-            result.append(f"{lst[i]}+")
+    while i < len(lst) - 1:
+        if lst[i] == lst[i + 1]:
+            lst[i:i + 2] = [lst[i]]  # 合并相邻相同的元素
         else:
-            result.append(lst[i])
-        i = j
-    return ''.join(result)
+            i += 1
+    return lst
 
 
-def generate_path_template(path: str) -> str:
-    """
-    将路径中的字符转换为通用模板表示。
-    数字 -> \d, 字母 -> \w, 其他保留原字符。
-    """
-    template = []
-    for char in path:
-        if char.isdigit():
-            template.append("\\d")
-        elif char.isalpha():
-            template.append("\\w")
+def merge_consecutive_digits(differences):
+    merged = []
+    i = 0
+    while i < len(differences):
+        current_idx, current_val, _ = differences[i]
+
+        # 检查下一个元素是否是当前索引 +1
+        if i + 1 < len(differences) and differences[i + 1][0] == current_idx + 1:
+            next_val = differences[i + 1][1]
+            merged.append((current_idx, f"{current_val}/{next_val}"))  # 使用 '/' 拼接
+            i += 2  # 跳过已合并的两个元素
         else:
-            template.append(char)
-    return merge_elements(template)
+            merged.append((current_idx, current_val))
+            i += 1
+
+    return merged
+error_url = "http://www.shuicheng.gov.cn/newsite/zwdt/tzgg/202106/t20210623_68770241.html"
+error_url = "http://www.shuicheng.gov.cn/newsite/zwgk/zfxxgk_1/zfxxgknb/nb_2022n/"
+error_url_info = urlparse(error_url)
+
+right_url = "http://www.shuicheng.gov.cn/newsite/gzcy/zxft/"
+right_url_info = urlparse(right_url)
+
+# print(parse_url(error_url))
+error_path_rule = []
+for item in parse_url(error_url)['url_path']:
+    error_path_rule.append(item.get('path_template'))
+
+right_ppath_rule = []
+for item in parse_url(right_url)['url_path']:
+    right_ppath_rule.append(item.get('path_template'))
+
+print(merge_adjacent_elements(error_path_rule))
+print(merge_adjacent_elements(right_ppath_rule))
 
 
-def parse_url(url: str) -> Dict[str, Any]:
-    """
-    解析 URL，返回结构化信息，包括路径模板、查询参数等。
-    """
-    result = {
-        "url": url,
-        "query_type": False,
-        "query": "",
-        "url_path": []
-    }
+def find_differences(list1, list2):
+    # 确保两个列表长度一致
+    min_len = min(len(list1), len(list2))
+    differences = []
 
-    if '?' in url:
-        parts = url.split('?', 1)
-        result["url"] = parts[0]
-        result["query_type"] = True
-        result["query"] = parts[1]
+    for i in range(min_len):
+        if list1[i] != list2[i]:
+            differences.append((i, list1[i], list2[i]))  # 返回下标和不同的值
 
-    path_parts = result["url"].strip('/').split('/')
-    for idx, part in enumerate(path_parts):
-        result["url_path"].append({
-            "path": part,
-            "path_index": idx + 1,
-            "path_template": generate_path_template(part),
-            "diversity": [],
-            "diversity_path": []
-        })
+    # 如果其中一个列表更长，标记超出部分为差异
+    for i in range(min_len, len(list1)):
+        differences.append((i, list1[i], None))  # list1 更长的部分
+    for i in range(min_len, len(list2)):
+        differences.append((i, None, list2[i]))  # list2 更长的部分
 
-    return result
+    return differences
 
 
-def load_html_file(file_path: str) -> Selector:
-    """
-    加载 HTML 文件并返回 Selector 对象。
-    """
-    try:
-        with open(file_path, 'r', encoding='utf-8') as f:
-            html_str = f.read()
-        return Selector(text=html_str)
-    except Exception as e:
-        print(f"Error loading HTML file: {e}")
-        return Selector(text="")
+# 示例使用
+list1 = merge_adjacent_elements(error_path_rule)
+list2 = merge_adjacent_elements(right_ppath_rule)
 
-def analyze_html_and_generate_xpaths(html_content: str, test_paths: List[str]) -> Dict[str, Any]:
-    """
-    分析给定的 HTML 内容，提取链接路径并生成对应的 XPath 表达式。
-    
-    Args:
-        html_content (str): 要分析的 HTML 字符串内容。
-        test_paths (List[str]): 测试用的 URL 路径列表，用于比较差异。
-        
-    Returns:
-        Dict[str, Any]: 包含以下字段：
-            - xpaths: 生成的 XPath 表达式列表
-            - matches: 每个表达式在 HTML 中匹配的内容
-            - select_elements: 解析出的锚点元素信息
-    """
-    result = {
-        "xpaths": [],
-        "matches": {},
-        "select_elements": []
-    }
+differences = find_differences(list1, list2)
 
-    html = Selector(text=html_content)
-    root_nodes = html.xpath('//body')
-    all_nodes = []
-    for idx, root in enumerate(root_nodes):
-        all_nodes.extend(build_nodes(root, level=0, level_index=idx))
+# print("不同点如下：",differences)
+differences = [item for item in differences if item[1] != '\\w+']
+# print("不同点如下：",differences)
+if len(differences) < 2:
+    print('不进行修改')
+else:
+    print('进行修改')
+    print("不同点如下：",differences)
+    # //element[matches(text(), '^[A-Z][a-z]+')]
+    # 执行合并
+    merged_result = merge_consecutive_digits(differences)
 
-    # 构建 select_element_list
-    a_nodes = [node for node in all_nodes if node.table_name == 'a']
-    select_element_list = []
-    for node in a_nodes:
-        href = node.attribute.get('href', '')
-        parsed = parse_url(href)
-        parsed['success'] = 0
-        select_element_list.append(parsed)
+    print("合并后结果：", merged_result)
 
-    result["select_elements"] = select_element_list
+    # //a[contains(@href, 'newsite') or contains(@href, 'zwdt')][not(re:test(@href, '\\d+/\\w\\d+_\\d+\\.\\w+', 'g'))]
+    # //a[re:test(@href, '\\d+/\\w\\d+_\\d+\\.\\w+', 'g')]
 
-    # 构建 url_result_list
-    url_result_list = [parse_url(path) for path in test_paths]
+    # pattern_template = "[not(re:test(@href, '{}', 'g')) ornot(re:test(@href, '{}', 'g'))]"
+    # [(4, '\\d+/\\w\\d+_\\d+.\\w+')]
+    pattern_template = ' or '.join([f"not(re:test(@href, '{item[1]}', 'g'))" for item in merged_result])
+    print(pattern_template)
 
-    # 分析差异点
-    for item in select_element_list:
-        select_url_path = item.get("url_path", [])
-        for jtem in url_result_list:
-            similar_url_path = jtem.get("url_path", [])
-            min_len = min(len(select_url_path), len(similar_url_path))
-            for i in range(min_len):
-                select_path = select_url_path[i]
-                similar_path = similar_url_path[i]
-                if select_path["path_template"] != similar_path["path_template"]:
-                    select_path["diversity"].append(similar_path["path_template"])
-                    select_path["diversity_path"].append(similar_path["path"])
-
-    # 构造 XPath 表达式
-    xpath_result = set()
-    for example in select_element_list:
-        path_list = [path.get("path") for path in example["url_path"] if not path.get("diversity")]
-        if not path_list:
-            continue
-        parameter = " or ".join([f"contains(@href, '{item}')" for item in path_list])
-        xpath_str = f"//a[{parameter}]"
-        xpath_result.add(xpath_str)
-
-    result["xpaths"] = list(xpath_result)
-
-
-    return result
-
-
-if __name__ == "__main__":
-    # 选中的元素
-    test_node = """<div class="more_btn" frag="按钮" type="更多" style=""> <a href="/186/list.htm" class="w9_more" target="_blank"><span class="more_text" frag="按钮内容" style="outline: red solid 2px;">More++</span></a> </div>"""
-
-
-    # 相似元素的a标签的href
-    test_paths = [
-        "/186/list.htm",
-        "/208/list.htm",
-        "/187/list.htm",
-        "/jxky/list.htm",
-        "/188/list.htm",
-        "/187/list.htm",
-        "/xmt/list.htm",
-        "/188/list.htm",
-        "/wzjt/list.htm",
-        "/210/list.htm",
-        "/wzsj/list.htm"
-    ]
-    # 测试数据
-    with open("/Users/yan/Desktop/Chrome-python/html/test.html", 'r', encoding='utf-8') as f:
-        html_content = f.read()
-    html = Selector(text=html_content)
-
-    result = analyze_html_and_generate_xpaths(test_node, test_paths)
-
-    print("XPath Expressions:")
-    for xpath in result["xpaths"]:
-        print(xpath)
-        for item in html.xpath(xpath):
-            print(item.get())
-
-    
-    
-    

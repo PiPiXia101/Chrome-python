@@ -170,6 +170,150 @@ def analyze_html_and_generate_xpaths(html_content: str, test_paths: List[str],we
 
     return result
 
+# 分析差异点
+
+def merge_adjacent_elements(lst):
+    """
+    合并列表中相邻的相同元素。
+    
+    遍历列表，当发现相邻元素相同时，将它们合并为一个元素。
+    这个过程会修改原始列表并返回合并后的列表。
+    
+    参数:
+    lst: 要处理的列表，包含可能被合并的元素。
+    
+    返回:
+    返回合并相邻元素后的列表。
+    """
+    # 初始化索引i，用于遍历列表
+    i = 0
+    # 当索引i小于列表长度减1时，执行循环
+    while i < len(lst) - 1:
+        # 如果当前元素与下一个元素相同
+        if lst[i] == lst[i + 1]:
+            # 合并相邻相同的元素
+            lst[i:i + 2] = [lst[i]]
+        else:
+            # 如果当前元素与下一个元素不同，移动到下一个元素
+            i += 1
+    # 返回合并后的列表
+    return lst
+
+def merge_consecutive_digits(differences):
+    """
+    合并连续的数字对。
+
+    遍历给定的数字对列表，如果发现连续的数字对，将它们合并成一个数字对，
+    其中第二个元素用 '/' 符号连接。
+
+    参数:
+    differences -- 一个包含数字对的列表，每个元素是一个形如 (索引, 值, 其他信息) 的元组。
+
+    返回:
+    一个合并了连续数字对的新列表。
+    """
+    merged = []  # 初始化合并后的数字对列表
+    i = 0  # 初始化索引变量
+    # 遍历输入的数字对列表
+    while i < len(differences):
+        current_idx, current_val, _ = differences[i]  # 解构当前数字对
+
+        # 检查下一个元素是否是当前索引 +1
+        if i + 1 < len(differences) and differences[i + 1][0] == current_idx + 1:
+            next_val = differences[i + 1][1]  # 获取下一个数字对的值
+            # 合并当前和下一个数字对，并使用 '/' 拼接它们的值
+            merged.append((current_idx, f"{current_val}/{next_val}"))
+            i += 2  # 跳过已合并的两个元素
+        else:
+            # 如果下一个元素不是连续的，直接添加当前数字对到合并列表
+            merged.append((current_idx, current_val))
+            i += 1  # 移动到下一个元素
+
+    return merged  # 返回合并后的数字对列表
+
+def find_differences(list1, list2):
+    """
+    发现并返回两个列表在相同位置上的差异。
+    
+    参数:
+    list1: 第一个列表，可以包含任意类型的元素。
+    list2: 第二个列表，可以包含任意类型的元素。
+    
+    返回:
+    一个包含差异的列表，每个差异由一个元组表示，元组中包含差异的位置和对应的值。
+    如果两个列表的长度不一致，超出部分将被视为差异。
+    """
+    # 确保两个列表长度一致
+    min_len = min(len(list1), len(list2))
+    differences = []
+
+    # 遍历两个列表的元素，找出不同之处
+    for i in range(min_len):
+        # 如果在相同位置上的元素不同，则记录下位置和元素值
+        if list1[i] != list2[i]:
+            differences.append((i, list1[i], list2[i]))  # 返回下标和不同的值
+
+    # 如果其中一个列表更长，标记超出部分为差异
+    for i in range(min_len, len(list1)):
+        differences.append((i, list1[i], None))  # list1 更长的部分
+    for i in range(min_len, len(list2)):
+        differences.append((i, None, list2[i]))  # list2 更长的部分
+
+    return differences
+
+def generate_xpath_exclusion_pattern(right_url, error_url):
+    """
+    生成XPath排除模式。该函数通过比较正确URL和错误URL的路径模板，找出它们的差异，并基于这些差异生成一个XPath表达式，
+    用于过滤掉错误的URL路径。
+
+    参数:
+    right_url (str): 正确的URL路径。
+    error_url (str): 错误的URL路径。
+
+    返回:
+    str: 生成的XPath排除模式字符串，如果生成失败则返回False。
+    """
+
+    # 定义一个内部函数，用于提取URL中的路径模板。
+    def extract_path_templates(url):
+        # 解析URL并提取路径模板，返回路径模板列表。
+        return [item.get('path_template', '') for item in parse_url(url).get('url_path', [])]
+
+    try:
+        # 提取错误URL和正确URL的路径模板。
+        error_path_parts = extract_path_templates(error_url)
+        right_path_parts = extract_path_templates(right_url)
+
+        # 合并相邻的路径部分。
+        error_list = merge_adjacent_elements(error_path_parts)
+        right_list = merge_adjacent_elements(right_path_parts)
+
+        # 找出错误路径和正确路径的差异。
+        differences = find_differences(error_list, right_list)
+        # 过滤掉差异中的正则表达式部分。
+        differences = [item for item in differences if item[1] != r'\w+']
+
+        # 如果差异不足以生成有效的过滤模式，则返回False。
+        if len(differences) < 2:
+            return False
+
+        # 合并连续的数字差异，并对差异项进行转义处理。
+        merged_result = merge_consecutive_digits(differences)
+        escaped_items = [(idx, val) for idx, val in merged_result]
+
+        # 生成XPath的排除模式字符串。
+        pattern_template = ' or '.join([f"not(re:test(@href, '{val}', 'g'))" for _, val in escaped_items])
+        # 打印生成的模式模板。
+        print(pattern_template)
+        # 返回最终的XPath排除模式。
+        return f"[{pattern_template}]"
+
+    except Exception as e:
+        # 可根据实际需求细化异常类型
+        print(f"发生异常: {e}")
+        # 如果发生异常，则返回False。
+        return False
+
 
 # if __name__ == "__main__":
 #     web_url = "http://www.shuicheng.gov.cn/"
@@ -245,8 +389,7 @@ def analyze_html_and_generate_xpaths(html_content: str, test_paths: List[str],we
 #     print("XPath Expressions:")
 #     for xpath in result["xpaths"]:
 #         print(xpath)
-    
 
-    
-    
-    
+# error_url= 'http://www.shuicheng.gov.cn/newsite/zwdt/tzgg/202106/t20210623_68770241.html'
+# right_url = 'http://www.shuicheng.gov.cn/newsite/gzcy/zxft/'
+# print(generate_xpath_exclusion_pattern(right_url,error_url))
