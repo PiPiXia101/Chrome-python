@@ -308,17 +308,17 @@ def children_match(result,all_nodes,first_node):
     return finally_result
 
 
-# 示例用法
-test_node = """<li class="active"><a target="_blank" href="./newsite/zwdt/szyw/">时政要闻</a></li>"""
+# # 示例用法
+# test_node = """<li class="active"><a target="_blank" href="./newsite/zwdt/szyw/">时政要闻</a></li>"""
 
 
 
-with open('/Users/yan/Desktop/Chrome-python/html/test copy.html', 'r', encoding='utf-8') as f:
-    html_str = f.read()
+# with open('/Users/yan/Desktop/Chrome-python/html/test copy.html', 'r', encoding='utf-8') as f:
+#     html_str = f.read()
 
-result,all_nodes,first_node = run_example(test_node,html_str)
-result = children_match(result,all_nodes,first_node)
-for item in result:
-    print(item[0]['seek_oneself'].xpath('./@href').get())
-    print('='*50)
+# result,all_nodes,first_node = run_example(test_node,html_str)
+# result = children_match(result,all_nodes,first_node)
+# for item in result:
+#     print(item[0]['seek_oneself'].xpath('./@href').get())
+#     print('='*50)
 

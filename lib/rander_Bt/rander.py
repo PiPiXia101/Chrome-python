@@ -8,7 +8,7 @@ import traceback
 import time
 
 
-from lib.rander_Bt.bit_api import *
+from rander_Bt.bit_api import *
 
 
 

@@ -53,7 +53,7 @@ def merge_consecutive_digits(differences):
 
     return merged
 error_url = "http://www.shuicheng.gov.cn/newsite/zwdt/tzgg/202106/t20210623_68770241.html"
-error_url = "http://www.shuicheng.gov.cn/newsite/zwgk/zfxxgk_1/zfxxgknb/nb_2022n/"
+error_url = "http://www.shuicheng.gov.cn/newsite/zwgk/zfxxgk_1/zfxxgknb/nb_2024n/202501/t20250122_86667778.html"
 error_url_info = urlparse(error_url)
 
 right_url = "http://www.shuicheng.gov.cn/newsite/gzcy/zxft/"

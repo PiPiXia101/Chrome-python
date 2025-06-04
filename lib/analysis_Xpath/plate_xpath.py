@@ -390,6 +390,6 @@ def generate_xpath_exclusion_pattern(right_url, error_url):
 #     for xpath in result["xpaths"]:
 #         print(xpath)
 
-# error_url= 'http://www.shuicheng.gov.cn/newsite/zwdt/tzgg/202106/t20210623_68770241.html'
-# right_url = 'http://www.shuicheng.gov.cn/newsite/gzcy/zxft/'
-# print(generate_xpath_exclusion_pattern(right_url,error_url))
+error_url= 'http://www.shuicheng.gov.cn/newsite/zwgk/zfxxgk_1/fdzdgknr/qtfdxx/'
+right_url = 'http://www.shuicheng.gov.cn/newsite/gzcy/zxft/'
+print(generate_xpath_exclusion_pattern(right_url,error_url))
