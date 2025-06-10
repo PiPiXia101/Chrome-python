@@ -50,7 +50,10 @@ def html_parse(html_str):
     html_str = ''.join(html_result)
 
     while True:
-        element = build_html_element(html_str)
+        try:
+            element = build_html_element(html_str)
+        except:
+            break
         body = element.xpath('//body')[0]
         html_str = etree.tostring(body, encoding = 'utf-8').decode()
         if not re.findall('<\w+/>', html_str): break

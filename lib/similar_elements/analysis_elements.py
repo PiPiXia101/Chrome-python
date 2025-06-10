@@ -18,7 +18,7 @@ TAG_WEIGHTS = {
     'td': 2,
     'br': 0,
     'i':-1,
-    '*': 0  # 默认权重
+    '*': 1  # 默认权重
     
 }
 
@@ -102,6 +102,7 @@ def find_scored_highest_weight_node(nodes: List[Node]) -> Node:
     返回:
     Node: 得分最高的节点。如果没有提供节点或没有有效节点，则返回None。
     """
+    nodes = [node for node in nodes if node.level > 1]
     # 检查节点列表是否为空
     if not nodes:
         return None
@@ -195,12 +196,12 @@ def run_example(test_node, html_str):
         print(f"{indent}└── [{node.level}] {node.table_name} path_weight: {node.path_weight} (ID: {node.id}, Level: {node.level}, LevelIndex: {node.level_index}) | Attrs: {node.attribute}")
     
     # 查找权重值最大的节点
-    first_node = find_scored_highest_weight_node(all_nodes)
+    first_node_max = find_scored_highest_weight_node(all_nodes)
     
     # 打印权重最大节点的信息
-    if first_node:
+    if first_node_max:
         print("找到的节点信息：")
-        print(f"└── [{first_node.level}] {first_node.table_name} (ID: {first_node.id}, Level: {first_node.level}, LevelIndex: {first_node.level_index}) | Attrs: {first_node.attribute}")
+        print(f"└── [{first_node_max.level}] {first_node_max.table_name} (ID: {first_node_max.id}, Level: {first_node_max.level}, LevelIndex: {first_node_max.level_index}) | Attrs: {first_node_max.attribute}")
     else:
         print("未找到符合条件的节点。")
     
@@ -215,7 +216,7 @@ def run_example(test_node, html_str):
     html_obj = Selector(text=html_str)
     
     # 查找匹配元素的节点
-    match_list = html_obj.xpath(f'//{first_node.table_name}')
+    match_list = html_obj.xpath(f'//{first_node_max.table_name}')
     
     # 遍历匹配节点，寻找相似元素
     for match_node in match_list:
@@ -281,7 +282,7 @@ def run_example(test_node, html_str):
             finnly_result.append(similar_elements)
     
     # 返回最终结果
-    return finnly_result, all_nodes, first_node
+    return finnly_result, all_nodes, first_node_max
 
 
 # 子节点匹配
@@ -308,17 +309,49 @@ def children_match(result,all_nodes,first_node):
     return finally_result
 
 
-# # 示例用法
-# test_node = """<li class="active"><a target="_blank" href="./newsite/zwdt/szyw/">时政要闻</a></li>"""
+# 示例用法
+# test_node = """<li class="">
+#                 <div class="menu-box">
+#                     <a class="i-page2" href="http://www.yulin.gov.cn/zjyl/" target="_blank"> 走进玉林</a>
+#                     <div class="child-ul-menu" style="display: none;">
+#                         <!-- 最多放4个 -->
+#                         <div class="child-box" startpos="0" num="4">
+                        	
+#                         		<a class="child-li-menu" target="_blank" href="http://www.yulin.gov.cn/zjyl/ylls/" title="玉林历史"> 玉林历史</a>
+							   
+							
+#                         		<a class="child-li-menu" target="_blank" href="http://www.yulin.gov.cn/zjyl/ylgk/" title="玉林概况"> 玉林概况</a>
+							   
+							
+#                         		<a class="child-li-menu" target="_blank" href="http://www.yulin.gov.cn/zjyl/ylyx/" title="玉林映像"> 玉林映像</a>
+							   
+							
+#                         		<a class="child-li-menu" target="_blank" href="http://www.yulin.gov.cn/zjyl/ylwh/" title="玉林文化"> 玉林文化</a>
+							   
+							
+#                         		<a class="child-li-menu" target="_blank" href="http://www.yulin.gov.cn/zjyl/yltz/" title="玉林图展"> 玉林图展</a>
+							   
+							
+#                         		<a class="child-li-menu" target="_blank" href="http://www.yulin.gov.cn/zjyl/ylly/" title="玉林旅游"> 玉林旅游</a>
+							   
+							
+#                         		<a class="child-li-menu" target="_blank" href="http://www.yulin.gov.cn/zjyl/ylms/" title="玉林美食"> 玉林美食</a>
+							   
+							
+#                             <!--<a class="child-li-menu" target="_blank" href="#" title="玉林概括">玉林概括</a>
+#                             <a class="child-li-menu" target="_blank" href="#" title="玉林文化">玉林文化</a>
+#                             <a class="child-li-menu" target="_blank" href="#" title="玉林文化">玉林文化</a>-->
+#                         </div>
+#                     </div>
+#                 </div>
+#             </li>"""
 
-
-
-# with open('/Users/yan/Desktop/Chrome-python/html/test copy.html', 'r', encoding='utf-8') as f:
+# with open('/Users/yan/Desktop/Chrome-python/html/test.html', 'r', encoding='utf-8') as f:
 #     html_str = f.read()
 
 # result,all_nodes,first_node = run_example(test_node,html_str)
 # result = children_match(result,all_nodes,first_node)
 # for item in result:
-#     print(item[0]['seek_oneself'].xpath('./@href').get())
+#     print(item[0]['seek_parent'].get())
 #     print('='*50)
 

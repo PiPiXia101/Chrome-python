@@ -58,7 +58,6 @@ class BitBrowser:
     def __str__(self) -> str:
         info = f"浏览器窗口id:{self.browser_id} 使用次数:{self.times} 创建时间:{self.create_time} 关闭时间:{self.close_time} 访问记录:{self.url_list} 关闭原因:{self.close_reason}"
         return info
-
 class BitPlaywright:
     def __init__(self):
         self.browser_id_list = [
@@ -81,21 +80,35 @@ class BitPlaywright:
         default_context = browser.contexts[0]
         # 打开链接
         page = default_context.new_page()
+        response_status = None
+
+        # 监听 response 事件以获取响应状态码
+        def handle_response(response):
+            nonlocal response_status
+            if response.url == url:  # 只关注目标 URL 的响应
+                response_status = response.status
+        
+        page.on("response", handle_response)
+
         try:
             page.goto(url)
         except:
             logging.info(f'{url}打开网页长时间不响应{traceback.format_exc()}')
+            return ''
+        
         page.wait_for_timeout(2000)
+        
         print(f'耗时{time.time() - start_time}')
+
+        if response_status == 404:
+            page.close()
+            return ''
+
         try:
             original_data = page.content()  # 源码
             # 关闭页面
             page.close()
             return original_data
         except:
-            logging.info(f'{url},ceph上传失败')
             page.close()
             return ''
-
-
-        

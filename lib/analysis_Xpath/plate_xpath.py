@@ -30,16 +30,32 @@ def merge_elements(lst: List[str]) -> str:
 def generate_path_template(path: str) -> str:
     """
     将路径中的字符转换为通用模板表示。
-    数字 -> \d, 字母 -> \w, 其他保留原字符。
+    - 数字 -> \d
+    - 非 html 文件名中的字母 -> \w
+    - html 文件名中的字母和后缀 -> 保留原样
+    - 其他字符保留原字符。
     """
+    # 判断是否是 .html 结尾的文件
+    is_html_file = path.endswith('.html') or path.endswith('.htm') or path.endswith('.shtml')
+
     template = []
-    for char in path:
-        if char.isdigit():
-            template.append("\\d")
-        elif char.isalpha():
-            template.append("\\w")
+    i = 0
+    while i < len(path):
+        # 检查当前位置是否处于 ".html" 或 ".htm" 中
+        if is_html_file and i >= len(path) - (5 if path.endswith('.html') else 4):
+            # 如果是 ".html" 或 ".htm" 后缀，保留原始字符
+            template.append(path[i])
+            i += 1
         else:
-            template.append(char)
+            char = path[i]
+            if char.isdigit():
+                template.append("\\d")
+            elif char.isalpha():
+                template.append("[a-zA-Z]")
+            else:
+                template.append(char)
+            i += 1
+
     return merge_elements(template)
 
 
@@ -103,31 +119,36 @@ def analyze_html_and_generate_xpaths(html_content: str, test_paths: List[str],we
     test_paths = list(set(test_paths))
     new_test_paths = list()
     for item in test_paths: 
+        if not item:
+            continue
         if web_url == item:
             continue
         if item.startswith('.'):
             url = urljoin(web_url, item)
-        else:
+        elif item.startswith('http'):
             url = item
+        else:
+            url = urljoin(web_url, item)
         if web_url_info.netloc not in url:
             continue 
         
         new_test_paths.append(url)
     test_paths = new_test_paths
+    # 构建相似元素链接的正则表达式
+    url_result_list = [parse_url(path) for path in test_paths]
+
     result = {
         "xpaths": [],
         "matches": {},
         "select_elements": []
     }
-
     html = Selector(text=html_content)
     root_nodes = html.xpath('//body')
     all_nodes = []
     for idx, root in enumerate(root_nodes):
         all_nodes.extend(build_nodes(root, level=0, level_index=idx))
-
-    # 构建 select_element_list
-    a_nodes = [node for node in all_nodes if node.table_name == 'a']
+    # 构建选择元素里面A标签链接的正则表达式
+    a_nodes = [node for node in all_nodes if node.table_name == 'a'] or [node for node in all_nodes if 'href' in node.attribute]
     select_element_list = []
     for node in a_nodes:
         href = node.attribute.get('href', '')
@@ -135,13 +156,8 @@ def analyze_html_and_generate_xpaths(html_content: str, test_paths: List[str],we
         parsed = parse_url(href)
         parsed['success'] = 0
         select_element_list.append(parsed)
-
     result["select_elements"] = select_element_list
-
-    # 构建 url_result_list
-    url_result_list = [parse_url(path) for path in test_paths]
-
-    # 分析差异点
+    # 分析相同、差异点
     for item in select_element_list:
         select_url_path = item.get("url_path", [])
         for jtem in url_result_list:
@@ -155,20 +171,28 @@ def analyze_html_and_generate_xpaths(html_content: str, test_paths: List[str],we
                     select_path["diversity_path"].append(similar_path["path"])
     with open("./test.json", 'w', encoding='utf-8') as f:
         f.write(str(select_element_list).replace("'", '"'))
-    # 构造 XPath 表达式
+    # 根据相同点构造 XPath 表达式
     xpath_result = set()
     for example in select_element_list:
         path_list = [path.get("path") for path in example["url_path"] if not path.get("diversity")]
         if not path_list:
-            continue         
-        parameter = " or ".join([f"contains(@href, '{item}')" for item in path_list if (item) and (not item.startswith('http')) and (not web_url_info.netloc == item)])
-        xpath_str = f"//a[{parameter}]"
-        xpath_result.add(xpath_str)
+            continue     
+        parameter_list = [item for item in path_list if (item) and (not item.startswith('http')) and (not web_url_info.netloc == item) and (item != path_list[-1])]
+        if parameter_list:
+            parameter = " or ".join([f"contains(@href, '{item}')" for item in parameter_list])
+            xpath_str = f"//a[{parameter}]"
+            xpath_result.add(xpath_str)
+        else:
+            # [not(re:test(@href, '\w+_\d', 'g')) or not(re:test(@href, '\w+_\d+\w', 'g'))]
+            parameter_list = [path.get('path_template') for path in example["url_path"] if not path.get("diversity") and path.get('path') and (not path.get('path').startswith('http')) and (not web_url_info.netloc == path.get('path'))]
+            # "//a[re:test(@href, '{path}', 'g') or ]"
+            parameter = " or ".join([f"re:test(@href, '{path}', 'g')" for path in parameter_list])
+            xpath_str = f"//*[{parameter}]"
+            xpath_result.add(xpath_str)
 
     result["xpaths"] = list(xpath_result)
-
-
     return result
+
 
 # 分析差异点
 
@@ -287,15 +311,16 @@ def generate_xpath_exclusion_pattern(right_url, error_url):
         # 合并相邻的路径部分。
         error_list = merge_adjacent_elements(error_path_parts)
         right_list = merge_adjacent_elements(right_path_parts)
-
+        print(error_list)
+        print(right_list)
         # 找出错误路径和正确路径的差异。
         differences = find_differences(error_list, right_list)
         # 过滤掉差异中的正则表达式部分。
-        differences = [item for item in differences if item[1] != r'\w+']
+        differences = [item for item in differences if item[1] != r'[a-zA-Z]+']
 
         # 如果差异不足以生成有效的过滤模式，则返回False。
-        if len(differences) < 2:
-            return False
+        # if len(differences) < 2:
+        #     return False
 
         # 合并连续的数字差异，并对差异项进行转义处理。
         merged_result = merge_consecutive_digits(differences)
@@ -304,9 +329,9 @@ def generate_xpath_exclusion_pattern(right_url, error_url):
         # 生成XPath的排除模式字符串。
         pattern_template = ' or '.join([f"not(re:test(@href, '{val}', 'g'))" for _, val in escaped_items])
         # 打印生成的模式模板。
-        print(pattern_template)
+        # print(pattern_template)
         # 返回最终的XPath排除模式。
-        return f"[{pattern_template}]"
+        return f"[{pattern_template}]" if pattern_template else False
 
     except Exception as e:
         # 可根据实际需求细化异常类型
@@ -316,68 +341,15 @@ def generate_xpath_exclusion_pattern(right_url, error_url):
 
 
 # if __name__ == "__main__":
-#     web_url = "http://www.shuicheng.gov.cn/"
+#     web_url = "https://syuzsjy.syu.edu.cn/"
 #     web_url_info = urlparse(web_url)
 #     # 选中的元素
 #     # 示例用法
-#     test_node = """<li class="active"><a target="_blank" href="./newsite/zwdt/szyw/">时政要闻</a></li>"""
+#     test_node = """<map name="AutoMap1" border="0"><area href="zsxxw.htm" shape="rect" target="" coords="5,5,271,175" border="0"></map>"""
 #     # 相似元素的a标签的href
 #     test_paths = [
-#         "http://www.shuicheng.gov.cn/",
-#     "http://www.shuicheng.gov.cn/newsite/zwdt/szyw/",
-#     "http://www.shuicheng.gov.cn/newsite/zwdt/zwyw/",
-#     "http://www.shuicheng.gov.cn/newsite/zwdt/xzdt/",
-#     "http://www.shuicheng.gov.cn/newsite/zwdt/bmdt/",
-#     "http://www.shuicheng.gov.cn/newsite/zwdt/tzgg/",
-#     "http://www.gov.cn/pushinfo/v150203/",
-#     "http://www.guizhou.gov.cn/zwgk/zcfg/szfwj/szfl/",
-#     "http://www.gzlps.gov.cn/ywdt/jrld/",
-#     "http://www.shuicheng.gov.cn/newsite/zwgk/zfxxgk_1/",
-#     "http://www.shuicheng.gov.cn/newsite/zwgk/ldzc/",
-#     "http://www.shuicheng.gov.cn/newsite/zwgk/zcbm/",
-#     "http://61.243.10.146:9090/",
-#     "http://www.shuicheng.gov.cn/newsite/zwgk/jyta/",
-#     "http://www.shuicheng.gov.cn/newsite/zwgk/scxhmzcmbk/",
-#     "http://www.shuicheng.gov.cn/newsite/zwgk/cwhy/",
-#     "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/",
-#     "http://www.shuicheng.gov.cn/newsite/zwgk/zdjc/",
-#     "http://www.shuicheng.gov.cn/newsite/zwgk/ggqsy/",
-#     "http://www.shuicheng.gov.cn/newsite/zwgk/yshj/",
-#     "http://www.shuicheng.gov.cn/newsite/zwgk/ysqgk/",
-#     "http://www.shuicheng.gov.cn/newsite/zwgk/gzhgfxwjsjk/",
-#     "http://www.shuicheng.gov.cn/newsite/zwgk/zfgzbg/",
-#     "http://www.shuicheng.gov.cn/newsite/zwgk/zwgkpt/",
-#     "http://www.shuicheng.gov.cn/newsite/jdhy/zcjd/",
-#     "http://www.shuicheng.gov.cn/newsite/jdhy/hygq/",
-#     "http://www.shuicheng.gov.cn/newsite/jdhy/xwfbh/",
-#     "http://www.shuicheng.gov.cn/newsite/bsfw/",
-#     "http://www.shuicheng.gov.cn/newsite/gzcy/qzxx/",
-#     "http://www.shuicheng.gov.cn/newsite/gzcy/myzj/",
-#     "http://www.shuicheng.gov.cn/newsite/gzcy/zxft/",
-#     "http://www.shuicheng.gov.cn/newsite/gzcy/zmhdzsk/",
-#     "http://www.shuicheng.gov.cn/newsite/gzcy/xmtjz/",
-#     "http://www.shuicheng.gov.cn/newsite/zfsj/",
-#     "http://www.shuicheng.gov.cn/newsite/zwgk/yshj/",
-#     "http://www.shuicheng.gov.cn/newsite/stsc/",
-#     "http://www.shuicheng.gov.cn/newsite/zwdt/tzgg/202106/t20210623_68770241.html",
-#     "https://www.gzscjjkfq.cn/index.php?c=category&id=12",
-#     "http://www.shuicheng.gov.cn/newsite/zwdt/tzgg/202505/t20250527_87929820.html",
-#     "./newsite/zwdt/szyw/",
-#     "./newsite/zwdt/zwyw/",
-#     "./newsite/zwdt/bmdt/",
-#     "./newsite/zwdt/xzdt/",
-#     "./newsite/zwgk/zfxxgk_1/zfxxgkzn/",
-#     "./newsite/zwgk/zfxxgk_1/zfxxgkzd/",
-#     "./newsite/zwgk/zfxxgk_1/fdzdgknr/",
-#     "./newsite/zwgk/zfxxgk_1/zfxxgknb/",
-#     "./newsite/zwgk/ysqgk/",
-#     "./newsite/zwgk/gzhgfxwjsjk/",
-#     "./newsite/zwgk/zfxxgk_1/fdzdgknr/zcwj_5827454/zfwj/",
-#     "./newsite/zwgk/cwhy/",
-#     "./newsite/zwgk/zdly/jycy/zpxx/",
-#     "./newsite/gzcy/qzxx/",
-#     "./newsite/gzcy/zxft/",
-#     "./newsite/gzcy/myzj/",
+#         'zsxxw.htm',
+#         'jywsy.htm'
 #     ]
 #     # 测试数据
 #     with open('/Users/yan/Desktop/Chrome-python/html/test copy.html', 'r', encoding='utf-8') as f:
@@ -390,6 +362,6 @@ def generate_xpath_exclusion_pattern(right_url, error_url):
 #     for xpath in result["xpaths"]:
 #         print(xpath)
 
-error_url= 'http://www.shuicheng.gov.cn/newsite/zwgk/zfxxgk_1/fdzdgknr/qtfdxx/'
-right_url = 'http://www.shuicheng.gov.cn/newsite/gzcy/zxft/'
-print(generate_xpath_exclusion_pattern(right_url,error_url))
+# error_url= 'http://www.yulin.gov.cn/ztjj/shcezxdzzt/t5338957.shtml'
+# right_url = 'http://www.yulin.gov.cn/ztjj/shcezxdzzt/index.shtml'
+# print(generate_xpath_exclusion_pattern(right_url,error_url))
