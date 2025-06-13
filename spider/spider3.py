@@ -88,16 +88,16 @@ task = {
     'selected_link':'http://www.yulin.gov.cn/zjyl/',
     'parent_url':web_url,
     'num':0,
-    'level':3
+    'level':2
 }
 plate_rule = "//*[re:test(@href, '[a-zA-Z]+', 'g')]"
 
-server.lpush('chrome:plate_task',json.dumps(task))
+# server.lpush('chrome:plate_task',json.dumps(task))
 # 添加任务的时候应该在任务 监控队列 里面 添加 监控任务
 task_monitor = f"chrome:monitor_task"
-server.lpush(task_monitor,task['task_id'])
+# server.lpush(task_monitor,task['task_id'])
 task_plate_rule = f"chrome:{task['task_id']}:plate_rule"
-server.set(task_plate_rule,plate_rule)
+# server.set(task_plate_rule,plate_rule)
 
 
 task_monitor_queue = f"chrome:{task['task_id']}:monitor_url"
@@ -130,18 +130,24 @@ while True:
             logits = model_result['msg'][0]['logits']
             print(f"小模型判定结果--{task['plate_url']}--{plate_result}--{logits}")
             # 进行大模型判断
-            if plate_result != 'L' and 0.5 < float(logits) < 1.1:
-                plate_result,logits = use_bigModel(html_str)
-                print(f"大模型判定结果--{task['plate_url']}--{plate_result}--{logits}")
+            # if plate_result != 'L' and 0.5 < float(logits) < 0.8:
+            #     try:
+            #         plate_result,logits = use_bigModel(html_str)
+            #         print(f"大模型判定结果--{task['plate_url']}--{plate_result}--{logits}")
+            #     except Exception as e:
+            #         print('大模型使用失败',e)
+            #         pass
+                
             # 记录分值
             server.zadd(f"chrome:{task['task_id']}:logits:{plate_result}",{task['plate_url']:logits})
-            if plate_result != 'L':
+            if plate_result == 'D':
                 # 提取出来的链接不是板块
                 # 修改提取规则
                 if task['num'] != 1:
                     rule_result = generate_xpath_exclusion_pattern(task['parent_url'],task['plate_url'])
                 else:
                     rule_result = generate_xpath_exclusion_pattern(task['selected_link'],task['plate_url'])
+                print(rule_result)
                 # [not(re:test(@href, '\\d\+/\\w\\d\+_\\d\+\.\\w\+', 'g'))]
                 if rule_result and 'None' not in rule_result:
                     with open('update_plate_rule.txt','a+') as f:
@@ -152,7 +158,7 @@ while True:
                     # 删除待处理的链接
                     delete_task(server,'chrome:plate_task',rule_result,task)
                     # 增加过滤链接格式
-                # continue
+                    continue
             else:
                 # 提取出来的是板块,但是需要完善提取板块规则
                 # 第一步分析差异点 
@@ -161,14 +167,15 @@ while True:
                     with open('差异点rule.txt','a+') as f:
                         f.write(f'差异点{rule_result} |{task["parent_url"]}| |{task["plate_url"]}|\n')
                 # [not(re:test(@href, '\w+_\d', 'g')) or not(re:test(@href, '\w+_\d+\w', 'g'))]
-        except:
+        except Exception as e:
+            print(f"错误",e)
             server.sadd(f'chrome:{Subdomains}:error_url', task['plate_url'])
     html = Selector(text=original_data)
     seed_urls = list()
     # 是一个list数据结构
     seed = html.xpath(plate_rule)
 
-    seed = per.prefilter(task["parent_url"],seed)
+    seed = per.prefilter(task["plate_url"],seed)
     for item in seed:
         # seed_url = urljoin(task['plate_url'], item.xpath('./@href').get())
         seed_url = item.get('url')

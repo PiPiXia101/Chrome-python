@@ -100,7 +100,7 @@ class BitPlaywright:
         
         print(f'耗时{time.time() - start_time}')
 
-        if response_status == 404:
+        if response_status in [404,403]:
             page.close()
             return ''
 

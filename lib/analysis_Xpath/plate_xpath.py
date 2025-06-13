@@ -311,16 +311,14 @@ def generate_xpath_exclusion_pattern(right_url, error_url):
         # 合并相邻的路径部分。
         error_list = merge_adjacent_elements(error_path_parts)
         right_list = merge_adjacent_elements(right_path_parts)
-        print(error_list)
-        print(right_list)
         # 找出错误路径和正确路径的差异。
         differences = find_differences(error_list, right_list)
         # 过滤掉差异中的正则表达式部分。
         differences = [item for item in differences if item[1] != r'[a-zA-Z]+']
-
+        # print(differences)
         # 如果差异不足以生成有效的过滤模式，则返回False。
-        # if len(differences) < 2:
-        #     return False
+        if len(differences) < 2 and [item for item in differences if 'htm' not in item[1]]:
+            return False
 
         # 合并连续的数字差异，并对差异项进行转义处理。
         merged_result = merge_consecutive_digits(differences)
@@ -362,6 +360,16 @@ def generate_xpath_exclusion_pattern(right_url, error_url):
 #     for xpath in result["xpaths"]:
 #         print(xpath)
 
-# error_url= 'http://www.yulin.gov.cn/ztjj/shcezxdzzt/t5338957.shtml'
-# right_url = 'http://www.yulin.gov.cn/ztjj/shcezxdzzt/index.shtml'
+# error_url= 'http://www.yulin.gov.cn/jryl/zwxx/t21170393.shtml'
+# right_url = 'http://www.yulin.gov.cn/zjyl/'
+# print(generate_xpath_exclusion_pattern(right_url,error_url))
+
+
+# error_url= 'http://www.yulin.gov.cn/gkzl/xxgknb/2008zfxxgkgzndbg/'
+# right_url = 'http://www.yulin.gov.cn/zcwj/difangxingfagui/'
+# print(generate_xpath_exclusion_pattern(right_url,error_url))
+
+
+# error_url= 'http://www.shuicheng.gov.cn/newsite/zwgk/zdly/jycy/zpxx/202505/t20250522_87909168.html'
+# right_url = 'http://www.shuicheng.gov.cn/'
 # print(generate_xpath_exclusion_pattern(right_url,error_url))

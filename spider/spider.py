@@ -6,14 +6,14 @@ import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from lib.rander_playwight import rander
-from lib.plate_extract.palte import analysis_plate
+from lib.plate_extract.palte import plate_extraction_rules
 from lib.analysis_Xpath.plate_xpath import *
 from lib.similar_elements.analysis_elements import *
 
 class Spider:
 
     def  __init__(self):
-        self.analysisPlate = analysis_plate()
+        self.analysisPlate = plate_extraction_rules()
         pass
 
 
@@ -62,11 +62,11 @@ class Spider:
 
 if __name__ == '__main__':
     # 例子1
-    # spider = Spider()
-    # test_node = """
-    #     <li class="active"><a target="_blank" href="./newsite/zwdt/zwyw/">水城要闻</a>
-    #                                 </li>"""
-    # spider.run('http://www.shuicheng.gov.cn/',test_node)
+    spider = Spider()
+    test_node = """
+        <li class="active"><a target="_blank" href="./newsite/zwdt/zwyw/">水城要闻</a>
+                                    </li>"""
+    spider.run('http://www.shuicheng.gov.cn/',test_node)
 
     # 例子2
     # spider = Spider()
@@ -76,41 +76,41 @@ if __name__ == '__main__':
 
 
     # 例子3
-    spider = Spider()
-    test_node = """<li class="">
-                <div class="menu-box">
-                    <a class="i-page2" href="http://www.yulin.gov.cn/zjyl/" target="_blank"> 走进玉林</a>
-                    <div class="child-ul-menu" style="display: none;">
-                        <!-- 最多放4个 -->
-                        <div class="child-box" startpos="0" num="4">
+    # spider = Spider()
+    # test_node = """<li class="">
+    #             <div class="menu-box">
+    #                 <a class="i-page2" href="http://www.yulin.gov.cn/zjyl/" target="_blank"> 走进玉林</a>
+    #                 <div class="child-ul-menu" style="display: none;">
+    #                     <!-- 最多放4个 -->
+    #                     <div class="child-box" startpos="0" num="4">
                         	
-                        		<a class="child-li-menu" target="_blank" href="http://www.yulin.gov.cn/zjyl/ylls/" title="玉林历史"> 玉林历史</a>
+    #                     		<a class="child-li-menu" target="_blank" href="http://www.yulin.gov.cn/zjyl/ylls/" title="玉林历史"> 玉林历史</a>
 							   
 							
-                        		<a class="child-li-menu" target="_blank" href="http://www.yulin.gov.cn/zjyl/ylgk/" title="玉林概况"> 玉林概况</a>
+    #                     		<a class="child-li-menu" target="_blank" href="http://www.yulin.gov.cn/zjyl/ylgk/" title="玉林概况"> 玉林概况</a>
 							   
 							
-                        		<a class="child-li-menu" target="_blank" href="http://www.yulin.gov.cn/zjyl/ylyx/" title="玉林映像"> 玉林映像</a>
+    #                     		<a class="child-li-menu" target="_blank" href="http://www.yulin.gov.cn/zjyl/ylyx/" title="玉林映像"> 玉林映像</a>
 							   
 							
-                        		<a class="child-li-menu" target="_blank" href="http://www.yulin.gov.cn/zjyl/ylwh/" title="玉林文化"> 玉林文化</a>
+    #                     		<a class="child-li-menu" target="_blank" href="http://www.yulin.gov.cn/zjyl/ylwh/" title="玉林文化"> 玉林文化</a>
 							   
 							
-                        		<a class="child-li-menu" target="_blank" href="http://www.yulin.gov.cn/zjyl/yltz/" title="玉林图展"> 玉林图展</a>
+    #                     		<a class="child-li-menu" target="_blank" href="http://www.yulin.gov.cn/zjyl/yltz/" title="玉林图展"> 玉林图展</a>
 							   
 							
-                        		<a class="child-li-menu" target="_blank" href="http://www.yulin.gov.cn/zjyl/ylly/" title="玉林旅游"> 玉林旅游</a>
+    #                     		<a class="child-li-menu" target="_blank" href="http://www.yulin.gov.cn/zjyl/ylly/" title="玉林旅游"> 玉林旅游</a>
 							   
 							
-                        		<a class="child-li-menu" target="_blank" href="http://www.yulin.gov.cn/zjyl/ylms/" title="玉林美食"> 玉林美食</a>
+    #                     		<a class="child-li-menu" target="_blank" href="http://www.yulin.gov.cn/zjyl/ylms/" title="玉林美食"> 玉林美食</a>
 							   
 							
-                            <!--<a class="child-li-menu" target="_blank" href="#" title="玉林概括">玉林概括</a>
-                            <a class="child-li-menu" target="_blank" href="#" title="玉林文化">玉林文化</a>
-                            <a class="child-li-menu" target="_blank" href="#" title="玉林文化">玉林文化</a>-->
-                        </div>
-                    </div>
-                </div>
-            </li>"""
-    spider.run('http://www.yulin.gov.cn/',test_node)
+    #                         <!--<a class="child-li-menu" target="_blank" href="#" title="玉林概括">玉林概括</a>
+    #                         <a class="child-li-menu" target="_blank" href="#" title="玉林文化">玉林文化</a>
+    #                         <a class="child-li-menu" target="_blank" href="#" title="玉林文化">玉林文化</a>-->
+    #                     </div>
+    #                 </div>
+    #             </div>
+    #         </li>"""
+    # spider.run('http://www.yulin.gov.cn/',test_node)
     
