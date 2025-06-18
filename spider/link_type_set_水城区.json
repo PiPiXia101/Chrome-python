@@ -1,0 +1,746 @@
+{
+    "90ff41402ee5e3487767d6c0800ab762": {
+        "link_type": "90ff41402ee5e3487767d6c0800ab762",
+        "link_list": [
+            "http://www.shuicheng.gov.cn/newsite/index.html",
+            "http://www.shuicheng.gov.cn/newsite/ztzl/rdzt/qmtjjczwgkbzhgfhzt/index.html",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/czzj/xzsyxsf/index.html",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/jsxm/xmpz/index.html",
+            "http://www.shuicheng.gov.cn/newsite/ztzl/rdzt/qmtjjczwgkbzhgfhzt/scxzwgkbzgf/index.html",
+            "http://www.shuicheng.gov.cn/newsite/ztzl/index.html"
+        ],
+        "link_score": -4,
+        "link_index": 6,
+        "link_re": "[not(re:test(@href, '[a-zA-Z]+.html', 'g'))]",
+        "link_value_list": [
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/index.html",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/ztzl/rdzt/qmtjjczwgkbzhgfhzt/index.html",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/czzj/xzsyxsf/index.html",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/jsxm/xmpz/index.html",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/ztzl/rdzt/qmtjjczwgkbzhgfhzt/scxzwgkbzgf/index.html",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/ztzl/index.html",
+                "plate_result": "L"
+            }
+        ]
+    },
+    "default": {
+        "link_type": "default",
+        "link_list": [
+            "http://www.shuicheng.gov.cn/newsite/fzlm/gybz/",
+            "http://www.shuicheng.gov.cn/newsite/fzlm/wzbz/",
+            "http://www.shuicheng.gov.cn/newsite/fzlm/wzdt/",
+            "http://www.shuicheng.gov.cn/newsite/fzlm/wznb/",
+            "http://www.shuicheng.gov.cn/newsite/zwdt/",
+            "http://www.shuicheng.gov.cn/newsite/zwdt/szyw/",
+            "http://www.shuicheng.gov.cn/newsite/zwdt/zwyw/",
+            "http://www.shuicheng.gov.cn/newsite/zwdt/xzdt/",
+            "http://www.shuicheng.gov.cn/newsite/zwdt/bmdt/",
+            "http://www.shuicheng.gov.cn/newsite/zwdt/tzgg/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/ldzc/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zcbm/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/jyta/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/scxhmzcmbk/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/cwhy/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zdjc/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/ggqsy/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/yshj/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/ysqgk/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/gzhgfxwjsjk/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zfgzbg/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zwgkpt/",
+            "http://www.shuicheng.gov.cn/newsite/jdhy/",
+            "http://www.shuicheng.gov.cn/newsite/jdhy/zcjd/",
+            "http://www.shuicheng.gov.cn/newsite/jdhy/hygq/",
+            "http://www.shuicheng.gov.cn/newsite/jdhy/xwfbh/",
+            "http://www.shuicheng.gov.cn/newsite/bsfw/",
+            "http://www.shuicheng.gov.cn/newsite/gzcy/",
+            "http://www.shuicheng.gov.cn/newsite/gzcy/qzxx/",
+            "http://www.shuicheng.gov.cn/newsite/gzcy/myzj/",
+            "http://www.shuicheng.gov.cn/newsite/gzcy/zxft/",
+            "http://www.shuicheng.gov.cn/newsite/gzcy/zmhdzsk/",
+            "http://www.shuicheng.gov.cn/newsite/gzcy/xmtjz/",
+            "http://www.shuicheng.gov.cn/newsite/zfsj/",
+            "http://www.shuicheng.gov.cn/newsite/stsc/",
+            "http://www.shuicheng.gov.cn/newsite/ztzl/",
+            "https://www.shuicheng.gov.cn/newsite/zwgk/yshj/",
+            "https://www.shuicheng.gov.cn/newsite/ztzl/rdzt/zysthbdcgzzxd/",
+            "http://www.shuicheng.gov.cn/newsite/ztzl/rdzt/wlwmjs/",
+            "http://www.shuicheng.gov.cn/newsite/ztzl/rdzt/xzzf/",
+            "http://www.shuicheng.gov.cn/newsite/ztzl/rdzt/xzfy/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/jycy/zpxx/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/fzgh/",
+            "http://www.shuicheng.gov.cn/newsite/ztzl/rdzt/qmtjjczwgkbzhgfhzt/zdgf/",
+            "http://www.shuicheng.gov.cn/newsite/ztzl/rdzt/qmtjjczwgkbzhgfhzt/zwgkztym/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/qzqd/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/jsxm/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/ggzypz/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/czzj/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/jycy/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/shbx/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/jy/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/mzjj/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/fpkf/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/hjgl/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/aqsc/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/zhjy/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/cszhzf/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/scjg/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/ylws/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/wtgdlyfz/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/gyfz/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/ggflfw/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/sylt/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/mzzj/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/shaq/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/zrzy/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/lygl/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/cxjs/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/hjbh/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/jtys/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/sljs/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/nync/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/stym/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/tyjrsw/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/ssgl/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/jgysf/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/gzhgfxwjsjk/gfxwjsjk/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/gzhgfxwjsjk/gfxwjbasc/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/gzhgfxwjsjk/gfxwjsjk/rmzfzfb/",
+            "http://www.shuicheng.gov.cn/newsite/jdhy/zcjd/wzjd/",
+            "http://www.shuicheng.gov.cn/newsite/jdhy/zcjd/tpjd/"
+        ],
+        "link_score": -52,
+        "link_index": 84,
+        "link_re": false,
+        "link_value_list": [
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/fzlm/gybz/",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/fzlm/wzbz/",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/fzlm/wzdt/",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/fzlm/wznb/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwdt/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwdt/szyw/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwdt/zwyw/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwdt/xzdt/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwdt/bmdt/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwdt/tzgg/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/ldzc/",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/zcbm/",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/jyta/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/scxhmzcmbk/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/cwhy/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/zdjc/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/ggqsy/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/yshj/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/ysqgk/",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/gzhgfxwjsjk/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/zfgzbg/",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/zwgkpt/",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/jdhy/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/jdhy/zcjd/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/jdhy/hygq/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/jdhy/xwfbh/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/bsfw/",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/gzcy/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/gzcy/qzxx/",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/gzcy/myzj/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/gzcy/zxft/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/gzcy/zmhdzsk/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/gzcy/xmtjz/",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zfsj/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/stsc/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/ztzl/",
+                "plate_result": "L"
+            },
+            {
+                "url": "https://www.shuicheng.gov.cn/newsite/zwgk/yshj/",
+                "plate_result": "L"
+            },
+            {
+                "url": "https://www.shuicheng.gov.cn/newsite/ztzl/rdzt/zysthbdcgzzxd/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/ztzl/rdzt/wlwmjs/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/ztzl/rdzt/xzzf/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/ztzl/rdzt/xzfy/",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/jycy/zpxx/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/fzgh/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/ztzl/rdzt/qmtjjczwgkbzhgfhzt/zdgf/",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/ztzl/rdzt/qmtjjczwgkbzhgfhzt/zwgkztym/",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/qzqd/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/jsxm/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/ggzypz/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/czzj/",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/jycy/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/shbx/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/jy/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/mzjj/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/fpkf/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/hjgl/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/aqsc/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/zhjy/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/cszhzf/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/scjg/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/ylws/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/wtgdlyfz/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/gyfz/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/ggflfw/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/sylt/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/mzzj/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/shaq/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/zrzy/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/lygl/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/cxjs/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/hjbh/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/jtys/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/sljs/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/nync/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/stym/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/tyjrsw/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/ssgl/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/jgysf/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/gzhgfxwjsjk/gfxwjsjk/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/gzhgfxwjsjk/gfxwjbasc/",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/gzhgfxwjsjk/gfxwjsjk/rmzfzfb/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/jdhy/zcjd/wzjd/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/jdhy/zcjd/tpjd/",
+                "plate_result": "L"
+            }
+        ]
+    },
+    "dd76da29fe0b27ed57598175201d1508": {
+        "link_type": "dd76da29fe0b27ed57598175201d1508",
+        "link_list": [
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zfxxgk_1/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zfxxgk_1/zfxxgkzn/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zfxxgk_1/zfxxgkzd/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zfxxgk_1/fdzdgknr/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zfxxgk_1/zfxxgknb/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zfxxgk_1/fdzdgknr/zdmsxx/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zfxxgk_1/fdzdgknr/qtfdxx/"
+        ],
+        "link_score": 1,
+        "link_index": 1,
+        "link_re": "[not(re:test(@href, '[a-zA-Z]+_\\d', 'g'))]",
+        "link_value_list": [
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/zfxxgk_1/",
+                "plate_result": "D"
+            }
+        ]
+    },
+    "6f7af57d7293da9855adaeccee1d5f8b": {
+        "link_type": "6f7af57d7293da9855adaeccee1d5f8b",
+        "link_list": [
+            "http://www.shuicheng.gov.cn/newsite/zwdt/zwyw/202506/t20250616_88144102.html",
+            "http://www.shuicheng.gov.cn/newsite/zwdt/tzgg/202106/t20210623_68770241.html",
+            "http://www.shuicheng.gov.cn/newsite/zwdt/tzgg/202506/t20250613_88134859.html",
+            "http://www.shuicheng.gov.cn/newsite/zwdt/zwyw/202506/t20250609_88112297.html",
+            "http://www.shuicheng.gov.cn/newsite/zwdt/zwyw/202506/t20250616_88144009.html",
+            "http://www.shuicheng.gov.cn/newsite/zwdt/zwyw/202506/t20250612_88129593.html",
+            "http://www.shuicheng.gov.cn/newsite/zwdt/szyw/202506/t20250617_88151074.html",
+            "http://www.shuicheng.gov.cn/newsite/zwdt/szyw/202506/t20250617_88149043.html",
+            "http://www.shuicheng.gov.cn/newsite/zwdt/szyw/202506/t20250617_88149044.html",
+            "http://www.shuicheng.gov.cn/newsite/zwdt/szyw/202506/t20250617_88149045.html",
+            "http://www.shuicheng.gov.cn/newsite/zwdt/szyw/202506/t20250615_88143170.html",
+            "http://www.shuicheng.gov.cn/newsite/zwdt/szyw/202506/t20250615_88143171.html",
+            "http://www.shuicheng.gov.cn/newsite/zwdt/zwyw/202506/t20250610_88119407.html",
+            "http://www.shuicheng.gov.cn/newsite/zwdt/zwyw/202506/t20250606_88102886.html",
+            "http://www.shuicheng.gov.cn/newsite/zwdt/zwyw/202506/t20250604_87961755.html",
+            "http://www.shuicheng.gov.cn/newsite/zwdt/bmdt/202506/t20250617_88151442.html",
+            "http://www.shuicheng.gov.cn/newsite/zwdt/bmdt/202506/t20250616_88144498.html",
+            "http://www.shuicheng.gov.cn/newsite/zwdt/bmdt/202506/t20250612_88129730.html",
+            "http://www.shuicheng.gov.cn/newsite/zwdt/bmdt/202506/t20250610_88119443.html",
+            "http://www.shuicheng.gov.cn/newsite/zwdt/bmdt/202506/t20250609_88113126.html",
+            "http://www.shuicheng.gov.cn/newsite/zwdt/bmdt/202506/t20250606_88103155.html",
+            "http://www.shuicheng.gov.cn/newsite/zwdt/bmdt/202506/t20250605_87968882.html",
+            "http://www.shuicheng.gov.cn/newsite/zwdt/xzdt/202506/t20250617_88151413.html",
+            "http://www.shuicheng.gov.cn/newsite/zwdt/xzdt/202506/t20250613_88134542.html",
+            "http://www.shuicheng.gov.cn/newsite/zwdt/xzdt/202506/t20250612_88129673.html",
+            "http://www.shuicheng.gov.cn/newsite/zwdt/xzdt/202506/t20250611_88122051.html",
+            "http://www.shuicheng.gov.cn/newsite/zwdt/xzdt/202506/t20250610_88119689.html",
+            "http://www.shuicheng.gov.cn/newsite/zwdt/xzdt/202506/t20250609_88112771.html",
+            "http://www.shuicheng.gov.cn/newsite/zwdt/xzdt/202506/t20250606_88103191.html",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/cwhy/202505/t20250527_87927558.html",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/cwhy/202505/t20250513_87855863.html",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/cwhy/202504/t20250423_87565125.html",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/cwhy/202504/t20250407_87479126.html",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/cwhy/202503/t20250320_87215071.html",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/cwhy/202503/t20250303_86975655.html",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/cwhy/202502/t20250212_86881832.html",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/jycy/zpxx/202506/t20250617_88150981.html",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/jycy/zpxx/202506/t20250612_88131999.html",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/jycy/zpxx/202506/t20250611_88128428.html",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/jycy/zpxx/202506/t20250610_88117440.html",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/jycy/zpxx/202506/t20250609_88115933.html",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/jycy/zpxx/202506/t20250609_88114180.html",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zdly/jycy/zpxx/202505/t20250529_87942677.html",
+            "http://www.shuicheng.gov.cn/newsite/ztzl/rdzt/xzzf/xzcf/202506/t20250606_88104640.html",
+            "http://www.shuicheng.gov.cn/newsite/ztzl/rdzt/xzzf/xzcf/202505/t20250516_87881015.html",
+            "http://www.shuicheng.gov.cn/newsite/ztzl/rdzt/xzzf/xzcf/202505/t20250515_87876469.html",
+            "http://www.shuicheng.gov.cn/newsite/ztzl/rdzt/xzzf/xzcf/202505/t20250513_87862093.html",
+            "http://www.shuicheng.gov.cn/newsite/ztzl/rdzt/xzzf/xzcf/202505/t20250509_87693454.html",
+            "http://www.shuicheng.gov.cn/newsite/ztzl/rdzt/xzzf/xzcf/202504/t20250418_87542731.html",
+            "http://www.shuicheng.gov.cn/newsite/ztzl/rdzt/xzzf/xzcf/202503/t20250328_87295158.html",
+            "http://www.shuicheng.gov.cn/newsite/ztzl/rdzt/xzzf/xzcf/202503/t20250321_87233961.html",
+            "http://www.shuicheng.gov.cn/newsite/ztzl/rdzt/qmtjjczwgkbzhgfhzt/zdgf/202504/t20250416_87528552.html",
+            "http://www.shuicheng.gov.cn/newsite/ztzl/rdzt/qmtjjczwgkbzhgfhzt/zdgf/202302/t20230209_78175993.html",
+            "http://www.shuicheng.gov.cn/newsite/ztzl/rdzt/qmtjjczwgkbzhgfhzt/zdgf/202202/t20220224_72703551.html",
+            "http://www.shuicheng.gov.cn/newsite/ztzl/rdzt/qmtjjczwgkbzhgfhzt/zdgf/202109/t20210916_70439659.html",
+            "http://www.shuicheng.gov.cn/newsite/ztzl/rdzt/qmtjjczwgkbzhgfhzt/zdgf/202009/t20200928_63601593.html"
+        ],
+        "link_score": 6,
+        "link_index": 6,
+        "link_re": "[not(re:test(@href, '\\d+/[a-zA-Z]\\d+_\\d+.html', 'g'))]",
+        "link_value_list": [
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwdt/zwyw/202506/t20250616_88144102.html",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwdt/tzgg/202106/t20210623_68770241.html",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwdt/tzgg/202506/t20250613_88134859.html",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwdt/zwyw/202506/t20250609_88112297.html",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwdt/zwyw/202506/t20250616_88144009.html",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwdt/zwyw/202506/t20250612_88129593.html",
+                "plate_result": "D"
+            }
+        ]
+    },
+    "1bd53dcdc99ff81fc76f65ff4e0eb3d5": {
+        "link_type": "1bd53dcdc99ff81fc76f65ff4e0eb3d5",
+        "link_list": [
+            "http://www.shuicheng.gov.cn/newsite/ztzl/rdzt/jcjf_index.html"
+        ],
+        "link_score": 1,
+        "link_index": 1,
+        "link_re": "[not(re:test(@href, '[a-zA-Z]+_[a-zA-Z]+.html', 'g'))]",
+        "link_value_list": [
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/ztzl/rdzt/jcjf_index.html",
+                "plate_result": "D"
+            }
+        ]
+    },
+    "238ced7fddba870129819d39b50bc5d1": {
+        "link_type": "238ced7fddba870129819d39b50bc5d1",
+        "link_list": [
+            "http://www.shuicheng.gov.cn/newsite/ztzl/rdzt/jj53/"
+        ],
+        "link_score": -1,
+        "link_index": 1,
+        "link_re": "[not(re:test(@href, '[a-zA-Z]+\\d+', 'g'))]",
+        "link_value_list": [
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/ztzl/rdzt/jj53/",
+                "plate_result": "L"
+            }
+        ]
+    },
+    "ee3d274d58b42621c8a56713751334cb": {
+        "link_type": "ee3d274d58b42621c8a56713751334cb",
+        "link_list": [
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zfxxgk_1/fdzdgknr/zcwj_5827454/zfwj/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zfxxgk_1/fdzdgknr/zcwj_5827454/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zfxxgk_1/fdzdgknr/zfcg_5826731/"
+        ],
+        "link_score": -3,
+        "link_index": 3,
+        "link_re": "[not(re:test(@href, '[a-zA-Z]+_\\d', 'g')) and not(re:test(@href, '[a-zA-Z]+_\\d+', 'g'))]",
+        "link_value_list": [
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/zfxxgk_1/fdzdgknr/zcwj_5827454/zfwj/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/zfxxgk_1/fdzdgknr/zcwj_5827454/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/zfxxgk_1/fdzdgknr/zfcg_5826731/",
+                "plate_result": "L"
+            }
+        ]
+    },
+    "61bd6b315dc405ad3063b59be5f8a2ea": {
+        "link_type": "61bd6b315dc405ad3063b59be5f8a2ea",
+        "link_list": [
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zfxxgk_1/fdzdgknr/zcwj_5827454/zfwj/202505/t20250530_87950430.html",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zfxxgk_1/fdzdgknr/zcwj_5827454/zfwj/202504/t20250424_87575565.html",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zfxxgk_1/fdzdgknr/zcwj_5827454/zfwj/202501/t20250124_86682167.html",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zfxxgk_1/fdzdgknr/zcwj_5827454/zfwj/202412/t20241231_86439261.html",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zfxxgk_1/fdzdgknr/zcwj_5827454/zfwj/202412/t20241202_86160106.html",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zfxxgk_1/fdzdgknr/zcwj_5827454/zfwj/202410/t20241025_85983750.html",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zfxxgk_1/fdzdgknr/zcwj_5827454/zfwj/202409/t20240914_85713564.html",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zfxxgk_1/fdzdgknr/zcwj_5827454/zfwj/202408/t20240829_85498241.html",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zfxxgk_1/fdzdgknr/zcwj_5827454/zfwj/202408/t20240829_85498090.html",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zfxxgk_1/fdzdgknr/zcwj_5827454/zfwj/202408/t20240808_85358583.html",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zfxxgk_1/fdzdgknr/zcwj_5827454/zfwj/202408/t20240801_85301686.html",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zfxxgk_1/fdzdgknr/zcwj_5827454/zfwj/202408/t20240801_85301361.html",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zfxxgk_1/fdzdgknr/zcwj_5827454/zfwj/202407/t20240716_85114153.html",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zfxxgk_1/fdzdgknr/zcwj_5827454/zfwj/202407/t20240701_84936982.html",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zfxxgk_1/fdzdgknr/zcwj_5827454/zfwj/202406/t20240612_84861492.html",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zfxxgk_1/fdzdgknr/zcwj_5827454/zfwj/202406/t20240603_84721313.html",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zfxxgk_1/fdzdgknr/zcwj_5827454/zfwj/202405/t20240511_84621909.html",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zfxxgk_1/fdzdgknr/zcwj_5827454/zfwj/202405/t20240511_84620712.html"
+        ],
+        "link_score": 2,
+        "link_index": 2,
+        "link_re": "[not(re:test(@href, '[a-zA-Z]+_\\d', 'g')) and not(re:test(@href, '[a-zA-Z]+_\\d+', 'g')) and not(re:test(@href, '\\d+/[a-zA-Z]\\d+_\\d+.html', 'g'))]",
+        "link_value_list": [
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/zfxxgk_1/fdzdgknr/zcwj_5827454/zfwj/202505/t20250530_87950430.html",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/zfxxgk_1/fdzdgknr/zcwj_5827454/zfwj/202504/t20250424_87575565.html",
+                "plate_result": "D"
+            }
+        ]
+    },
+    "8cfb083cdce0f7ebc8bc099757e987e4": {
+        "link_type": "8cfb083cdce0f7ebc8bc099757e987e4",
+        "link_list": [
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zfxxgk_1/fdzdgknr/cfqzxxgk1/"
+        ],
+        "link_score": -1,
+        "link_index": 1,
+        "link_re": "[not(re:test(@href, '[a-zA-Z]+_\\d', 'g')) and not(re:test(@href, '[a-zA-Z]+\\d', 'g'))]",
+        "link_value_list": [
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/zfxxgk_1/fdzdgknr/cfqzxxgk1/",
+                "plate_result": "L"
+            }
+        ]
+    },
+    "bfafce72eebd82978211cb4f79239781": {
+        "link_type": "bfafce72eebd82978211cb4f79239781",
+        "link_list": [
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zfxxgk_1/zfxxgknb/nb_2024n/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zfxxgk_1/zfxxgknb/nb_2023n/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zfxxgk_1/zfxxgknb/nb_2022n/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zfxxgk_1/zfxxgknb/nb_2021n/",
+            "http://www.shuicheng.gov.cn/newsite/zwgk/zfxxgk_1/zfxxgknb/nb_2020n/"
+        ],
+        "link_score": -5,
+        "link_index": 5,
+        "link_re": "[not(re:test(@href, '[a-zA-Z]+_\\d', 'g')) and not(re:test(@href, '[a-zA-Z]+_\\d+[a-zA-Z]', 'g'))]",
+        "link_value_list": [
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/zfxxgk_1/zfxxgknb/nb_2024n/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/zfxxgk_1/zfxxgknb/nb_2023n/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/zfxxgk_1/zfxxgknb/nb_2022n/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/zfxxgk_1/zfxxgknb/nb_2021n/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/zwgk/zfxxgk_1/zfxxgknb/nb_2020n/",
+                "plate_result": "L"
+            }
+        ]
+    },
+    "6e019db2ae1bb6da03e843377296bc93": {
+        "link_type": "6e019db2ae1bb6da03e843377296bc93",
+        "link_list": [
+            "http://www.shuicheng.gov.cn/newsite/ztzl/rdzt/jj53/202505/t20250516_87880741.html",
+            "http://www.shuicheng.gov.cn/newsite/ztzl/rdzt/jj53/202505/t20250508_87685445.html",
+            "http://www.shuicheng.gov.cn/newsite/ztzl/rdzt/jj53/202505/t20250508_87685415.html",
+            "http://www.shuicheng.gov.cn/newsite/ztzl/rdzt/jj53/202505/t20250508_87685444.html",
+            "http://www.shuicheng.gov.cn/newsite/ztzl/rdzt/jj53/202505/t20250508_87685443.html",
+            "http://www.shuicheng.gov.cn/newsite/ztzl/rdzt/jj53/202505/t20250508_87685442.html",
+            "http://www.shuicheng.gov.cn/newsite/ztzl/rdzt/jj53/202505/t20250508_87685426.html",
+            "http://www.shuicheng.gov.cn/newsite/ztzl/rdzt/jj53/202505/t20250508_87685414.html"
+        ],
+        "link_score": 1,
+        "link_index": 1,
+        "link_re": "[not(re:test(@href, '[a-zA-Z]+\\d+/\\d+', 'g')) and not(re:test(@href, '[a-zA-Z]\\d+_\\d+.html', 'g'))]",
+        "link_value_list": [
+            {
+                "url": "http://www.shuicheng.gov.cn/newsite/ztzl/rdzt/jj53/202505/t20250516_87880741.html",
+                "plate_result": "D"
+            }
+        ]
+    }
+}

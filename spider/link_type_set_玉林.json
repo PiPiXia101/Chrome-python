@@ -1,0 +1,1458 @@
+{
+    "default": {
+        "link_type": "default",
+        "link_list": [
+            "http://www.yulin.gov.cn/zzzq/",
+            "http://www.yulin.gov.cn/zjyl/",
+            "http://www.yulin.gov.cn/zjyl/ylls/",
+            "http://www.yulin.gov.cn/zjyl/ylgk/",
+            "http://www.yulin.gov.cn/zjyl/ylyx/",
+            "http://www.yulin.gov.cn/zjyl/ylwh/",
+            "http://www.yulin.gov.cn/zjyl/yltz/",
+            "http://www.yulin.gov.cn/zjyl/ylly/",
+            "http://www.yulin.gov.cn/zjyl/ylms/",
+            "http://www.yulin.gov.cn/gkzl/",
+            "http://www.yulin.gov.cn/gkzl/zc/",
+            "http://www.yulin.gov.cn/gkzl/xxgkzn/",
+            "http://www.yulin.gov.cn/gkzl/xinxigongkaizhidu/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/",
+            "http://www.yulin.gov.cn/gkzl/xxgknb/",
+            "http://www.yulin.gov.cn/gkzl/ysqgk/",
+            "http://www.yulin.gov.cn/gkzl/zfwznbgk/",
+            "http://www.yulin.gov.cn/gkzl/zfxxgklj/",
+            "http://www.yulin.gov.cn/dhjl/",
+            "http://www.yulin.gov.cn/dhjl/myzj/",
+            "http://www.yulin.gov.cn/dhjl/zwzx/",
+            "http://www.yulin.gov.cn/dhjl/zwhdtj/",
+            "http://www.yulin.gov.cn/dhjl/zxft/",
+            "http://www.yulin.gov.cn/dhjl/cshd/",
+            "http://www.yulin.gov.cn/bmlqfw/",
+            "http://www.yulin.gov.cn/bmlqfw/bmfw/",
+            "http://www.yulin.gov.cn/bmlqfw/bsfw/",
+            "http://www.yulin.gov.cn/bmlqfw/cxfw/",
+            "http://www.yulin.gov.cn/bmlqfw/jsms/",
+            "http://www.yulin.gov.cn/sjfb/",
+            "http://www.yulin.gov.cn/sjfb/tjsj/",
+            "http://www.yulin.gov.cn/sjfb/tjfx/",
+            "http://www.yulin.gov.cn/sjfb/tjgb/",
+            "http://www.yulin.gov.cn/sjfb/flsj/",
+            "http://www.yulin.gov.cn/sjfb/sjkf/",
+            "http://www.yulin.gov.cn/jryl/bmts/bmrl/",
+            "http://www.yulin.gov.cn/zwdt/",
+            "http://www.yulin.gov.cn/jzgk/",
+            "http://www.yulin.gov.cn/jryl/zwxx/",
+            "http://www.yulin.gov.cn/jryl/bmdt/",
+            "http://www.yulin.gov.cn/jryl/xsqdt/",
+            "http://www.yulin.gov.cn/jryl/tzgg/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/zyhy/",
+            "http://www.yulin.gov.cn/zcwj/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/jytajggk/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/bmqzqd/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/qtzdxxgk/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/jggk/",
+            "http://www.yulin.gov.cn/zhengfugongbao/",
+            "http://www.yulin.gov.cn/zcwj/difangxingfagui/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/rsxx/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ghjh/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/gzbg/",
+            "http://www.yulin.gov.cn/bmlqfw/bsfw/grbs/",
+            "http://www.yulin.gov.cn/bmlqfw/bsfw/frbs/",
+            "http://www.yulin.gov.cn/bmlqfw/bmfw/jypx/",
+            "http://www.yulin.gov.cn/bmlqfw/bmfw/ldjy/",
+            "http://www.yulin.gov.cn/bmlqfw/bmfw/shbx/",
+            "http://www.yulin.gov.cn/bmlqfw/bmfw/yljk/",
+            "http://www.yulin.gov.cn/bmlqfw/bmfw/jzfl/",
+            "http://www.yulin.gov.cn/bmlqfw/bmfw/bzxzf/",
+            "http://www.yulin.gov.cn/bmlqfw/bmfw/hysy/",
+            "http://www.yulin.gov.cn/bmlqfw/bmfw/jtcx/",
+            "http://www.yulin.gov.cn/bmlqfw/bmfw/zjbl/",
+            "http://www.yulin.gov.cn/bmlqfw/bmfw/qykb/",
+            "http://www.yulin.gov.cn/ztjj/dqzt/",
+            "http://www.yulin.gov.cn/jwmsxfwmjkynywgygg/",
+            "http://www.yulin.gov.cn/",
+            "http://www.yulin.gov.cn/ztjj/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ggzypzlygk/zfbzly/zhufangfenpei/"
+        ],
+        "link_score": -8,
+        "link_index": 70,
+        "link_re": false,
+        "link_value_list": [
+            {
+                "url": "http://www.yulin.gov.cn/zzzq/",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/zjyl/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/zjyl/ylls/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/zjyl/ylgk/",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/zjyl/ylyx/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/zjyl/ylwh/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/zjyl/yltz/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/zjyl/ylly/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/zjyl/ylms/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/zc/",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/xxgkzn/",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/xinxigongkaizhidu/",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/xxgknb/",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/ysqgk/",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/zfwznbgk/",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/zfxxgklj/",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/dhjl/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/dhjl/myzj/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/dhjl/zwzx/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/dhjl/zwhdtj/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/dhjl/zxft/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/dhjl/cshd/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/bmlqfw/",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/bmlqfw/bmfw/",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/bmlqfw/bsfw/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/bmlqfw/cxfw/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/sjfb/tjsj/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/sjfb/tjfx/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/sjfb/tjgb/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/sjfb/flsj/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/sjfb/sjkf/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/jryl/bmts/bmrl/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/zwdt/",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/jzgk/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/jryl/zwxx/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/jryl/bmdt/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/jryl/xsqdt/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/jryl/tzgg/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/zyhy/",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/zcwj/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/jytajggk/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/bmqzqd/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/qtzdxxgk/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/jggk/",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/zhengfugongbao/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/zcwj/difangxingfagui/",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/rsxx/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ghjh/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/gzbg/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/bmlqfw/bsfw/grbs/",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/bmlqfw/bsfw/frbs/",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/bmlqfw/bmfw/jypx/",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/bmlqfw/bmfw/ldjy/",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/bmlqfw/bmfw/shbx/",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/bmlqfw/bmfw/yljk/",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/bmlqfw/bmfw/jzfl/",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/bmlqfw/bmfw/bzxzf/",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/bmlqfw/bmfw/hysy/",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/bmlqfw/bmfw/jtcx/",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/bmlqfw/bmfw/zjbl/",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/bmlqfw/bmfw/qykb/",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/ztjj/dqzt/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/jwmsxfwmjkynywgygg/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/ztjj/",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ggzypzlygk/zfbzly/zhufangfenpei/",
+                "plate_result": "L"
+            }
+        ]
+    },
+    "e264946012f5336e02d59eae0ecd700e": {
+        "link_type": "e264946012f5336e02d59eae0ecd700e",
+        "link_list": [
+            "http://www.yulin.gov.cn/gx-znwd/home/yulin"
+        ],
+        "link_score": 1,
+        "link_index": 1,
+        "link_re": "[not(re:test(@href, '[a-zA-Z]+-[a-zA-Z]+', 'g'))]",
+        "link_value_list": [
+            {
+                "url": "http://www.yulin.gov.cn/gx-znwd/home/yulin",
+                "plate_result": "DL"
+            }
+        ]
+    },
+    "e76ce7c122b8170a247285285f694ed5": {
+        "link_type": "e76ce7c122b8170a247285285f694ed5",
+        "link_list": [
+            "http://www.yulin.gov.cn/gx-gbk-search/#/search?keywords=&name=%E7%8E%89%E6%9E%97%E5%B8%82%E4%BA%BA%E6%B0%91%E6%94%BF%E5%BA%9C"
+        ],
+        "link_score": -1,
+        "link_index": 1,
+        "link_re": "[not(re:test(@href, '[a-zA-Z]+-[a-zA-Z]+-[a-zA-Z]+/#', 'g'))]",
+        "link_value_list": [
+            {
+                "url": "http://www.yulin.gov.cn/gx-gbk-search/#/search?keywords=&name=%E7%8E%89%E6%9E%97%E5%B8%82%E4%BA%BA%E6%B0%91%E6%94%BF%E5%BA%9C",
+                "plate_result": "L"
+            }
+        ]
+    },
+    "685fec37c9b9b0ac71b6c4d81ad3bc50": {
+        "link_type": "685fec37c9b9b0ac71b6c4d81ad3bc50",
+        "link_list": [
+            "http://www.yulin.gov.cn/dhjl/xwfbh_30372/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/"
+        ],
+        "link_score": -2,
+        "link_index": 2,
+        "link_re": "[not(re:test(@href, '[a-zA-Z]+_\\d+', 'g'))]",
+        "link_value_list": [
+            {
+                "url": "http://www.yulin.gov.cn/dhjl/xwfbh_30372/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/",
+                "plate_result": "L"
+            }
+        ]
+    },
+    "dd76da29fe0b27ed57598175201d1508": {
+        "link_type": "dd76da29fe0b27ed57598175201d1508",
+        "link_list": [
+            "http://www.yulin.gov.cn/dhjl/hygq_1/",
+            "http://www.yulin.gov.cn/zcwj/zcjd_1/"
+        ],
+        "link_score": 0,
+        "link_index": 2,
+        "link_re": "[not(re:test(@href, '[a-zA-Z]+_\\d', 'g'))]",
+        "link_value_list": [
+            {
+                "url": "http://www.yulin.gov.cn/dhjl/hygq_1/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/zcwj/zcjd_1/",
+                "plate_result": "DL"
+            }
+        ]
+    },
+    "7bde8bebf28cc10487ebc5b2b2ac0013": {
+        "link_type": "7bde8bebf28cc10487ebc5b2b2ac0013",
+        "link_list": [
+            "http://www.yulin.gov.cn/jryl/zwxx/t21207274.shtml",
+            "http://www.yulin.gov.cn/jryl/zwxx/t18981897.shtml",
+            "http://www.yulin.gov.cn/jryl/zwxx/t19668829.shtml",
+            "http://www.yulin.gov.cn/jryl/zwxx/t19748340.shtml",
+            "http://www.yulin.gov.cn/jryl/zwxx/t19952894.shtml",
+            "http://www.yulin.gov.cn/jryl/zwxx/t19761984.shtml",
+            "http://www.yulin.gov.cn/jryl/zwxx/t18763124.shtml",
+            "http://www.yulin.gov.cn/jryl/zwxx/t18494683.shtml",
+            "http://www.yulin.gov.cn/jryl/zwxx/t19945549.shtml",
+            "http://www.yulin.gov.cn/jryl/zwxx/t21174631.shtml",
+            "http://www.yulin.gov.cn/jryl/zwxx/t21077736.shtml",
+            "http://www.yulin.gov.cn/jryl/zwxx/t20309855.shtml",
+            "http://www.yulin.gov.cn/jryl/zwxx/t20160246.shtml",
+            "http://www.yulin.gov.cn/jryl/zwxx/t21201482.shtml",
+            "http://www.yulin.gov.cn/jryl/zwxx/t21201140.shtml",
+            "http://www.yulin.gov.cn/jryl/zwxx/t21196973.shtml",
+            "http://www.yulin.gov.cn/jryl/zwxx/t21189488.shtml",
+            "http://www.yulin.gov.cn/jryl/bmdt/t21204766.shtml",
+            "http://www.yulin.gov.cn/jryl/bmdt/t21201630.shtml",
+            "http://www.yulin.gov.cn/jryl/bmdt/t21201963.shtml",
+            "http://www.yulin.gov.cn/jryl/xsqdt/t21203818.shtml",
+            "http://www.yulin.gov.cn/jryl/xsqdt/t21203811.shtml",
+            "http://www.yulin.gov.cn/jryl/xsqdt/t21203806.shtml",
+            "http://www.yulin.gov.cn/jryl/xsqdt/t21203803.shtml",
+            "http://www.yulin.gov.cn/jryl/xsqdt/t21203810.shtml",
+            "http://www.yulin.gov.cn/jryl/tzgg/t19530651.shtml",
+            "http://www.yulin.gov.cn/jryl/tzgg/t19525024.shtml",
+            "http://www.yulin.gov.cn/jryl/tzgg/t21204364.shtml",
+            "http://www.yulin.gov.cn/jryl/tzgg/t21146945.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/zyhy/swhy/t21207282.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/zyhy/swhy/t21185241.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/zyhy/szfcwhy/t21170401.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/zyhy/swhy/t21166800.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/zyhy/szfcwhy/t21148479.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/zyhy/swhy/t21138896.shtml",
+            "http://www.yulin.gov.cn/zcwj/zfl/t9790821.shtml",
+            "http://www.yulin.gov.cn/zcwj/bmwj/swj/t21196603.shtml",
+            "http://www.yulin.gov.cn/zcwj/bmwj/swj/t21174037.shtml",
+            "http://www.yulin.gov.cn/zcwj/bmwj/swj/t21149138.shtml",
+            "http://www.yulin.gov.cn/zcwj/bmwj/swj/t21149136.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/jytajggk/rendajianyi/t18843781.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/jytajggk/zhengxietian/t18843763.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/jytajggk/zhengxietian/t18843764.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/jytajggk/zhengxietian/t18843765.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/jytajggk/rendajianyi/t18843782.shtml",
+            "http://www.yulin.gov.cn/dhjl/zwhdtj/t21162246.shtml",
+            "http://www.yulin.gov.cn/dhjl/zwhdtj/t20443770.shtml",
+            "http://www.yulin.gov.cn/dhjl/zwhdtj/t19769833.shtml",
+            "http://www.yulin.gov.cn/dhjl/zwhdtj/t19689347.shtml",
+            "http://www.yulin.gov.cn/dhjl/zwhdtj/t19566036.shtml",
+            "http://www.yulin.gov.cn/dhjl/zwhdtj/t19467826.shtml",
+            "http://www.yulin.gov.cn/jwmsxfwmjkynywgygg/t17832258.shtml",
+            "http://www.yulin.gov.cn/jwmsxfwmjkynywgygg/t16707947.shtml",
+            "http://www.yulin.gov.cn/jwmsxfwmjkynywgygg/t13045616.shtml",
+            "http://www.yulin.gov.cn/jwmsxfwmjkynywgygg/t13045624.shtml",
+            "http://www.yulin.gov.cn/jwmsxfwmjkynywgygg/t13045885.shtml",
+            "http://www.yulin.gov.cn/jwmsxfwmjkynywgygg/t19584771.shtml",
+            "http://www.yulin.gov.cn/jwmsxfwmjkynywgygg/t19584739.shtml",
+            "http://www.yulin.gov.cn/jwmsxfwmjkynywgygg/t18439566.shtml",
+            "http://www.yulin.gov.cn/jwmsxfwmjkynywgygg/t18226030.shtml",
+            "http://www.yulin.gov.cn/jwmsxfwmjkynywgygg/t16708969.shtml",
+            "http://www.yulin.gov.cn/jwmsxfwmjkynywgygg/t18035108.shtml",
+            "http://www.yulin.gov.cn/jwmsxfwmjkynywgygg/t17937763.shtml",
+            "http://www.yulin.gov.cn/jwmsxfwmjkynywgygg/t17937758.shtml",
+            "http://www.yulin.gov.cn/jwmsxfwmjkynywgygg/t17937747.shtml",
+            "http://www.yulin.gov.cn/jwmsxfwmjkynywgygg/t17832902.shtml",
+            "http://www.yulin.gov.cn/jryl/zwxx/t21185091.shtml",
+            "http://www.yulin.gov.cn/bmlqfw/cxfw/bmcycx/jyky/t21035713.shtml",
+            "http://www.yulin.gov.cn/bmlqfw/cxfw/bmcycx/jyky/t19932832.shtml",
+            "http://www.yulin.gov.cn/bmlqfw/cxfw/bmcycx/jyky/t17445049.shtml",
+            "http://www.yulin.gov.cn/bmlqfw/cxfw/bmcycx/jyky/t17397555.shtml",
+            "http://www.yulin.gov.cn/bmlqfw/cxfw/bmcycx/jyky/t18797154.shtml",
+            "http://www.yulin.gov.cn/bmlqfw/cxfw/bmcycx/jyky/t18828506.shtml",
+            "http://www.yulin.gov.cn/bmlqfw/cxfw/bmcycx/jyky/t18828476.shtml",
+            "http://www.yulin.gov.cn/bmlqfw/cxfw/bmcycx/jyky/t18828486.shtml",
+            "http://www.yulin.gov.cn/bmlqfw/cxfw/bmcycx/jyky/t17397510.shtml",
+            "http://www.yulin.gov.cn/bmlqfw/cxfw/bmcycx/jyky/t18828930.shtml",
+            "http://www.yulin.gov.cn/bmlqfw/cxfw/bmcycx/zjbl/t18713117.shtml",
+            "http://www.yulin.gov.cn/bmlqfw/cxfw/bmcycx/hysy/t17392417.shtml",
+            "http://www.yulin.gov.cn/bmlqfw/cxfw/bmcycx/hysy/t17404985.shtml",
+            "http://www.yulin.gov.cn/bmlqfw/cxfw/bmcycx/wtly/t18816284.shtml",
+            "http://www.yulin.gov.cn/bmlqfw/cxfw/bmcycx/wtly/t18816283.shtml",
+            "http://www.yulin.gov.cn/bmlqfw/cxfw/bmcycx/wtly/t18816281.shtml",
+            "http://www.yulin.gov.cn/bmlqfw/cxfw/bmcycx/wtly/t18816282.shtml",
+            "http://www.yulin.gov.cn/bmlqfw/cxfw/bmcycx/wtly/t18816285.shtml",
+            "http://www.yulin.gov.cn/bmlqfw/cxfw/bmcycx/wtly/t18816280.shtml",
+            "http://www.yulin.gov.cn/bmlqfw/cxfw/bmcycx/wtly/t18816279.shtml",
+            "http://www.yulin.gov.cn/bmlqfw/cxfw/bmcycx/ylws/t18771372.shtml",
+            "http://www.yulin.gov.cn/bmlqfw/cxfw/bmcycx/ylws/t17589843.shtml",
+            "http://www.yulin.gov.cn/bmlqfw/cxfw/bmcycx/ylws/t18896090.shtml",
+            "http://www.yulin.gov.cn/bmlqfw/cxfw/bmcycx/zfbz/t18817210.shtml",
+            "http://www.yulin.gov.cn/bmlqfw/cxfw/bmcycx/shbz/t17404612.shtml",
+            "http://www.yulin.gov.cn/bmlqfw/cxfw/bmcycx/shbz/t17404589.shtml",
+            "http://www.yulin.gov.cn/bmlqfw/cxfw/bmcycx/shbz/t17404571.shtml",
+            "http://www.yulin.gov.cn/bmlqfw/cxfw/bmcycx/shbz/t17404611.shtml",
+            "http://www.yulin.gov.cn/bmlqfw/cxfw/lqcycx/cwss/t17445308.shtml",
+            "http://www.yulin.gov.cn/bmlqfw/cxfw/bmcycx/qtcx/t19113555.shtml",
+            "http://www.yulin.gov.cn/bmlqfw/cxfw/bmcycx/qtcx/t18828186.shtml",
+            "http://www.yulin.gov.cn/bmlqfw/cxfw/bmcycx/qtcx/t18827986.shtml",
+            "http://www.yulin.gov.cn/bmlqfw/cxfw/bmcycx/qtcx/t18819098.shtml",
+            "http://www.yulin.gov.cn/bmlqfw/cxfw/bmcycx/qtcx/t18819025.shtml",
+            "http://www.yulin.gov.cn/bmlqfw/bmfw/zjbl/hjbl/wyc/t17438586.shtml",
+            "http://www.yulin.gov.cn/bmlqfw/bmfw/zjbl/hjbl/wyc/t17438590.shtml",
+            "http://www.yulin.gov.cn/bmlqfw/bmfw/jzfl/shjz/wyc/t17441714.shtml",
+            "http://www.yulin.gov.cn/bmlqfw/bmfw/jzfl/lnrfl/wyc/t17356160.shtml",
+            "http://www.yulin.gov.cn/bmlqfw/bmfw/jtcx/ggjt/wyc/t19085570.shtml",
+            "http://www.yulin.gov.cn/zwgk/bmlqfw/bmfw/jzfl/cjrfl/wyc/t17278605.shtml"
+        ],
+        "link_score": 11,
+        "link_index": 13,
+        "link_re": "[not(re:test(@href, '[a-zA-Z]\\d+.[a-zA-Z]html', 'g'))]",
+        "link_value_list": [
+            {
+                "url": "http://www.yulin.gov.cn/jryl/zwxx/t21207274.shtml",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/jryl/zwxx/t18981897.shtml",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/jryl/zwxx/t19668829.shtml",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/jryl/zwxx/t19748340.shtml",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/jryl/zwxx/t19952894.shtml",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/jryl/zwxx/t19761984.shtml",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/jryl/zwxx/t18763124.shtml",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/jryl/zwxx/t18494683.shtml",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/jryl/zwxx/t19945549.shtml",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/jryl/zwxx/t21174631.shtml",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/jryl/zwxx/t21077736.shtml",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/jryl/zwxx/t20309855.shtml",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/jryl/zwxx/t20160246.shtml",
+                "plate_result": "D"
+            }
+        ]
+    },
+    "79c6d1fd6ea10c99fd6ecf66e965c194": {
+        "link_type": "79c6d1fd6ea10c99fd6ecf66e965c194",
+        "link_list": [
+            "http://www.yulin.gov.cn/zcwj/zcjd_1/t21135667.shtml",
+            "http://www.yulin.gov.cn/zcwj/zcjd_1/t21086273.shtml",
+            "http://www.yulin.gov.cn/bmlqfw/bmfw/shbx/yanglaobaoxian/wyc_1/t17388100.shtml",
+            "http://www.yulin.gov.cn/dhjl/hygq_1/t19642446.shtml",
+            "http://www.yulin.gov.cn/dhjl/hygq_1/t19616833.shtml",
+            "http://www.yulin.gov.cn/dhjl/hygq_1/t19504147.shtml",
+            "http://www.yulin.gov.cn/dhjl/hygq_1/t19454278.shtml",
+            "http://www.yulin.gov.cn/dhjl/hygq_1/t19366931.shtml",
+            "http://www.yulin.gov.cn/dhjl/hygq_1/t19366919.shtml",
+            "http://www.yulin.gov.cn/dhjl/hygq_1/t19268749.shtml",
+            "http://www.yulin.gov.cn/dhjl/hygq_1/t19207731.shtml",
+            "http://www.yulin.gov.cn/dhjl/hygq_1/t19158952.shtml",
+            "http://www.yulin.gov.cn/dhjl/hygq_1/t19089392.shtml",
+            "http://www.yulin.gov.cn/dhjl/hygq_1/t18856000.shtml",
+            "http://www.yulin.gov.cn/dhjl/hygq_1/t18731274.shtml",
+            "http://www.yulin.gov.cn/dhjl/hygq_1/t18514246.shtml",
+            "http://www.yulin.gov.cn/dhjl/hygq_1/t18431819.shtml",
+            "http://www.yulin.gov.cn/dhjl/hygq_1/t18473826.shtml",
+            "http://www.yulin.gov.cn/dhjl/hygq_1/t18017962.shtml",
+            "http://www.yulin.gov.cn/dhjl/hygq_1/t17784162.shtml",
+            "http://www.yulin.gov.cn/dhjl/hygq_1/t17501614.shtml",
+            "http://www.yulin.gov.cn/dhjl/hygq_1/t17349911.shtml",
+            "http://www.yulin.gov.cn/dhjl/hygq_1/t17225346.shtml",
+            "http://www.yulin.gov.cn/dhjl/hygq_1/t17096447.shtml",
+            "http://www.yulin.gov.cn/dhjl/hygq_1/t16966529.shtml",
+            "http://www.yulin.gov.cn/dhjl/hygq_1/t16644386.shtml",
+            "http://www.yulin.gov.cn/dhjl/hygq_1/t16597260.shtml",
+            "http://www.yulin.gov.cn/dhjl/hygq_1/t16597282.shtml",
+            "http://www.yulin.gov.cn/dhjl/hygq_1/t16499832.shtml"
+        ],
+        "link_score": 3,
+        "link_index": 3,
+        "link_re": "[not(re:test(@href, '[a-zA-Z]+_\\d/[a-zA-Z]\\d+.[a-zA-Z]html', 'g'))]",
+        "link_value_list": [
+            {
+                "url": "http://www.yulin.gov.cn/zcwj/zcjd_1/t21135667.shtml",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/zcwj/zcjd_1/t21086273.shtml",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/bmlqfw/bmfw/shbx/yanglaobaoxian/wyc_1/t17388100.shtml",
+                "plate_result": "D"
+            }
+        ]
+    },
+    "fd8e3d8cb78a71d89481ade0e28ddcfe": {
+        "link_type": "fd8e3d8cb78a71d89481ade0e28ddcfe",
+        "link_list": [
+            "http://www.yulin.gov.cn/dhjl/xwfbh_30372/t21130277.shtml",
+            "http://www.yulin.gov.cn/dhjl/xwfbh_30372/t19454275.shtml",
+            "http://www.yulin.gov.cn/dhjl/xwfbh_30372/t19442658.shtml",
+            "http://www.yulin.gov.cn/dhjl/xwfbh_30372/t19442653.shtml",
+            "http://www.yulin.gov.cn/dhjl/xwfbh_30372/t19431339.shtml",
+            "http://www.yulin.gov.cn/dhjl/xwfbh_30372/t19366816.shtml",
+            "http://www.yulin.gov.cn/dhjl/xwfbh_30372/t19319886.shtml",
+            "http://www.yulin.gov.cn/dhjl/xwfbh_30372/t19297554.shtml",
+            "http://www.yulin.gov.cn/dhjl/xwfbh_30372/t19291021.shtml",
+            "http://www.yulin.gov.cn/dhjl/xwfbh_30372/t19011858.shtml",
+            "http://www.yulin.gov.cn/dhjl/xwfbh_30372/t18886291.shtml",
+            "http://www.yulin.gov.cn/dhjl/xwfbh_30372/t18855224.shtml",
+            "http://www.yulin.gov.cn/dhjl/xwfbh_30372/t18855619.shtml",
+            "http://www.yulin.gov.cn/dhjl/xwfbh_30372/t18805432.shtml",
+            "http://www.yulin.gov.cn/dhjl/xwfbh_30372/t18766972.shtml",
+            "http://www.yulin.gov.cn/dhjl/xwfbh_30372/t18764594.shtml",
+            "http://www.yulin.gov.cn/dhjl/xwfbh_30372/t18668905.shtml",
+            "http://www.yulin.gov.cn/dhjl/xwfbh_30372/t18612612.shtml",
+            "http://www.yulin.gov.cn/dhjl/xwfbh_30372/t18545563.shtml",
+            "http://www.yulin.gov.cn/dhjl/xwfbh_30372/t18578405.shtml",
+            "http://www.yulin.gov.cn/dhjl/xwfbh_30372/t18048605.shtml",
+            "http://www.yulin.gov.cn/dhjl/xwfbh_30372/t17784069.shtml",
+            "http://www.yulin.gov.cn/dhjl/xwfbh_30372/t17758270.shtml",
+            "http://www.yulin.gov.cn/dhjl/xwfbh_30372/t17758279.shtml",
+            "http://www.yulin.gov.cn/dhjl/xwfbh_30372/t17758315.shtml",
+            "http://www.yulin.gov.cn/dhjl/xwfbh_30372/t17510558.shtml",
+            "http://www.yulin.gov.cn/dhjl/xwfbh_30372/t17009697.shtml",
+            "http://www.yulin.gov.cn/dhjl/xwfbh_30372/t16981712.shtml"
+        ],
+        "link_score": 3,
+        "link_index": 3,
+        "link_re": "[not(re:test(@href, '[a-zA-Z]+_\\d+/[a-zA-Z]\\d+.[a-zA-Z]html', 'g'))]",
+        "link_value_list": [
+            {
+                "url": "http://www.yulin.gov.cn/dhjl/xwfbh_30372/t21130277.shtml",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/dhjl/xwfbh_30372/t19454275.shtml",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/dhjl/xwfbh_30372/t19442658.shtml",
+                "plate_result": "D"
+            }
+        ]
+    },
+    "4ca5388da3fa026d0149022c583d456a": {
+        "link_type": "4ca5388da3fa026d0149022c583d456a",
+        "link_list": [
+            "http://www.yulin.gov.cn/bmlqfw/cxfw/index.shtml",
+            "http://www.yulin.gov.cn/detail.shtml?metadataId=157814444766",
+            "http://www.yulin.gov.cn/detail.shtml?metadataId=157814434878",
+            "http://www.yulin.gov.cn/detail.shtml?metadataId=157814421472",
+            "http://www.yulin.gov.cn/detail.shtml?metadataId=157814414603",
+            "http://www.yulin.gov.cn/detail.shtml?metadataId=157814410126",
+            "http://www.yulin.gov.cn/detail.shtml?metadataId=157814410125",
+            "http://www.yulin.gov.cn/ztjj/dierhuanjingbaohu/index.shtml",
+            "http://www.yulin.gov.cn/ztjj/bwcxsmwzzbss/index.shtml",
+            "http://www.yulin.gov.cn/ztjj/ywsccllnmyjmp/index.shtml",
+            "http://www.yulin.gov.cn/ztjj/tdxyldgmsbgxhxfpyjhx/index.shtml",
+            "http://www.yulin.gov.cn/ztjj/spaqzl/index.shtml",
+            "http://www.yulin.gov.cn/ztjj/ylscjrlhhzl/index.shtml",
+            "http://www.yulin.gov.cn/ztjj/ylsjgzzt/index.shtml",
+            "http://www.yulin.gov.cn/ztjj/ylszfwzpcbbzl/index.shtml",
+            "http://www.yulin.gov.cn/map.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/jghsf/shangpingjiage/index.shtml"
+        ],
+        "link_score": 2,
+        "link_index": 4,
+        "link_re": "[not(re:test(@href, '[a-zA-Z]+.[a-zA-Z]html', 'g'))]",
+        "link_value_list": [
+            {
+                "url": "http://www.yulin.gov.cn/bmlqfw/cxfw/index.shtml",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/detail.shtml?metadataId=157814444766",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/detail.shtml?metadataId=157814434878",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/detail.shtml?metadataId=157814421472",
+                "plate_result": "D"
+            }
+        ]
+    },
+    "0ca091dd6ff1f381e493fabe9e276dea": {
+        "link_type": "0ca091dd6ff1f381e493fabe9e276dea",
+        "link_list": [
+            "http://www.yulin.gov.cn//dhjl/myzj/opinionDetail.shtml?opinionid=9915"
+        ],
+        "link_score": 1,
+        "link_index": 1,
+        "link_re": "[not(re:test(@href, '', 'g')) and not(re:test(@href, '[a-zA-Z]+.[a-zA-Z]html', 'g'))]",
+        "link_value_list": [
+            {
+                "url": "http://www.yulin.gov.cn//dhjl/myzj/opinionDetail.shtml?opinionid=9915",
+                "plate_result": "D"
+            }
+        ]
+    },
+    "c4726b60a7459cceed98fa9f6b339074": {
+        "link_type": "c4726b60a7459cceed98fa9f6b339074",
+        "link_list": [
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/index.shtml",
+            "http://www.yulin.gov.cn/dhjl/xwfbh_30372/index.shtml"
+        ],
+        "link_score": -2,
+        "link_index": 2,
+        "link_re": "[not(re:test(@href, '[a-zA-Z]+_\\d+/[a-zA-Z]+.[a-zA-Z]html', 'g'))]",
+        "link_value_list": [
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/index.shtml",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/dhjl/xwfbh_30372/index.shtml",
+                "plate_result": "L"
+            }
+        ]
+    },
+    "efe23f5090260768dd14726416505dd0": {
+        "link_type": "efe23f5090260768dd14726416505dd0",
+        "link_list": [
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2025n_2/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2024n_3/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2023n_3/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2022n_3/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2021n_3/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfzw/2024n_1/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfzw/2023n_1/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfzw/2022n_1/"
+        ],
+        "link_score": 1,
+        "link_index": 1,
+        "link_re": "[not(re:test(@href, '[a-zA-Z]+_\\d+', 'g')) and not(re:test(@href, '\\d+[a-zA-Z]_\\d', 'g'))]",
+        "link_value_list": [
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2025n_2/",
+                "plate_result": "D"
+            }
+        ]
+    },
+    "0e04f3910635771c6e7c2e7911a1764f": {
+        "link_type": "0e04f3910635771c6e7c2e7911a1764f",
+        "link_list": [
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2020n/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfjs/2023n/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2025n/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2024n/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2023n/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2022n/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2021n/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2024n/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2023n/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2019n/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2018n/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/sgjf/2024n/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/sgjf/2023n/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/sgjf/2022n/"
+        ],
+        "link_score": -6,
+        "link_index": 14,
+        "link_re": "[not(re:test(@href, '[a-zA-Z]+_\\d+', 'g')) and not(re:test(@href, '\\d+[a-zA-Z]', 'g'))]",
+        "link_value_list": [
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2020n/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfjs/2023n/",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2025n/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2024n/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2023n/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2022n/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2021n/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2024n/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2023n/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2019n/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2018n/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/sgjf/2024n/",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/sgjf/2023n/",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/sgjf/2022n/",
+                "plate_result": "D"
+            }
+        ]
+    },
+    "34cdc3dd7eddbb352c8e1b5d1d09064c": {
+        "link_type": "34cdc3dd7eddbb352c8e1b5d1d09064c",
+        "link_list": [
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2019n_30037/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfjs/2022n_30043/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfjs/2021n_30043/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfjs/2020n_30043/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfjs/2019n_30042/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfjs/2018n_30039/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfjs/2017n_30040/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2020n_30047/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2019n_30047/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2022n_30020/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2021n_30020/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2020n_30020/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2023n_30042/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2022n_30042/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2021n_30041/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2021n_30026/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2020n_30026/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2019n_30026/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2018n_30023/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/sgjf/2021n_30032/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/sgjf/2021n_30031/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/sgjf/2020n_30031/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfzw/2021n_30051/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfzw/2020n_30051/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfzw/2019n_30050/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfzw/2018n_30049/"
+        ],
+        "link_score": 3,
+        "link_index": 5,
+        "link_re": "[not(re:test(@href, '[a-zA-Z]+_\\d+', 'g')) and not(re:test(@href, '\\d+[a-zA-Z]_\\d+', 'g'))]",
+        "link_value_list": [
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2019n_30037/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfjs/2022n_30043/",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfjs/2021n_30043/",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfjs/2020n_30043/",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfjs/2019n_30042/",
+                "plate_result": "D"
+            }
+        ]
+    },
+    "dd97b6cfb7d26ef66edc2a4b9a453dd3": {
+        "link_type": "dd97b6cfb7d26ef66edc2a4b9a453dd3",
+        "link_list": [
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2025n_2/t20911195.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2025n_2/t19965947.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2025n_2/t19707506.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2025n_2/t19683418.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2025n_2/t19594893.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2024n_3/t19489577.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2024n_3/t19408971.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2024n_3/t19297179.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2024n_3/t19295183.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2024n_3/t19092473.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2024n_3/t19003303.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2024n_3/t18968344.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2024n_3/t18830522.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2023n_3/t17860698.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2023n_3/t17830480.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2023n_3/t17621002.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2023n_3/t17476347.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2023n_3/t17278823.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2023n_3/t17165359.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2023n_3/t17133380.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2023n_3/t16978254.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2022n_3/t15529130.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2022n_3/t14189120.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2022n_3/t13696889.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2022n_3/t13338687.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2022n_3/t13190885.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2022n_3/t13147516.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2022n_3/t12987063.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2022n_3/t12801893.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2021n_3/t11155050.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2021n_3/t10977063.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2021n_3/t10947770.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2021n_3/t10766415.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2021n_3/t10513480.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2021n_3/t10513479.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2021n_3/t9757046.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2021n_3/t9462942.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfzw/2024n_1/t19495250.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfzw/2024n_1/t19179479.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfzw/2024n_1/t18170932.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfzw/2024n_1/t18170882.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfzw/2024n_1/t18170890.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfzw/2024n_1/t18170913.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfzw/2023n_1/t17804930.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfzw/2023n_1/t16895366.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfzw/2023n_1/t15915959.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfzw/2023n_1/t15915933.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfzw/2022n_1/t13697083.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfzw/2022n_1/t13262663.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfzw/2022n_1/t13262631.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfzw/2022n_1/t11862333.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfzw/2022n_1/t11862341.shtml"
+        ],
+        "link_score": 6,
+        "link_index": 6,
+        "link_re": "[not(re:test(@href, '[a-zA-Z]+_\\d+', 'g')) and not(re:test(@href, '\\d+[a-zA-Z]_\\d/[a-zA-Z]\\d+.[a-zA-Z]html', 'g'))]",
+        "link_value_list": [
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2025n_2/t20911195.shtml",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2025n_2/t19965947.shtml",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2025n_2/t19707506.shtml",
+                "plate_result": "DL"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2025n_2/t19683418.shtml",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2025n_2/t19594893.shtml",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2024n_3/t19489577.shtml",
+                "plate_result": "D"
+            }
+        ]
+    },
+    "4c2060ba5104e7f192626c9958e3a3b6": {
+        "link_type": "4c2060ba5104e7f192626c9958e3a3b6",
+        "link_list": [
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2020n/t8803199.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2020n/t8803198.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2020n/t7025193.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2020n/t8803193.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2020n/t8803187.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2020n/t8803181.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2020n/t8803174.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2020n/t8041763.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfjs/2023n/t19003214.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2025n/t19705988.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2025n/t19705987.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2025n/t19705986.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2025n/t19705984.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2025n/t19705983.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2025n/t19705982.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2025n/t19705980.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2025n/t19705979.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2024n/t18141895.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2024n/t18141893.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2024n/t18141892.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2024n/t18141891.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2024n/t18141890.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2024n/t18141885.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2024n/t18141916.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2024n/t18141913.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2023n/t16780312.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2023n/t16780311.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2023n/t16780310.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2023n/t16780308.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2023n/t16780309.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2023n/t16780307.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2023n/t16780306.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2023n/t16780345.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2022n/t16780463.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2022n/t16780528.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2022n/t16780527.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2022n/t16780547.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2022n/t16780546.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2022n/t16780545.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2022n/t16780544.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2022n/t16780543.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2021n/t8829161.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2021n/t8041741.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2021n/t8041742.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2021n/t8041743.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2021n/t8041734.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2021n/t8041735.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2021n/t8041736.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2021n/t8041738.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2024n/t18186692.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2024n/t18547616.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2024n/t18291020.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2024n/t18286282.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2024n/t18286178.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2024n/t18290959.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2024n/t18286012.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2024n/t18290887.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2023n/t16061413.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2023n/t16717960.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2023n/t16290423.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2023n/t16233542.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2023n/t16418433.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2023n/t16417953.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2023n/t16417722.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2023n/t16417783.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2019n/t1268173.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2019n/t6501474.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2019n/t1268176.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2019n/t1268175.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2019n/t1268174.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2019n/t1268172.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2019n/t1268171.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2019n/t1268169.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2018n/t1267883.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2018n/t1267910.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2018n/t1267909.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2018n/t1267908.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2018n/t1267906.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2018n/t1267904.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2018n/t1267902.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/sgjf/2024n/t18170743.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/sgjf/2023n/t16589781.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/sgjf/2022n/t16589754.shtml"
+        ],
+        "link_score": 9,
+        "link_index": 13,
+        "link_re": "[not(re:test(@href, '[a-zA-Z]+_\\d+', 'g')) and not(re:test(@href, '\\d+[a-zA-Z]/[a-zA-Z]\\d+.[a-zA-Z]html', 'g'))]",
+        "link_value_list": [
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2020n/t8803199.shtml",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2020n/t8803198.shtml",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2020n/t7025193.shtml",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2020n/t8803193.shtml",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2020n/t8803187.shtml",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2020n/t8803181.shtml",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2020n/t8803174.shtml",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2020n/t8041763.shtml",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfjs/2023n/t19003214.shtml",
+                "plate_result": null
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2025n/t19705988.shtml",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2025n/t19705987.shtml",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2025n/t19705986.shtml",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2025n/t19705984.shtml",
+                "plate_result": "D"
+            }
+        ]
+    },
+    "38a2070916bd9d73d2ca08a394aaea24": {
+        "link_type": "38a2070916bd9d73d2ca08a394aaea24",
+        "link_list": [
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2019n_30037/t1268875.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2019n_30037/t1268874.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2019n_30037/t1268873.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2019n_30037/t1268872.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2019n_30037/t1268871.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2019n_30037/t1268870.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2019n_30037/t1268869.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2019n_30037/t1268868.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfjs/2022n_30043/t17190692.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfjs/2021n_30043/t13090458.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfjs/2020n_30043/t10165138.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfjs/2020n_30043/t6397989.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfjs/2019n_30042/t1268878.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfjs/2018n_30039/t1268876.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfjs/2017n_30040/t1268877.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2020n_30047/t8041647.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2020n_30047/t8041645.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2019n_30047/t1268905.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2019n_30047/t1268904.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2019n_30047/t1268903.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2019n_30047/t1268902.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2019n_30047/t1268901.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2019n_30047/t1268900.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2019n_30047/t1268899.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/czzxzj/2019n_30047/t1268898.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2022n_30020/t11341902.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2022n_30020/t17220600.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2022n_30020/t17311168.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2022n_30020/t17170621.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2022n_30020/t11612278.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2022n_30020/t11612180.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2022n_30020/t17185623.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2022n_30020/t11603094.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2021n_30020/t9463291.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2021n_30020/t13085510.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2021n_30020/t13085653.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2021n_30020/t13027527.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2021n_30020/t13029417.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2021n_30020/t9632782.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2021n_30020/t9629715.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2021n_30020/t9620048.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2020n_30020/t5481149.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2020n_30020/t5495392.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2020n_30020/t5523656.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2020n_30020/t5492498.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2020n_30020/t5490950.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2020n_30020/t5564286.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2020n_30020/t5560847.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2020n_30020/t5494065.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2023n_30042/t19069744.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2023n_30042/t19299387.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2023n_30042/t19175300.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2023n_30042/t19175299.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2023n_30042/t19175297.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2023n_30042/t19175296.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2023n_30042/t19175295.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2023n_30042/t19175293.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2022n_30042/t17223602.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2022n_30042/t17496472.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2022n_30042/t17304766.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2022n_30042/t17295595.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2022n_30042/t17294398.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2022n_30042/t17304562.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2022n_30042/t17292699.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2022n_30042/t17291391.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2021n_30041/t13142096.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2021n_30041/t17311003.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2021n_30041/t17310952.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2021n_30041/t17281644.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2021n_30041/t17245028.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2021n_30041/t13202975.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2021n_30041/t13202927.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2021n_30041/t13202884.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2021n_30026/t10279646.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2021n_30026/t11342352.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2021n_30026/t10577950.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2021n_30026/t13007788.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2021n_30026/t10507321.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2021n_30026/t13027721.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2021n_30026/t10483181.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2021n_30026/t10483154.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2020n_30026/t6504591.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2020n_30026/t10248860.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2020n_30026/t9055560.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2020n_30026/t6505201.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2020n_30026/t6504223.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2020n_30026/t6503145.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2020n_30026/t6626805.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2020n_30026/t6499328.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2019n_30026/t1268601.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2019n_30026/t1268600.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2019n_30026/t1268599.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2019n_30026/t1268598.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2019n_30026/t1268597.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2019n_30026/t1268596.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2019n_30026/t1268595.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2019n_30026/t1268594.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2018n_30023/t1268352.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2018n_30023/t1268293.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2018n_30023/t1268292.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2018n_30023/t1268291.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2018n_30023/t1268289.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2018n_30023/t1268287.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2018n_30023/t1268286.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2018n_30023/t1268285.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/sgjf/2021n_30032/t16589718.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/sgjf/2021n_30031/t10694547.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/sgjf/2021n_30031/t10694544.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/sgjf/2021n_30031/t10483819.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/sgjf/2021n_30031/t10433048.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/sgjf/2021n_30031/t10432989.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/sgjf/2021n_30031/t10410510.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/sgjf/2021n_30031/t10694852.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/sgjf/2021n_30031/t10694823.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/sgjf/2020n_30031/t6486922.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/sgjf/2020n_30031/t6475216.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/sgjf/2020n_30031/t6474241.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/sgjf/2020n_30031/t6405429.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/sgjf/2020n_30031/t16590491.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfzw/2021n_30051/t9696758.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfzw/2021n_30051/t9696786.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfzw/2020n_30051/t5466153.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfzw/2020n_30051/t5466230.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfzw/2019n_30050/t1268908.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfzw/2019n_30050/t1268907.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfzw/2018n_30049/t1268906.shtml"
+        ],
+        "link_score": 13,
+        "link_index": 15,
+        "link_re": "[not(re:test(@href, '[a-zA-Z]+_\\d+', 'g')) and not(re:test(@href, '\\d+[a-zA-Z]_\\d+/[a-zA-Z]\\d+.[a-zA-Z]html', 'g'))]",
+        "link_value_list": [
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2019n_30037/t1268875.shtml",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2019n_30037/t1268874.shtml",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2019n_30037/t1268873.shtml",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2019n_30037/t1268872.shtml",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2019n_30037/t1268871.shtml",
+                "plate_result": null
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2019n_30037/t1268870.shtml",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2019n_30037/t1268869.shtml",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfys/2019n_30037/t1268868.shtml",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfjs/2022n_30043/t17190692.shtml",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfjs/2021n_30043/t13090458.shtml",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfjs/2020n_30043/t10165138.shtml",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfjs/2020n_30043/t6397989.shtml",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfjs/2019n_30042/t1268878.shtml",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfjs/2018n_30039/t1268876.shtml",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfjs/2017n_30040/t1268877.shtml",
+                "plate_result": "D"
+            }
+        ]
+    },
+    "81a024fdf32cc04a041a060aa01c68a2": {
+        "link_type": "81a024fdf32cc04a041a060aa01c68a2",
+        "link_list": [
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2025n-1/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/sgjf/2025n-2/",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfzw/2025n-5/"
+        ],
+        "link_score": 1,
+        "link_index": 3,
+        "link_re": "[not(re:test(@href, '[a-zA-Z]+_\\d+', 'g')) and not(re:test(@href, '\\d+[a-zA-Z]-\\d', 'g'))]",
+        "link_value_list": [
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2025n-1/",
+                "plate_result": "L"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/sgjf/2025n-2/",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfzw/2025n-5/",
+                "plate_result": "D"
+            }
+        ]
+    },
+    "ac28915071baee559f66f29af10bc7b8": {
+        "link_type": "ac28915071baee559f66f29af10bc7b8",
+        "link_list": [
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2025n-1/t19739126.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2025n-1/t19944251.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2025n-1/t19944288.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2025n-1/t19942091.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2025n-1/t19950028.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2025n-1/t19949978.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2025n-1/t19927760.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2025n-1/t19927758.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/sgjf/2025n-2/t19707857.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfzw/2025n-5/t19711177.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfzw/2025n-5/t19711181.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfzw/2025n-5/t19711171.shtml",
+            "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/zfzw/2025n-5/t19711162.shtml"
+        ],
+        "link_score": 2,
+        "link_index": 2,
+        "link_re": "[not(re:test(@href, '[a-zA-Z]+_\\d+', 'g')) and not(re:test(@href, '\\d+[a-zA-Z]-\\d/[a-zA-Z]\\d+.[a-zA-Z]html', 'g'))]",
+        "link_value_list": [
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2025n-1/t19739126.shtml",
+                "plate_result": "D"
+            },
+            {
+                "url": "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmys/2025n-1/t19944251.shtml",
+                "plate_result": "D"
+            }
+        ]
+    },
+    "86dd3d690f39628ea1160b39c17d2638": {
+        "link_type": "86dd3d690f39628ea1160b39c17d2638",
+        "link_list": [
+            "http://www.yulin.gov.cn/bmlqfw/bmfw/shbx/shengyubaoxian/wyc1/t17285714.shtml"
+        ],
+        "link_score": 1,
+        "link_index": 1,
+        "link_re": "[not(re:test(@href, '[a-zA-Z]+\\d/[a-zA-Z]\\d+.[a-zA-Z]html', 'g'))]",
+        "link_value_list": [
+            {
+                "url": "http://www.yulin.gov.cn/bmlqfw/bmfw/shbx/shengyubaoxian/wyc1/t17285714.shtml",
+                "plate_result": "D"
+            }
+        ]
+    },
+    "b68330f2fc48d3729af1f7aac0b23d86": {
+        "link_type": "b68330f2fc48d3729af1f7aac0b23d86",
+        "link_list": [
+            "http://www.yulin.gov.cn/dhjl/hygq_1/index.shtml"
+        ],
+        "link_score": -1,
+        "link_index": 1,
+        "link_re": "[not(re:test(@href, '[a-zA-Z]+_\\d/[a-zA-Z]+.[a-zA-Z]html', 'g'))]",
+        "link_value_list": [
+            {
+                "url": "http://www.yulin.gov.cn/dhjl/hygq_1/index.shtml",
+                "plate_result": "L"
+            }
+        ]
+    },
+    "5696ab7c9b1ad9ff4e53bb8b45609f78": {
+        "link_type": "5696ab7c9b1ad9ff4e53bb8b45609f78",
+        "link_list": [
+            "http://www.yulin.gov.cn/zhengfugongbao/2025_ylzfgb/2025_1/ylszfbmwj_2025_1/t19726440.shtml"
+        ],
+        "link_score": 1,
+        "link_index": 1,
+        "link_re": "[not(re:test(@href, '\\d+_[a-zA-Z]+/\\d+_\\d', 'g')) and not(re:test(@href, '[a-zA-Z]+_\\d+_\\d/[a-zA-Z]\\d+.[a-zA-Z]html', 'g'))]",
+        "link_value_list": [
+            {
+                "url": "http://www.yulin.gov.cn/zhengfugongbao/2025_ylzfgb/2025_1/ylszfbmwj_2025_1/t19726440.shtml",
+                "plate_result": "D"
+            }
+        ]
+    }
+}

@@ -317,15 +317,15 @@ def generate_xpath_exclusion_pattern(right_url, error_url):
         differences = [item for item in differences if item[1] != r'[a-zA-Z]+']
         # print(differences)
         # 如果差异不足以生成有效的过滤模式，则返回False。
-        if len(differences) < 2 and [item for item in differences if 'htm' not in item[1]]:
-            return False
+        # if len(differences) < 2 and [item for item in differences if 'htm' not in item[1]]:
+        #     return False
 
         # 合并连续的数字差异，并对差异项进行转义处理。
         merged_result = merge_consecutive_digits(differences)
         escaped_items = [(idx, val) for idx, val in merged_result]
 
         # 生成XPath的排除模式字符串。
-        pattern_template = ' or '.join([f"not(re:test(@href, '{val}', 'g'))" for _, val in escaped_items])
+        pattern_template = ' and '.join([f"not(re:test(@href, '{val}', 'g'))" for _, val in escaped_items])
         # 打印生成的模式模板。
         # print(pattern_template)
         # 返回最终的XPath排除模式。

@@ -130,13 +130,13 @@ while True:
             logits = model_result['msg'][0]['logits']
             print(f"小模型判定结果--{task['plate_url']}--{plate_result}--{logits}")
             # 进行大模型判断
-            # if plate_result != 'L' and 0.5 < float(logits) < 0.8:
-            #     try:
-            #         plate_result,logits = use_bigModel(html_str)
-            #         print(f"大模型判定结果--{task['plate_url']}--{plate_result}--{logits}")
-            #     except Exception as e:
-            #         print('大模型使用失败',e)
-            #         pass
+            if plate_result != 'L' and 0.5 < float(logits) < 0.8:
+                try:
+                    plate_result,logits = use_bigModel(html_str)
+                    print(f"大模型判定结果--{task['plate_url']}--{plate_result}--{logits}")
+                except Exception as e:
+                    print('大模型使用失败',e)
+                    pass
                 
             # 记录分值
             server.zadd(f"chrome:{task['task_id']}:logits:{plate_result}",{task['plate_url']:logits})
