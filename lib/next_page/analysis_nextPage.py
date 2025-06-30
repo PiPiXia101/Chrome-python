@@ -11,6 +11,41 @@ def is_power_of_ten(n):
     log_val = math.log10(n)
     return log_val == int(log_val)
 
+def merge_consecutive_indices(data):
+    if not data:
+        return []
+
+    # 按照 index 排序
+    sorted_data = sorted(data, key=lambda x: x['index'])
+    merged_groups = []
+    current_group = [sorted_data[0]]
+
+    for i in range(1, len(sorted_data)):
+        prev_index = current_group[-1]['index']
+        curr_index = sorted_data[i]['index']
+
+        if curr_index == prev_index + 1:
+            # 连续索引，加入当前组
+            current_group.append(sorted_data[i])
+        else:
+            # 不连续，开始新组
+            merged_groups.append(current_group)
+            current_group = [sorted_data[i]]
+
+    # 添加最后一组
+    merged_groups.append(current_group)
+
+    # 构建结果，提取每个组的 next_url_path
+    result = [
+        {'indices': [item['index'] for item in group], 
+         'next_url_paths': [item['next_url_path'] for item in group]}
+        for group in merged_groups
+    ]
+
+    return result
+
+
+
 class NextLink:
 
     def for_to_html(self, next_pahr_html, url):
@@ -44,7 +79,7 @@ class NextLink:
         next_url_info_path = [item for item in next_url_info.path.split('/') if item]
         # 初始化列表以存储路径不同点和额外路径
         difference_path = list()  # 下标一样,但是值不一样
-        add_path = list()  # 多出来的部分
+        extra_path_list = list()  # 多出来的部分
         # 确保本次选择的页面是几位数字
         if is_power_of_ten(int(next_url_num)):
             num_length = [str(len(next_url_num) - 1), str(len(next_url_num))]
@@ -65,29 +100,28 @@ class NextLink:
                         'next_url_path': next_url_info_path[i]
                     })
             except:
-                add_path.append({
+                extra_path_list.append({
                     'index': i,
                     'url_path': '',
                     'next_url_path': next_url_info_path[i]
                 })
+        print(extra_path_list)
         # 处理额外路径
-        for item in add_path:
-            if re.findall(next_page_num_re, item.get('next_url_path')):
-                re_path = re.sub(next_page_num_re, "{}", item.get('next_url_path'))
-                url_info_path.append(re_path)
-            else:
-                url_info_path.append(item.get('next_url_path'))
-    
-        # 更新路径中的不同点
-        for item in difference_path:
-            if re.findall(next_page_num_re, item.get('next_url_path')):
-                re_path = re.sub(next_page_num_re, "{}", item.get('next_url_path'))
-                url_info_path[item.get('index')] = re_path
-            else:
-                url_info_path[item.get('index')] = item.get('next_url_path')
+        # [{'index': 4, 'url_path': '', 'next_url_path': 'test'},{'index': 5, 'url_path': '', 'next_url_path': 'index_2.shtml'}]
+        extra_path_list = merge_consecutive_indices(extra_path_list)
+        nextPage_rule_re = list()
+        for extra_path in extra_path_list:
+            step_target= '$'
+            step_replace = '/'.join(extra_path['next_url_paths'])
+            nextPage_rule_re.append(
+                [step_target,step_replace]
+            )
+        
+        for difference in difference_path:
+            nextPage_rule_re.append(difference)
     
         # 返回下一页的完整URL
-        return f'{url_info.scheme}://{url_info.netloc}/{"/".join(url_info_path)}'
+        return nextPage_rule_re
 
             
 
@@ -107,4 +141,5 @@ if __name__ == '__main__':
 
 
     result= nextLink.for_to_html(next_pahr_html,url)
+    print(url)
     print(result)

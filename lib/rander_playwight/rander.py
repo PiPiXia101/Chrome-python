@@ -47,43 +47,43 @@ def get_html(url):
         # 监控所有网络响应
         xhr_list = []
         html_info = {}
-        # def handle_response(response):
-        #     if response.request.resource_type == 'document':
-        #         html_info['url'] = response.url
-        #         html_info['status'] =response.status
-        #         html_info['headers'] = response.headers
-        #         html_info['body'] = response.text()
-        #         html_info['method'] = response.request.method
-        #         html_info['params'] = response.request.post_data
-        #     # 获取图片和css
-        #     if response.request.resource_type in ['stylesheet', 'image']:
-        #         pass
-        #     else:
+        def handle_response(response):
+            if response.request.resource_type == 'document':
+                html_info['url'] = response.url
+                html_info['status'] =response.status
+                html_info['headers'] = response.headers
+                html_info['body'] = response.text()
+                html_info['method'] = response.request.method
+                html_info['params'] = response.request.post_data
+            # 获取图片和css
+            if response.request.resource_type in ['stylesheet', 'image']:
+                pass
+            else:
 
-        #         if '.js' not in response.request.url:
-        #             try:
+                if '.js' not in response.request.url:
+                    try:
                         
-        #                 xhr_list.append({
-        #                     'url': response.url,
-        #                     'status': response.status,
-        #                     'headers': response.headers,
-        #                     'body': response.text(),
-        #                     'method': response.request.method,  # 记录请求方式
-        #                     'params': response.request.post_data  # 记录请求参数
-        #                 })
-        #             except Exception as e:
-        #                 pass
-        #         else:
-        #             # 写入js文件
-        #             js_url_info = urlparse(response.request.url)
-        #             js_file_name = js_url_info.path.split('/')[-1]
-        #             try:
-        #                 with open(f"{web_js_file_path}/{js_file_name}", 'w', encoding='utf-8') as f:
-        #                     f.write(response.text())
-        #             except Exception as e:
-        #                 print(f'写入js文件失败: {e}')
+                        xhr_list.append({
+                            'url': response.url,
+                            'status': response.status,
+                            'headers': response.headers,
+                            'body': response.text(),
+                            'method': response.request.method,  # 记录请求方式
+                            'params': response.request.post_data  # 记录请求参数
+                        })
+                    except Exception as e:
+                        pass
+                else:
+                    # 写入js文件
+                    js_url_info = urlparse(response.request.url)
+                    js_file_name = js_url_info.path.split('/')[-1]
+                    try:
+                        with open(f"{web_js_file_path}/{js_file_name}", 'w', encoding='utf-8') as f:
+                            f.write(response.text())
+                    except Exception as e:
+                        print(f'写入js文件失败: {e}')
                     
-        # page.on('response', handle_response)
+        page.on('response', handle_response)
         try:
             page.goto(url, wait_until='load')
             s_time = 10000

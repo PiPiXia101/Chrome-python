@@ -82,11 +82,46 @@ class BitPlaywright:
         page = default_context.new_page()
         response_status = None
 
+    
+
+        # 监控所有网络响应
+        xhr_list = []
+        html_info = {}
         # 监听 response 事件以获取响应状态码
         def handle_response(response):
             nonlocal response_status
             if response.url == url:  # 只关注目标 URL 的响应
                 response_status = response.status
+            if response.request.resource_type == 'document':
+                html_info['url'] = response.url
+                html_info['status'] =response.status
+                html_info['headers'] = response.headers
+                html_info['body'] = response.text()
+                html_info['method'] = response.request.method
+                html_info['params'] = response.request.post_data
+                with open(f"html_info.text", 'w', encoding='utf-8') as f:
+                    f.write(str(html_info))
+            # 获取图片和css
+            elif response.request.resource_type in ['stylesheet', 'image']:
+                pass
+            else:
+                if '.js' not in response.request.url:
+                    try:
+                        xhr_info = {
+                            'url': response.url,
+                            'status': response.status,
+                            'headers': response.headers,
+                            'body': json.loads(response.text()),
+                            'method': response.request.method,  # 记录请求方式
+                            'params': response.request.post_data  # 记录请求参数
+                        }
+                        xhr_list.append(xhr_info)
+                        with open(f"xhr_list.text", 'a', encoding='utf-8') as f:
+                            f.write(json.dumps(xhr_info)+"\n")
+                    except Exception as e:
+                        pass
+                else:
+                    pass
         
         page.on("response", handle_response)
 
@@ -108,7 +143,7 @@ class BitPlaywright:
             original_data = page.content()  # 源码
             # 关闭页面
             page.close()
-            return original_data
+            return original_data,xhr_list
         except:
             page.close()
             return ''
