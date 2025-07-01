@@ -119,6 +119,8 @@ class NextLink:
                 [step_target,re_path]
             )
         for difference in difference_path:
+            if difference == difference_path[-1]:
+                difference['next_url_path'] = re.sub(next_page_num_re, "{}", difference['next_url_path'])
             nextPage_rule_re.append(difference)
     
         # 返回下一页的完整URL
