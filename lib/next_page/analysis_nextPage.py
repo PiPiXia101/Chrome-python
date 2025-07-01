@@ -111,12 +111,13 @@ class NextLink:
         extra_path_list = merge_consecutive_indices(extra_path_list)
         nextPage_rule_re = list()
         for extra_path in extra_path_list:
+            
             step_target= '$'
             step_replace = '/'.join(extra_path['next_url_paths'])
+            re_path = re.sub(next_page_num_re, "{}", step_replace)
             nextPage_rule_re.append(
-                [step_target,step_replace]
+                [step_target,re_path]
             )
-        
         for difference in difference_path:
             nextPage_rule_re.append(difference)
     
@@ -136,7 +137,7 @@ if __name__ == '__main__':
     nextLink = NextLink()
 
     next_pahr_html = """<a href="index_2.shtml">3</a>"""
-    url = 'http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2023n_30042/'
+    url = 'http://www.yulin.gov.cn    /gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2023n_30042/index_1.shtml'
     # url = 'http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2023n_30042/index_{}.shtml'
 
 

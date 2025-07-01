@@ -217,7 +217,7 @@ while True:
     plate_rule = bytes.decode(plate_rule) if isinstance(plate_rule, bytes) else plate_rule
     with sync_playwright() as playwright:
         # 获取源码 
-        original_data = bp.run(playwright=playwright, browser_id_object=bp.browser_id_object_list[0], url=task['plate_url'])
+        original_data,xhr_list,html_info = bp.run(playwright=playwright, browser_id_object=bp.browser_id_object_list[0], url=task['plate_url'])
     if not original_data:
         time.sleep(5)
         continue

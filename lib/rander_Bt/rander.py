@@ -99,8 +99,6 @@ class BitPlaywright:
                 html_info['body'] = response.text()
                 html_info['method'] = response.request.method
                 html_info['params'] = response.request.post_data
-                with open(f"html_info.text", 'w', encoding='utf-8') as f:
-                    f.write(str(html_info))
             # 获取图片和css
             elif response.request.resource_type in ['stylesheet', 'image']:
                 pass
@@ -116,8 +114,6 @@ class BitPlaywright:
                             'params': response.request.post_data  # 记录请求参数
                         }
                         xhr_list.append(xhr_info)
-                        with open(f"xhr_list.text", 'a', encoding='utf-8') as f:
-                            f.write(json.dumps(xhr_info)+"\n")
                     except Exception as e:
                         pass
                 else:
@@ -143,7 +139,7 @@ class BitPlaywright:
             original_data = page.content()  # 源码
             # 关闭页面
             page.close()
-            return original_data,xhr_list
+            return original_data,xhr_list,html_info
         except:
             page.close()
             return ''
