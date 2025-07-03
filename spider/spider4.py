@@ -115,7 +115,8 @@ class LinkTypeSet:
         for link_type in self.link_type_set.keys():
             link = self.link_type_set[link_type]
             # 如果该类别的链接存在两条及以上的文章 则跳过
-            if link.link_score > len(link.link_list) * 0.1:
+            Proportion = 0.01 if len(link.link_list) > 100 else 0.1
+            if link.link_score > len(link.link_list) * Proportion:
                 # 当出现错误链接时 需要更正 提取规则
                 rule_list.append(link.link_re)
                 continue
@@ -183,6 +184,22 @@ task = {
 plate_rule = "//*[re:test(@href, '[a-zA-Z]+', 'g')]"
 
 
+
+# 例子2
+web_url =  "https://www.dahecube.com/"
+task = {
+    'web_url': web_url,
+    'plate_url': web_url,
+    'task_id':web_url.replace('https://','').replace('http://',''),
+    'selected_link':'https://www.dahecube.com/index.html?recid=1',
+    'Subdomains':web_url.replace('https://','').replace('http://',''),
+    'parent_url':web_url,
+    'num':0,
+    'level':2
+}
+plate_rule = "//*[re:test(@href, '[a-zA-Z]+.html', 'g')]"
+
+
 server.lpush('chrome:plate_task',json.dumps(task))
 task_plate_rule = f"chrome:{task['task_id']}:plate_rule"
 server.set(f"chrome:{task['Subdomains']}:plate_rule",plate_rule)
@@ -201,8 +218,13 @@ while True:
             with open('link_type_set.json','w') as f:
                 json.dump(link_type_set.statistics(),f)
             break
-        if i == 5:
-            with open('link_type_set_5.json','w') as f:
+        # if i == 5:
+        #     with open('link_type_set_5.json','w') as f:
+        #         json.dump(link_type_set.statistics(),f)
+
+        # 判断i是不是3的倍数
+        if i % 3 == 0:
+            with open(f'link_type_set_{i}.json','w') as f:
                 json.dump(link_type_set.statistics(),f)
         if rule_list:
             print(rule_list)

@@ -45,8 +45,8 @@ class plate_extraction_rules:
                 print(f'filter article: {seed_url} - text:{text} url包含javascript:或为# | prefilter')
                 continue
             # 链接字数过滤 >13个字的不要
-            # if len(text) > 13:
-            #     print(f'filter article: {seed_url} - text:{text} > 13 | prefilter')
+            if len(text) > 13:
+                print(f'filter article: {seed_url} - text:{text} > 13 | prefilter')
                 continue
             # 根据指定链接字段过滤文章
             if sum([item == url_item and 'list' not in url_item for url_item in seed_url.split('/') for item in self.url_words]):

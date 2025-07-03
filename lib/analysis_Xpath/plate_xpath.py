@@ -1,7 +1,7 @@
 import sys
 import os
 from typing import List, Dict, Any
-from urllib.parse import urljoin, urlparse
+from urllib.parse import urljoin, urlparse, parse_qsl
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from scrapy import Selector
@@ -37,7 +37,6 @@ def generate_path_template(path: str) -> str:
     """
     # 判断是否是 .html 结尾的文件
     is_html_file = path.endswith('.html') or path.endswith('.htm') or path.endswith('.shtml')
-
     template = []
     i = 0
     while i < len(path):
@@ -74,8 +73,8 @@ def parse_url(url: str) -> Dict[str, Any]:
         parts = url.split('?', 1)
         result["url"] = parts[0]
         result["query_type"] = True
-        result["query"] = parts[1]
-
+        result["query"] = dict(parse_qsl(parts[1],True))
+        
     path_parts = result["url"].strip('/').split('/')
     for idx, part in enumerate(path_parts):
         result["url_path"].append({
@@ -85,7 +84,6 @@ def parse_url(url: str) -> Dict[str, Any]:
             "diversity": [],
             "diversity_path": []
         })
-
     return result
 
 
@@ -300,29 +298,32 @@ def generate_xpath_exclusion_pattern(right_url, error_url):
 
     # 定义一个内部函数，用于提取URL中的路径模板。
     def extract_path_templates(url):
+        url_info = parse_url(url)
         # 解析URL并提取路径模板，返回路径模板列表。
-        return [item.get('path_template', '') for item in parse_url(url).get('url_path', [])]
+        return [item.get('path_template', '') for item in url_info.get('url_path', [])], url_info.get('query')
 
     try:
         # 提取错误URL和正确URL的路径模板。
-        error_path_parts = extract_path_templates(error_url)
-        right_path_parts = extract_path_templates(right_url)
+        error_path_parts,error_query = extract_path_templates(error_url)
+        right_path_parts,right_query = extract_path_templates(right_url)
 
         # 合并相邻的路径部分。
         error_list = merge_adjacent_elements(error_path_parts)
         right_list = merge_adjacent_elements(right_path_parts)
         # 找出错误路径和正确路径的差异。
         differences = find_differences(error_list, right_list)
+
         # 过滤掉差异中的正则表达式部分。
         differences = [item for item in differences if item[1] != r'[a-zA-Z]+']
-        # print(differences)
-        # 如果差异不足以生成有效的过滤模式，则返回False。
-        # if len(differences) < 2 and [item for item in differences if 'htm' not in item[1]]:
-        #     return False
 
         # 合并连续的数字差异，并对差异项进行转义处理。
         merged_result = merge_consecutive_digits(differences)
         escaped_items = [(idx, val) for idx, val in merged_result]
+
+        if error_query:
+            for key in error_query.keys():
+                if key not in right_query and len(key) > 1:
+                    escaped_items.append((0,key))
 
         # 生成XPath的排除模式字符串。
         pattern_template = ' and '.join([f"not(re:test(@href, '{val}', 'g'))" for _, val in escaped_items])
@@ -343,14 +344,42 @@ def generate_xpath_exclusion_pattern(right_url, error_url):
 #     web_url_info = urlparse(web_url)
 #     # 选中的元素
 #     # 示例用法
-#     test_node = """<map name="AutoMap1" border="0"><area href="zsxxw.htm" shape="rect" target="" coords="5,5,271,175" border="0"></map>"""
+#     test_node = """<li class="navItem"><a href="channel.html?recid=4">政经</a></li>"""
 #     # 相似元素的a标签的href
 #     test_paths = [
-#         'zsxxw.htm',
-#         'jywsy.htm'
+#         "index.html?recid=1",
+#         "channel.html?recid=4",
+#         "channel.html?recid=2",
+#         "channel.html?recid=5",
+#         "channel.html?recid=40",
+#         "channel.html?recid=50",
+#         "channel.html?recid=19",
+#         "channel.html?recid=34",
+#         "channel.html?recid=49",
+#         "channel.html?recid=44",
+#         "channel.html?recid=43",
+#         "channel.html?recid=42",
+#         "channel.html?recid=47",
+#         "currentNews.html?recid=7",
+#         "channel.html?recid=38",
+#         "channel.html?recid=29",
+#         "channel.html?recid=33",
+#         "channel.html?recid=37",
+#         "channel.html?recid=36",
+#         "channel.html?recid=18",
+#         "channel.html?recid=6",
+#         "channel.html?recid=20",
+#         "channel.html?recid=32",
+#         "channel.html?recid=35",
+#         "channel.html?recid=30",
+#         "subject.html?recid=25",
+#         "channel.html?recid=39",
+#         "channel.html?recid=22",
+#         "channel.html?recid=46",
+#         "about.html",
 #     ]
 #     # 测试数据
-#     with open('/Users/yan/Desktop/Chrome-python/html/test copy.html', 'r', encoding='utf-8') as f:
+#     with open('/Users/yan/Desktop/Chrome-python/html/test.html', 'r', encoding='utf-8') as f:
 #         html_str = f.read()
 #     html = Selector(text=html_str)
 
@@ -370,6 +399,6 @@ def generate_xpath_exclusion_pattern(right_url, error_url):
 # print(generate_xpath_exclusion_pattern(right_url,error_url))
 
 
-# error_url= 'http://www.shuicheng.gov.cn/newsite/zwgk/zdly/jycy/zpxx/202505/t20250522_87909168.html'
-# right_url = 'http://www.shuicheng.gov.cn/'
+# error_url = 'https://www.dahecube.com/article.html?artid=239991?recid=1'
+# right_url= 'https://www.dahecube.com/index.html'
 # print(generate_xpath_exclusion_pattern(right_url,error_url))

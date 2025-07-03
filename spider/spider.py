@@ -36,6 +36,7 @@ class Spider:
 
 
     def run(self,url,test_node):
+        print(url)
         # 模拟浏览器打开链接
         original_data,xhr_list,html_info,web_js_file_path = rander.get_html(url)
         html = Selector(text=original_data)
@@ -61,12 +62,12 @@ class Spider:
 
 
 if __name__ == '__main__':
-    # 例子1
-    spider = Spider()
-    test_node = """
-        <li class="active"><a target="_blank" href="./newsite/zwdt/zwyw/">水城要闻</a>
-                                    </li>"""
-    spider.run('http://www.shuicheng.gov.cn/',test_node)
+    # # 例子1
+    # spider = Spider()
+    # test_node = """
+    #     <li class="active"><a target="_blank" href="./newsite/zwdt/zwyw/">水城要闻</a>
+    #                                 </li>"""
+    # spider.run('http://www.shuicheng.gov.cn/',test_node)
 
     # 例子2
     # spider = Spider()
@@ -113,4 +114,10 @@ if __name__ == '__main__':
     #             </div>
     #         </li>"""
     # spider.run('http://www.yulin.gov.cn/',test_node)
+
+
+    # 例子4
+    spider = Spider()
+    test_node = """<li class="navItem"><a href="channel.html?recid=4">政经</a></li>"""
+    spider.run('https://www.dahecube.com/',test_node)
     

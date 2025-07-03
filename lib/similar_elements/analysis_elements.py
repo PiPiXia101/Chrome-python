@@ -310,41 +310,7 @@ def children_match(result,all_nodes,first_node):
 
 
 # 示例用法
-# test_node = """<li class="">
-#                 <div class="menu-box">
-#                     <a class="i-page2" href="http://www.yulin.gov.cn/zjyl/" target="_blank"> 走进玉林</a>
-#                     <div class="child-ul-menu" style="display: none;">
-#                         <!-- 最多放4个 -->
-#                         <div class="child-box" startpos="0" num="4">
-                        	
-#                         		<a class="child-li-menu" target="_blank" href="http://www.yulin.gov.cn/zjyl/ylls/" title="玉林历史"> 玉林历史</a>
-							   
-							
-#                         		<a class="child-li-menu" target="_blank" href="http://www.yulin.gov.cn/zjyl/ylgk/" title="玉林概况"> 玉林概况</a>
-							   
-							
-#                         		<a class="child-li-menu" target="_blank" href="http://www.yulin.gov.cn/zjyl/ylyx/" title="玉林映像"> 玉林映像</a>
-							   
-							
-#                         		<a class="child-li-menu" target="_blank" href="http://www.yulin.gov.cn/zjyl/ylwh/" title="玉林文化"> 玉林文化</a>
-							   
-							
-#                         		<a class="child-li-menu" target="_blank" href="http://www.yulin.gov.cn/zjyl/yltz/" title="玉林图展"> 玉林图展</a>
-							   
-							
-#                         		<a class="child-li-menu" target="_blank" href="http://www.yulin.gov.cn/zjyl/ylly/" title="玉林旅游"> 玉林旅游</a>
-							   
-							
-#                         		<a class="child-li-menu" target="_blank" href="http://www.yulin.gov.cn/zjyl/ylms/" title="玉林美食"> 玉林美食</a>
-							   
-							
-#                             <!--<a class="child-li-menu" target="_blank" href="#" title="玉林概括">玉林概括</a>
-#                             <a class="child-li-menu" target="_blank" href="#" title="玉林文化">玉林文化</a>
-#                             <a class="child-li-menu" target="_blank" href="#" title="玉林文化">玉林文化</a>-->
-#                         </div>
-#                     </div>
-#                 </div>
-#             </li>"""
+# test_node = """<li class="navItem"><a href="channel.html?recid=4">政经</a></li>"""
 
 # with open('/Users/yan/Desktop/Chrome-python/html/test.html', 'r', encoding='utf-8') as f:
 #     html_str = f.read()
@@ -352,6 +318,6 @@ def children_match(result,all_nodes,first_node):
 # result,all_nodes,first_node = run_example(test_node,html_str)
 # result = children_match(result,all_nodes,first_node)
 # for item in result:
-#     print(item[0]['seek_parent'].get())
-#     print('='*50)
+#     print(item[0]['seek_parent'].xpath('./a/@href').get())
+    # print('='*50)
 

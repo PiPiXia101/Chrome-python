@@ -4,7 +4,7 @@ import sys
 import os
 import uuid
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from lib.analysis_xhr.test import analysis_xhr
+from lib.analysis_xhr.plate_xhr import analysis_xhr
 from lib.analysis_Xpath.plate_xpath import *
 from lib.models.clean_data import html_parse
 from lib.models.model_usage import *
