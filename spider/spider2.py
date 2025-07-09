@@ -95,6 +95,7 @@ for item in xhr_list:
                             article_url += '/'+''.join(['{'+f'item[{jsonpath}]'+'}' if jsonpath.isdigit() else '{'+f'item["{jsonpath}"]'+'}' for jsonpath in path_json[0].split(".")])
                         else:
                             article_url += f"/{path}"
+                    # print(item)
                     print(code.replace("item.get('body')",""),title_key_path,article_url)
 
                 else:

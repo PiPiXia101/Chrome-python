@@ -137,9 +137,9 @@ class NextLink:
          
 if __name__ == '__main__':
     nextLink = NextLink()
-
-    next_pahr_html = """<a href="index_2.shtml">3</a>"""
-    url = 'http://www.yulin.gov.cn    /gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2023n_30042/index_1.shtml'
+    next_page_url = "http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2023n_30042/index_1.shtml"
+    next_pahr_html = f"""<a href="{next_page_url}">2</a>"""
+    url = 'http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2023n_30042/'
     # url = 'http://www.yulin.gov.cn/gkzl/fadingzhudonggongkaineirong/ylsbjyjsgkpt_30014/bmjs/2023n_30042/index_{}.shtml'
 
 

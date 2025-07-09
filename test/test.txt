@@ -1,0 +1,12 @@
+0./scrapy-redis-gne/slave/slave/slave/lib/umeiparse.py:18:        self.redis_6306 = RunRedis('redis.wx.crawler.sinayq.cn', 'rds6306_paswd', '6306', 0)
+0./scrapy-redis-gne/slave/slave/slave/parse_umei/crawlPlateFunc.py:103:    cdh_host = "api-cdh.crawler.sinayq.cn"
+0./scrapy-redis-gne/slave/slave/slave/parse_umei/crawlPlateFunc.py:1153:                host="search.rgw-sjqx.sinayq.cn",
+0./scrapy-redis-gne/slave/slave/slave/parse_umei/crawlPlateFunc.py:1431:        api_url = 'http://originapi.dc.sinayq.cn/origin/getOriginTypeFirst'
+0./scrapy-redis-gne/slave/slave/slave/specialParse/parseFuncLj4.py:26:redis_server = redis.StrictRedis(host='redis.wx.crawler.sinayq.cn', password='rds6306_paswd', port=6306, db=0,
+0./scrapy-redis-gne/slave/slave/slave/specialParse/parseFuncZY.py:1518:    server = redis.Redis(host='redis.wx.crawler.sinayq.cn', password='rds6306_paswd', port=6306, db=0,
+0./scrapy-redis-gne/slave/slave/slave/unGneSpider/check/spider.py:40:        self.updata_url = "http://admin.dc.sinayq.cn/analtask/updateStatus"
+0./scrapy-redis-gne/slave/slave/slave/unGneSpider/check/spider.py:41:        self.insert_url = "http://admin.dc.sinayq.cn/analtask/addAnalysisTaskData"
+0./scrapy-redis-gne/slave/slave/slave/unGneSpider/contentLink/spider.py:63:        self.cdh_host = "api-cdh.crawler.sinayq.cn"
+0./scrapy-redis-gne/slave/slave/slave/unGneSpider/filter_plate/gn/spider.py:393:        api_url = 'http://originapi.dc.sinayq.cn/origin/getOriginTypeFirst'
+0./scrapy-redis-gne/slave/slave/slave/unGneSpider/umei/anxuntong/plate_new/spider.py:704:        api_url = 'http://originapi.dc.sinayq.cn/origin/getOriginTypeFirst'
+0./scrapy-redis-gne/slave/slave/slave/unGneSpider/umei/anxuntong/recall/special/spider.py:275:        api_url = 'http://originapi.dc.sinayq.cn/origin/getOriginTypeFirst'
