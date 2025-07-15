@@ -399,6 +399,6 @@ def generate_xpath_exclusion_pattern(right_url, error_url):
 # print(generate_xpath_exclusion_pattern(right_url,error_url))
 
 
-# error_url = 'https://www.dahecube.com/article.html?artid=239991?recid=1'
-# right_url= 'https://www.dahecube.com/index.html'
-# print(generate_xpath_exclusion_pattern(right_url,error_url))
+error_url = 'https://www.dahecube.com/article.html?artid=239991?recid=1'
+right_url= 'https://www.dahecube.com/index.html'
+print(generate_xpath_exclusion_pattern(right_url,error_url))

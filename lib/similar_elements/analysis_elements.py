@@ -310,14 +310,14 @@ def children_match(result,all_nodes,first_node):
 
 
 # 示例用法
-# test_node = """<li class="navItem"><a href="channel.html?recid=4">政经</a></li>"""
+test_node = """<li class="navItem"><a href="channel.html?recid=4">政经</a></li>"""
 
-# with open('/Users/yan/Desktop/Chrome-python/html/test.html', 'r', encoding='utf-8') as f:
-#     html_str = f.read()
+with open('/Users/yan/Desktop/Chrome-python/html/test.html', 'r', encoding='utf-8') as f:
+    html_str = f.read()
 
-# result,all_nodes,first_node = run_example(test_node,html_str)
-# result = children_match(result,all_nodes,first_node)
-# for item in result:
-#     print(item[0]['seek_parent'].xpath('./a/@href').get())
-    # print('='*50)
+result,all_nodes,first_node = run_example(test_node,html_str)
+result = children_match(result,all_nodes,first_node)
+for item in result:
+    print(item[0]['seek_parent'].get())
+    print('='*50)
 

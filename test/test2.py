@@ -201,7 +201,7 @@ else:
 
 
 
-with open('/Users/yan/Desktop/Chrome-python/html/test copy.html', 'r', encoding='utf-8') as f:
+with open('/Users/yan/Desktop/Chrome-python/html/test.html', 'r', encoding='utf-8') as f:
     html_str = f.read()
 html_obj = Selector(text = html_str)
 # 选中元素的代表节点在页面中,已经全部找到了

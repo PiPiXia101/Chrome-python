@@ -116,7 +116,7 @@ class analysis_xhr:
         """
         try:
             # 将字符串解析为 datetime 对象
-            dt = datetime.strptime(date_str, date_format)
+            dt = datetime.datetime.strptime(date_str, date_format)
             # 将 datetime 对象转换为时间戳
             timestamp = int(dt.timestamp())
             return timestamp
@@ -184,7 +184,7 @@ class analysis_xhr:
                 result_paths.extend(self.find_chinese_range_in_json(item, content_range, new_path))
         return result_paths
 
-    def find_matching_json_path(self,xhr_list,title,published,content,other):
+    def find_matching_json_path(self,xhr_list,title,published,content,other=None):
         for item in xhr_list:
             item = json.loads(item[:-1])
             # 确定了数据在哪个请求
@@ -221,8 +221,10 @@ class analysis_xhr:
                 content_range = (int(HZchar_count*0.9),int(HZchar_count/0.9))
                 content_json_path = self.find_chinese_range_in_json(item.get('body'),content_range)
                 # 验证逻辑
-
-                return title_json_path,published_json_path,content_json_path,item
+                
+                if title_json_path and published_json_path and content_json_path:
+                    return title_json_path,published_json_path,content_json_path,item
+                
 
 
 
